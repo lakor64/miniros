@@ -111,11 +111,11 @@ WinLdrSetupMemoryLayout(IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock);
 BOOLEAN
 WinLdrInitSystemHive(
     IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
-    IN PCSTR SearchPath,
+    IN PCSTR SystemRoot,
     IN BOOLEAN Setup);
 
 BOOLEAN WinLdrScanSystemHive(IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
-                             IN PCSTR SearchPath);
+                             IN PCSTR SystemRoot);
 
 BOOLEAN
 WinLdrLoadNLSData(

@@ -603,7 +603,7 @@ BOOLEAN
 LoadWindowsCore(IN USHORT OperatingSystemVersion,
                 IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
                 IN PCSTR BootOptions,
-                IN PCSTR DirPath,
+                IN PCSTR BootPath,
                 IN OUT PLDR_DATA_TABLE_ENTRY* KernelDTE)
 {
     BOOLEAN Success;
@@ -611,11 +611,16 @@ LoadWindowsCore(IN USHORT OperatingSystemVersion,
     ULONG OptionLength;
     PVOID KernelBase, HalBase, KdDllBase = NULL;
     PLDR_DATA_TABLE_ENTRY HalDTE, KdDllDTE = NULL;
+    CHAR DirPath[MAX_PATH];
     CHAR HalFileName[MAX_PATH];
     CHAR KernelFileName[MAX_PATH];
     CHAR KdDllName[MAX_PATH];
 
     if (!KernelDTE) return FALSE;
+
+    /* Initialize SystemRoot\System32 path */
+    RtlStringCbCopyA(DirPath, sizeof(DirPath), BootPath);
+    RtlStringCbCatA(DirPath, sizeof(DirPath), "system32\\");
 
     /* Parse the boot options */
     TRACE("LoadWindowsCore: BootOptions '%s'\n", BootOptions);
@@ -1110,25 +1115,7 @@ LoadAndBootWindows(
 
     /* Load the system hive */
     UiUpdateProgressBar(15, "Loading system hive...");
-
-    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
-
-    FileName = NtLdrGetOptionEx(BootOptions, "HIVEPATH=", &FileNameLength);
-    if (FileName && (FileNameLength > 9))
-    {
-		FileName += 9; FileNameLength -= 9;
-		RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);       
-		if (FileName[strlen(FileName) - 1] != '\\')
-            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
-    }
-    else
-    {
-        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\config\\");
-    }
-
-    TRACE("HivePath: %s\n", FilePath);
-    
-    Success = WinLdrInitSystemHive(LoaderBlock, FilePath, FALSE);
+    Success = WinLdrInitSystemHive(LoaderBlock, BootPath, FALSE);
     TRACE("SYSTEM hive %s\n", (Success ? "loaded" : "not loaded"));
     /* Bail out if failure */
     if (!Success)
@@ -1141,65 +1128,22 @@ LoadAndBootWindows(
     LoaderBlock->Extension->MinorVersion = (OperatingSystemVersion & 0xFF);
 
     /* Load NLS data, OEM font, and prepare boot drivers list */
-    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
-
-    FileName = NtLdrGetOptionEx(BootOptions, "NLSPATH=", &FileNameLength);
-    if (FileName && (FileNameLength > 8))
-    {
-		FileName += 8; FileNameLength -= 8;
-        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
-        if (FileName[strlen(FileName) - 1] != '\\')
-            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
-    }
-    else
-    {
-        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\");
-    }
-
-    TRACE("NLSPath: %s\n", FilePath);
-	
-    Success = WinLdrScanSystemHive(LoaderBlock, FilePath);
+    Success = WinLdrScanSystemHive(LoaderBlock, BootPath);
     TRACE("SYSTEM hive %s\n", (Success ? "scanned" : "not scanned"));
     /* Bail out if failure */
     if (!Success)
         return ENOEXEC;
 
-    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
-
-    FileName = NtLdrGetOptionEx(BootOptions, "INFPATH=", &FileNameLength);
-    if (FileName && (FileNameLength > 8))
-    {
-		FileName += 8; FileNameLength -= 8;
-        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
-        if (FileName[strlen(FileName) - 1] != '\\')
-            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
-    }
-
     /* Load the Firmware Errata file */
-    Success = WinLdrInitErrataInf(LoaderBlock, OperatingSystemVersion, FilePath);
+    Success = WinLdrInitErrataInf(LoaderBlock, OperatingSystemVersion, BootPath);
     TRACE("Firmware Errata file %s\n", (Success ? "loaded" : "not loaded"));
     /* Not necessarily fatal if not found - carry on going */
-
-    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
-
-    FileName = NtLdrGetOptionEx(BootOptions, "BOOTPATH=", &FileNameLength);
-    if (FileName && (FileNameLength > 9))
-    {
-		FileName += 9; FileNameLength -= 9;
-        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
-        if (FileName[strlen(FileName) - 1] != '\\')
-            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
-    }
-    else
-    {
-        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\");
-    }
 
     /* Finish loading */
     return LoadAndBootWindowsCommon(OperatingSystemVersion,
                                     LoaderBlock,
                                     BootOptions,
-                                    FilePath);
+                                    BootPath);
 }
 
 ARC_STATUS

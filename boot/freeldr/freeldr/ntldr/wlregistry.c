@@ -109,14 +109,16 @@ WinLdrLoadSystemHive(
 BOOLEAN
 WinLdrInitSystemHive(
     IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
-    IN PCSTR SearchPath,
+    IN PCSTR SystemRoot,
     IN BOOLEAN Setup)
 {
+    CHAR SearchPath[1024];
     PCSTR HiveName;
     BOOLEAN Success;
 
     if (Setup)
     {
+        RtlStringCbCopyA(SearchPath, sizeof(SearchPath), SystemRoot);
         HiveName = "SETUPREG.HIV";
     }
     else
@@ -125,6 +127,8 @@ WinLdrInitSystemHive(
         // fails, then give system.alt a try, and finally try a system.sav
 
         // FIXME: For now we only try system
+        RtlStringCbCopyA(SearchPath, sizeof(SearchPath), SystemRoot);
+        RtlStringCbCatA(SearchPath, sizeof(SearchPath), "system32\\config\\");
         HiveName = "SYSTEM";
     }
 
@@ -155,13 +159,14 @@ WinLdrInitSystemHive(
 }
 
 BOOLEAN WinLdrScanSystemHive(IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
-                             IN PCSTR SearchPath)
+                             IN PCSTR SystemRoot)
 {
     BOOLEAN Success;
     DECLARE_UNICODE_STRING_SIZE(AnsiFileName, MAX_PATH);
     DECLARE_UNICODE_STRING_SIZE(OemFileName, MAX_PATH);
     DECLARE_UNICODE_STRING_SIZE(LangFileName, MAX_PATH); // CaseTable
     DECLARE_UNICODE_STRING_SIZE(OemHalFileName, MAX_PATH);
+    CHAR SearchPath[1024];
 
     /* Scan registry and prepare boot drivers list */
     Success = WinLdrScanRegistry(&LoaderBlock->BootDriverListHead);
@@ -187,6 +192,8 @@ BOOLEAN WinLdrScanSystemHive(IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
           &AnsiFileName, &OemFileName, &LangFileName, &OemHalFileName);
 
     /* Load NLS data */
+    RtlStringCbCopyA(SearchPath, sizeof(SearchPath), SystemRoot);
+    RtlStringCbCatA(SearchPath, sizeof(SearchPath), "system32\\");
     Success = WinLdrLoadNLSData(LoaderBlock,
                                 SearchPath,
                                 &AnsiFileName,
