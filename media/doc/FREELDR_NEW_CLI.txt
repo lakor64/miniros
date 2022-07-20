@@ -1,0 +1,15 @@
+reactos\
+    boot\
+        drivers\
+        ntoskrnl.exe
+    etc\
+        inf\
+        nls\
+        hive\
+
+SystemRoot=reactos\
+CLI:
+/BOOTPATH=boot          -> Changes the directory where the kernel is installed (default: system32)
+/NLSPATH=etc\nls        -> Changes the directory where the kernel fonts are installed (default: system32)
+/INFPATH=etc\inf        -> Changes the directory where the default firmware inf files are loaded (default: .)
+/HIVEPATH=etc\hive      -> Changes the directory where the registry hive is loaded (default: system32\config)

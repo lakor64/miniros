@@ -1,6 +1,6 @@
 ###
 
-set(BOOT_TARGETS "hal;halacpi;halaacpi;halapic;halxbox;halpc98;bootvid;ntoskrnl;ntkrnlmp;kdcom")
+set(BOOT_TARGETS "hal;halacpi;halaacpi;halapic;halxbox;halpc98;bootvid;ntoskrnl;ntkrnlmp;kdcom;kdvbox")
 
 macro(fix_cd_path)
     set(_CD_NO_CAB 1)
@@ -18,11 +18,11 @@ macro(fix_cd_path)
     if ("${_CD_DESTINATION}" STREQUAL "reactos/system32/drivers")
         set(_CD_DESTINATION "reactos/boot/drivers")
     endif()
-    if ("${_CD_DESTINATION}" STREQUAL "reactos/inf")
+    if ("${_CD_DESTINATION}" STREQUAL "reactos/inf" OR "${_TARGET}" STREQUAL "unattend.inf")
         set(_CD_DESTINATION "reactos/etc/inf")
     endif()
     if ("${_CD_DESTINATION}" STREQUAL "reactos/system32/config")
-        set(_CD_DESTINATION "reactos/boot/config")
+        set(_CD_DESTINATION "reactos/etc/hive")
     endif()
     
     if (NOT "${TARGET_LEN}" STREQUAL "0")
@@ -35,6 +35,6 @@ macro(fix_cd_path)
     string(FIND "${_CD_FILE}" ".nls" HAVE_NLS)
 
     if (NOT "${HAVE_NLS}" STREQUAL "-1")
-        set(_CD_DESTINATION "reactos/boot/nls")
+        set(_CD_DESTINATION "reactos/etc/nls")
     endif()
 endmacro()

@@ -695,8 +695,8 @@ LoadWindowsCore(IN USHORT OperatingSystemVersion,
      * https://www.geoffchappell.com/notes/windows/boot/bcd/osloader/kernel.htm
      */
     /* Default HAL and KERNEL file names */
-    RtlStringCbCopyA(HalFileName   , sizeof(HalFileName)   , "system32\\hal.dll");
-    RtlStringCbCopyA(KernelFileName, sizeof(KernelFileName), "system32\\ntoskrnl.exe");
+    RtlStringCbCopyA(HalFileName   , sizeof(HalFileName)   , "hal.dll");
+    RtlStringCbCopyA(KernelFileName, sizeof(KernelFileName), "ntoskrnl.exe");
 
     Option = NtLdrGetOptionEx(BootOptions, "HAL=", &OptionLength);
     if (Option && (OptionLength > 4))
@@ -1164,16 +1164,42 @@ LoadAndBootWindows(
     if (!Success)
         return ENOEXEC;
 
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "INFPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 8))
+    {
+		FileName += 8; FileNameLength -= 8;
+        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
+        if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+
     /* Load the Firmware Errata file */
-    Success = WinLdrInitErrataInf(LoaderBlock, OperatingSystemVersion, BootPath);
+    Success = WinLdrInitErrataInf(LoaderBlock, OperatingSystemVersion, FilePath);
     TRACE("Firmware Errata file %s\n", (Success ? "loaded" : "not loaded"));
     /* Not necessarily fatal if not found - carry on going */
+
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "BOOTPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 9))
+    {
+		FileName += 9; FileNameLength -= 9;
+        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
+        if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+    else
+    {
+        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\");
+    }
 
     /* Finish loading */
     return LoadAndBootWindowsCommon(OperatingSystemVersion,
                                     LoaderBlock,
                                     BootOptions,
-                                    BootPath);
+                                    FilePath);
 }
 
 ARC_STATUS
@@ -1198,6 +1224,7 @@ LoadAndBootWindowsCommon(
     WinLdrSetupEms(BootOptions);
 #endif
 
+    /* Convert BootPath to SystemRoot */
     SystemRoot = strstr(BootPath, "\\");
 
     /* Detect hardware */
