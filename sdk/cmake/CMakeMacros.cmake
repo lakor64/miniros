@@ -295,7 +295,7 @@ function(add_cd_file)
     endif()
 
     # [miniros]
-    fix_cd_path()
+    #fix_cd_path()
     # [miniros]
     
     # do we add it to bootcd?
