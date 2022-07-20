@@ -603,7 +603,7 @@ BOOLEAN
 LoadWindowsCore(IN USHORT OperatingSystemVersion,
                 IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
                 IN PCSTR BootOptions,
-                IN PCSTR BootPath,
+                IN PCSTR DirPath,
                 IN OUT PLDR_DATA_TABLE_ENTRY* KernelDTE)
 {
     BOOLEAN Success;
@@ -611,16 +611,11 @@ LoadWindowsCore(IN USHORT OperatingSystemVersion,
     ULONG OptionLength;
     PVOID KernelBase, HalBase, KdDllBase = NULL;
     PLDR_DATA_TABLE_ENTRY HalDTE, KdDllDTE = NULL;
-    CHAR DirPath[MAX_PATH];
     CHAR HalFileName[MAX_PATH];
     CHAR KernelFileName[MAX_PATH];
     CHAR KdDllName[MAX_PATH];
 
     if (!KernelDTE) return FALSE;
-
-    /* Initialize SystemRoot\System32 path */
-    RtlStringCbCopyA(DirPath, sizeof(DirPath), BootPath);
-    RtlStringCbCatA(DirPath, sizeof(DirPath), "system32\\");
 
     /* Parse the boot options */
     TRACE("LoadWindowsCore: BootOptions '%s'\n", BootOptions);
@@ -700,8 +695,8 @@ LoadWindowsCore(IN USHORT OperatingSystemVersion,
      * https://www.geoffchappell.com/notes/windows/boot/bcd/osloader/kernel.htm
      */
     /* Default HAL and KERNEL file names */
-    RtlStringCbCopyA(HalFileName   , sizeof(HalFileName)   , "hal.dll");
-    RtlStringCbCopyA(KernelFileName, sizeof(KernelFileName), "ntoskrnl.exe");
+    RtlStringCbCopyA(HalFileName   , sizeof(HalFileName)   , "system32\\hal.dll");
+    RtlStringCbCopyA(KernelFileName, sizeof(KernelFileName), "system32\\ntoskrnl.exe");
 
     Option = NtLdrGetOptionEx(BootOptions, "HAL=", &OptionLength);
     if (Option && (OptionLength > 4))
@@ -1115,7 +1110,25 @@ LoadAndBootWindows(
 
     /* Load the system hive */
     UiUpdateProgressBar(15, "Loading system hive...");
-    Success = WinLdrInitSystemHive(LoaderBlock, BootPath, FALSE);
+
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "HIVEPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 9))
+    {
+		FileName += 9; FileNameLength -= 9;
+		RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);       
+		if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+    else
+    {
+        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\config\\");
+    }
+
+    TRACE("HivePath: %s\n", FilePath);
+    
+    Success = WinLdrInitSystemHive(LoaderBlock, FilePath, FALSE);
     TRACE("SYSTEM hive %s\n", (Success ? "loaded" : "not loaded"));
     /* Bail out if failure */
     if (!Success)
@@ -1128,7 +1141,24 @@ LoadAndBootWindows(
     LoaderBlock->Extension->MinorVersion = (OperatingSystemVersion & 0xFF);
 
     /* Load NLS data, OEM font, and prepare boot drivers list */
-    Success = WinLdrScanSystemHive(LoaderBlock, BootPath);
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "NLSPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 8))
+    {
+		FileName += 8; FileNameLength -= 8;
+        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
+        if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+    else
+    {
+        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\");
+    }
+
+    TRACE("NLSPath: %s\n", FilePath);
+	
+    Success = WinLdrScanSystemHive(LoaderBlock, FilePath);
     TRACE("SYSTEM hive %s\n", (Success ? "scanned" : "not scanned"));
     /* Bail out if failure */
     if (!Success)
@@ -1168,7 +1198,6 @@ LoadAndBootWindowsCommon(
     WinLdrSetupEms(BootOptions);
 #endif
 
-    /* Convert BootPath to SystemRoot */
     SystemRoot = strstr(BootPath, "\\");
 
     /* Detect hardware */
