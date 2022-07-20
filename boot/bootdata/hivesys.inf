@@ -1,0 +1,25 @@
+[Version]
+Signature = "$Windows NT$"
+
+[AddReg]
+
+; ControlSet selection settings
+HKLM,"SYSTEM\Select","Current",0x00010003,0x00000001
+HKLM,"SYSTEM\Select","Default",0x00010003,0x00000001
+HKLM,"SYSTEM\Select","Failed",0x00010003,0x00000000
+HKLM,"SYSTEM\Select","LastKnownGood",0x00010003,0x00000001
+
+; System setup settings
+HKLM,"SYSTEM\Setup","CmdLine",0x00000000,"setup -newsetup"
+HKLM,"SYSTEM\Setup","OsLoaderPath",0x00000000,"\"
+HKLM,"SYSTEM\Setup","SetupType",0x00010001,0x00000001
+HKLM,"SYSTEM\Setup","SystemPartition",0x00000000,"\Device\Harddisk0\Partition1"
+HKLM,"SYSTEM\Setup","SystemPrefix",0x00000001
+HKLM,"SYSTEM\Setup","SystemSetupInProgress",0x00010001,0x00000001
+
+; Debug channels
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","DEBUGCHANNEL",0x00020000,"+ole,+rpc"
+
+; Winsrv configuration
+HKLM,"SYSTEM\CurrentControlSet\Control\PriorityControl",,0x00000012
+HKLM,"SYSTEM\CurrentControlSet\Control\PriorityControl","Win32PrioritySeparation",0x00010001,0x2
