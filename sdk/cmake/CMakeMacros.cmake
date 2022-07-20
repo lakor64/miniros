@@ -801,18 +801,18 @@ function(create_registry_hives)
     # LiveCD hives
     list(APPEND _livecd_inf_files
         ${_registry_inf}
-        #${CMAKE_SOURCE_DIR}/boot/bootdata/livecd.inf
+        ${CMAKE_SOURCE_DIR}/boot/bootdata/livecd.inf
         ${CMAKE_SOURCE_DIR}/boot/bootdata/caroots.inf)
-    #if(SARCH STREQUAL "xbox")
-    #    list(APPEND _livecd_inf_files
-    #        ${CMAKE_SOURCE_DIR}/boot/bootdata/hiveinst_xbox.inf)
-    #elseif(SARCH STREQUAL "pc98")
-    #    list(APPEND _livecd_inf_files
-    #        ${CMAKE_SOURCE_DIR}/boot/bootdata/hiveinst_pc98.inf)
-    #else()
-    #    list(APPEND _livecd_inf_files
-    #        ${CMAKE_SOURCE_DIR}/boot/bootdata/hiveinst.inf)
-    #endif()
+    if(SARCH STREQUAL "xbox")
+        list(APPEND _livecd_inf_files
+            ${CMAKE_SOURCE_DIR}/boot/bootdata/hiveinst_xbox.inf)
+    elseif(SARCH STREQUAL "pc98")
+        list(APPEND _livecd_inf_files
+            ${CMAKE_SOURCE_DIR}/boot/bootdata/hiveinst_pc98.inf)
+    else()
+        list(APPEND _livecd_inf_files
+            ${CMAKE_SOURCE_DIR}/boot/bootdata/hiveinst.inf)
+    endif()
 
     add_custom_command(
         OUTPUT ${CMAKE_BINARY_DIR}/boot/bootdata/system

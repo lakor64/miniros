@@ -83,17 +83,17 @@ HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\HID_DEVICE_SYSTEM_
 HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\HID_DEVICE_SYSTEM_MOUSE","Service",0x00000000,"mouhid"
 HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\HID_DEVICE_SYSTEM_MOUSE","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
 
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0000","Service",0x00000000,"vga"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0000","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0000","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0000","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
 
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0001","Service",0x00000000,"vga"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0001","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0001","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0001","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
 
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0300","Service",0x00000000,"vga"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0300","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0300","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0300","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
 
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0301","Service",0x00000000,"vga"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0301","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0301","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0301","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
 
 HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0303","Service",0x00000000,"i8042prt"
 HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0303","ClassGUID",0x00000000,"{4D36E96B-E325-11CE-BFC1-08002BE10318}"
@@ -122,7 +122,8 @@ HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F03","ClassGU
 HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\ROOT#SWENUM","Service",0x00000000,"swenum"
 HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\ROOT#SWENUM","ClassGUID",0x00000000,"{4d36e97d-e325-11ce-bfc1-08002be10318}"
 
-;HKLM,"SYSTEM\CurrentControlSet\Control\SafeBoot","AlternateShell",2,"cmd.exe"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\SafeBoot","AlternateShell",2,"cmd.exe"
 
 ; Safe Boot drivers
 HKLM,"SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\AppMgmt","",0x00000000,"Service"
@@ -428,14 +429,14 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Class\{9D6D66A6-0B0C-4563-9077-A0E9A7955A
 HKLM,"SYSTEM\CurrentControlSet\Control\Class\{9D6D66A6-0B0C-4563-9077-A0E9A7955AE4}","Icon",0x00000000,"-5"
 
 ; Class Co-Installers
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers",,0x00000012
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E965-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,StorageCoInstaller","syssetup.dll,CriticalDeviceCoInstaller"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E967-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,StorageCoInstaller","syssetup.dll,CriticalDeviceCoInstaller"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E96A-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E96B-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E96F-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E97B-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E97D-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers",,0x00000012
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E965-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,StorageCoInstaller","syssetup.dll,CriticalDeviceCoInstaller"
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E967-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,StorageCoInstaller","syssetup.dll,CriticalDeviceCoInstaller"
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E96A-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E96B-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E96F-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E97B-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
+HKLM,"SYSTEM\CurrentControlSet\Control\CoDeviceInstallers","{4D36E97D-E325-11CE-BFC1-08002BE10318}",0x00010000,"syssetup.dll,CriticalDeviceCoInstaller"
 
 
 ; Default computer name settings
@@ -443,13 +444,13 @@ HKLM,"SYSTEM\CurrentControlSet\Control\ComputerName",,0x00000012
 HKLM,"SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName","ComputerName",0x00000002,"COMPUTERNAME"
 
 ; Crash Control
-;HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","AutoReboot",0x00010003,0
-;HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","CrashDumpEnabled",0x00010003,3
-;HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","DumpFile",0x00020002,"%SystemRoot%\MEMORY.DMP"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","LogEvent",0x00010003,0
-;HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","MinidumpDir",0x00020002,"%SystemRoot%\Minidump"
-;HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","Overwrite",0x00010003,1
-;HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","SendAlert",0x00010003,0
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","AutoReboot",0x00010003,0
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","CrashDumpEnabled",0x00010003,3
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","DumpFile",0x00020002,"%SystemRoot%\MEMORY.DMP"
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","LogEvent",0x00010003,0
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","MinidumpDir",0x00020002,"%SystemRoot%\Minidump"
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","Overwrite",0x00010003,1
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","SendAlert",0x00010003,0
 
 ; Device classes key
 HKLM,"SYSTEM\CurrentControlSet\Control\DeviceClasses",,0x00000012
@@ -479,8 +480,362 @@ HKLM,"SYSTEM\CurrentControlSet\Control\IDConfigDB\Hardware Profiles\0000","Frien
 HKLM,"SYSTEM\CurrentControlSet\Hardware Profiles\Current\Software\Fonts","LogPixels",0x00010003,96
 
 ; Keyboard Layouts
-;
-;
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000401","Layout File",0x00000000,"kbda1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000401","Layout Text",0x00000000,%ARABIC_101%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000401","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5084"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010401","Layout File",0x00000000,"kbda2.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010401","Layout Text",0x00000000,%ARABIC_102%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010401","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5085"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020401","Layout File",0x00000000,"kbda3.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020401","Layout Text",0x00000000,%ARABIC_102_AZERTY%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020401","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5086"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000402","Layout File",0x00000000,"kbdbgm.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000402","Layout Text",0x00000000,%BULGARIAN_BDS%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000402","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5136"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020402","Layout File",0x00000000,"kbdbgt.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020402","Layout Text",0x00000000,%BULGARIAN_PHONETIC%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020402","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5134"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030402","Layout File",0x00000000,"kbdbga.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030402","Layout Text",0x00000000,%BULGARIAN_PHONETIC_BDS%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030402","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5135"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000405","Layout File",0x00000000,"kbdcz.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000405","Layout Text",0x00000000,%CZECH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000405","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5031"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010405","Layout File",0x00000000,"kbdcz1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010405","Layout Text",0x00000000,%CZECH_QWERTY%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010405","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5032"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000406","Layout File",0x00000000,"kbdda.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000406","Layout Text",0x00000000,%DANISH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000406","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5007"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030407","Layout File",0x00000000,"kbdgerg.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030407","Layout Text",0x00000000,%GERMAN_ERGO%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030407","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5139"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020407","Layout File",0x00000000,"kbdgneo.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020407","Layout Text",0x00000000,%GERMAN_NEO%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020407","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5138"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout File",0x00000000,"kbdgrist.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout Text",0x00000000,%GERMAN_RISTOME%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5137"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000407","Layout File",0x00000000,"kbdgr.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000407","Layout Text",0x00000000,%GERMAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000407","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5011"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000807","Layout File",0x00000000,"kbdsg.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000807","Layout Text",0x00000000,%SWISS_GERMAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000807","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5024"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000408","Layout File",0x00000000,"kbdhe.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000408","Layout Text",0x00000000,%GREEK%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000408","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5046"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000409","Layout File",0x00000000,"kbdus.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000409","Layout Text",0x00000000,%US%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000409","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5000"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000809","Layout File",0x00000000,"kbduk.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000809","Layout Text",0x00000000,%UK%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000809","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5025"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00001809","Layout File",0x00000000,"kbdir.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00001809","Layout Text",0x00000000,%IRISH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00001809","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5014"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010409","Layout File",0x00000000,"kbddv.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010409","Layout Id",  0x00000000,"0002"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010409","Layout Text",0x00000000,%US_DVORAK%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010409","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5092"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00011009","Layout File",0x00000000,"kbdcan.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00011009","Layout Id",  0x00000000,"0020"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00011009","Layout Text",0x00000000,%CANADIAN_MULTILINGUAL%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00011009","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5110"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020409","Layout File",0x00000000,"kbdusx.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020409","Layout Id",  0x00000000,"0001"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020409","Layout Text",0x00000000,%US_INTERNATIONAL%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020409","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5026"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030409","Layout File",0x00000000,"kbdusl.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030409","Layout Id",  0x00000000,"001A"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030409","Layout Text",0x00000000,%US_DVORAK_LEFT%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00030409","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5027"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00040409","Layout File",0x00000000,"kbdusr.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00040409","Layout Id",  0x00000000,"001B"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00040409","Layout Text",0x00000000,%US_DVORAK_RIGHT%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00040409","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5028"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00050409","Layout File",0x00000000,"kbdusa.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00050409","Layout Id",  0x00000000,"000B"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00050409","Layout Text",0x00000000,%US_ARABIC%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00050409","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5123"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040a","Layout File",0x00000000,"kbdes.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040a","Layout Text",0x00000000,%SPANISH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040a","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5020"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000080a","Layout File",0x00000000,"kbdla.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000080a","Layout Text",0x00000000,%LATIN_AMERICAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000080a","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5017"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040b","Layout File",0x00000000,"kbdfi.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040b","Layout Text",0x00000000,%FINNISH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040b","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5009"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040c","Layout File",0x00000000,"kbdfr.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040c","Layout Text",0x00000000,%FRENCH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5010"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000080c","Layout File",0x00000000,"kbdbe.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000080c","Layout Text",0x00000000,%BELGIAN_FRENCH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000080c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5002"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000c0c","Layout File",0x00000000,"kbdfc.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000c0c","Layout Text",0x00000000,%CANADIAN_FRENCH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000c0c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5005"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000100c","Layout File",0x00000000,"kbdsf.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000100c","Layout Text",0x00000000,%SWISS_FRENCH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000100c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5023"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040d","Layout File",0x00000000,"kbdheb.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040d","Layout Text",0x00000000,%HEBREW%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040d","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5083"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040e","Layout File",0x00000000,"kbdhu.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040e","Layout Text",0x00000000,%HUNGARIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040e","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5033"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040f","Layout File",0x00000000,"kbdic.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040f","Layout Text",0x00000000,%ICELANDIC%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000040f","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5013"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000410","Layout File",0x00000000,"kbdit.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000410","Layout Text",0x00000000,%ITALIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000410","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5015"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000411","Layout File",0x00000000,"kbdja.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000411","Layout Text",0x00000000,%JAPANESE%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000411","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5061"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000411","Layout Id",0x00000000,"0001"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000412","Layout File",0x00000000,"kbdko.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000412","Layout Text",0x00000000,%KOREAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000412","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5063"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000412","Layout Id",0x00000000,"0001"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000413","Layout File",0x00000000,"kbdne.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000413","Layout Text",0x00000000,%DUTCH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000413","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5008"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000813","Layout File",0x00000000,"kbdbe.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000813","Layout Text",0x00000000,%BELGIAN_DUTCH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000813","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5001"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000414","Layout File",0x00000000,"kbdno.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000414","Layout Text",0x00000000,%NORWEGIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000414","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5018"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000415","Layout File",0x00000000,"kbdpl1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000415","Layout Text",0x00000000,%POLISH_PROGRAMMERS%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000415","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5035"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010415","Layout File",0x00000000,"kbdpl.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010415","Layout Text",0x00000000,%POLISH_214%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010415","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5036"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010416","Layout File",0x00000000,"kbdbr.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010416","Layout Text",0x00000000,%PORTUGESE_BRAZILIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010416","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5126"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000816","Layout File",0x00000000,"kbdpo.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000816","Layout Text",0x00000000,%PORTUGESE%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000816","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5019"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000418","Layout File",0x00000000,"kbdro.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000418","Layout Text",0x00000000,%ROMANIAN_LEGACY%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000418","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5037"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010418","Layout File",0x00000000,"kbdrost.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010418","Layout Text",0x00000000,%ROMANIAN_STANDARD%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010418","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5175"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000419","Layout File",0x00000000,"kbdru.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000419","Layout Text",0x00000000,%RUSSIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000419","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5055"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010419","Layout File",0x00000000,"kbdru1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010419","Layout Text",0x00000000,%RUSSIAN_TYPEWRITER%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010419","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5056"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041a","Layout File",0x00000000,"kbdcr.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041a","Layout Text",0x00000000,%CROATIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041a","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5030"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000081a","Layout File",0x00000000,"kbdycl.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000081a","Layout Text",0x00000000,%SERBIAN_LATIN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000081a","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5038"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000c1a","Layout File",0x00000000,"kbdycc.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000c1a","Layout Text",0x00000000,%SERBIAN_CYRILLIC%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000c1a","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5057"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041b","Layout File",0x00000000,"kbdsk.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041b","Layout Text",0x00000000,%SLOVAK%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041b","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5039"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041b","Layout File",0x00000000,"kbdsk1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041b","Layout Text",0x00000000,%SLOVAK_QWERTY%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041b","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5040"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041c","Layout File",0x00000000,"kbdal.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041c","Layout Text",0x00000000,%ALBANIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5029"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041d","Layout File",0x00000000,"kbdsw.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041d","Layout Text",0x00000000,%SWEDISH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041d","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5022"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041e","Layout File",0x00000000,"kbdth0.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041e","Layout Text",0x00000000,%THAI_KEDMANEE%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041e","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5079"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041e","Layout File",0x00000000,"kbdth1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041e","Layout Text",0x00000000,%THAI_PATTACHOTE%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041e","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5080"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0002041e","Layout File",0x00000000,"kbdth2.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0002041e","Layout Text",0x00000000,%THAI_KEDMANEE_NON_SHIFTLOCK%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0002041e","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5081"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0003041e","Layout File",0x00000000,"kbdth3.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0003041e","Layout Text",0x00000000,%THAI_PATTACHOTE_NON_SHIFTLOCK%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0003041e","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5082"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041f","Layout File",0x00000000,"kbdtuq.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041f","Layout Text",0x00000000,%TURKISH_Q%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000041f","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5060"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041f","Layout File",0x00000000,"kbdtuf.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041f","Layout Text",0x00000000,%TURKISH_F%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041f","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5059"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001041f","Layout Id",0x00000000,"0014"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000422","Layout File",0x00000000,"kbdur.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000422","Layout Text",0x00000000,%UKRAINIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000422","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5058"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010422","Layout File",0x00000000,"kbdurs.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010422","Layout Text",0x00000000,%UKRAINIAN_STUDENT%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010422","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5141"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000423","Layout File",0x00000000,"kbdblr.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000423","Layout Text",0x00000000,%BELARUSIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000423","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5052"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000425","Layout File",0x00000000,"kbdest.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000425","Layout Text",0x00000000,%ESTONIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000425","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5042"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000426","Layout File",0x00000000,"kbdlv.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000426","Layout Text",0x00000000,%LATVIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000426","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5043"
+
+; HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010426","Layout File",0x00000000,"kbdlv1.dll"
+; HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010426","Layout Text",0x00000000,%LATVIAN_QWERTY%
+; HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010426","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5044"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010427","Layout File",0x00000000,"kbdlt1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010427","Layout Text",0x00000000,%LITHUANIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010427","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5088"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042a","Layout File",0x00000000,"kbdvntc.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042a","Layout Text",0x00000000,%VIETNAMESE%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042a","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5118"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042b","Layout File",0x00000000,"kbdarme.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042b","Layout Text",0x00000000,%ARMENIAN_EASTERN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042b","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5120"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001042b","Layout File",0x00000000,"kbdarmw.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001042b","Layout Text",0x00000000,%ARMENIAN_WESTERN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0001042b","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5121"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042c","Layout File",0x00000000,"kbdazel.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042c","Layout Text",0x00000000,%AZERI_LATIN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5117"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000082c","Layout File",0x00000000,"kbdaze.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000082c","Layout Text",0x00000000,%AZERI_CYRILLIC%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000082c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5115"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042f","Layout File",0x00000000,"kbdmac.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042f","Layout Text",0x00000000,%MACEDONIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000042f","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5109"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000437","Layout File",0x00000000,"kbdgeo.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000437","Layout Text",0x00000000,%GEORGIAN%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000437","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5119"
+
+;HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000438","Layout File",0x00000000,"kbdfo.dll"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000438","Layout Text",0x00000000,%FAEROESE%
+;HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000438","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5108"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000439","Layout File",0x00000000,"kbdindev.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000439","Layout Text",0x00000000,%DEVANAGARI%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000439","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5096"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000043f","Layout File",0x00000000,"kbdkaz.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000043f","Layout Text",0x00000000,%KAZAKH%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000043f","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5113"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000843","Layout File",0x00000000,"kbduzb.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000843","Layout Text",0x00000000,%UZBEK_CYRILLIC%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000843","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5114"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000444","Layout File",0x00000000,"kbdtat.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000444","Layout Text",0x00000000,%TATAR%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000444","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5116"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000445","Layout File",0x00000000,"kbdinben.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000445","Layout Text",0x00000000,%BENGALI%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000445","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5135"
+
+; HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020445","Layout File",0x00000000,"kbdinbe2.dll"
+; HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020445","Layout Text",0x00000000,%BENGALI_INSCRIPT%
+; HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020445","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5135"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000447","Layout File",0x00000000,"kbdinguj.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000447","Layout Text",0x00000000,%GUJARATI%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000447","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5097"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000044c","Layout File",0x00000000,"kbdinmal.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000044c","Layout Text",0x00000000,%MALAYALAM%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000044c","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5139"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000044d","Layout File",0x00000000,"kbdinasa.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000044d","Layout Text",0x00000000,%ASSAMESE%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000044d","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5177"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000455","Layout File",0x00000000,"kbdbur.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000455","Layout Text",0x00000000,%BURMESE%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000455","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5140"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000048f","Layout File",0x00000000,"kbdeo.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000048f","Layout Text",0x00000000,%ESPERANTO%
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\0000048f","Layout Display Name",0x00000000,"@%SystemRoot%\system32\input.dll,-5142"
 
 ; Keyboard layouts
 HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layout",,0x00000012
@@ -558,10 +913,20 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layout\DosKeybIDs","0001041F",2,
 HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layout\DosKeybIDs","00020408",2,"319"
 
 ; Lsa
-;
+HKLM,"SYSTEM\CurrentControlSet\Control\Lsa","Authentication Packages",0x00010000,"msv1_0"
+HKLM,"SYSTEM\CurrentControlSet\Control\Lsa","EveryoneIncludesAnonymous",0x00010001,0
+HKLM,"SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy","Enabled",0x00010001,0
 
 ; Network
-;
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E972-E325-11CE-BFC1-08002BE10318}",,0x00000000,"Network Adapters"
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E972-E325-11CE-BFC1-08002BE10318}","Class",0x00000000,"Net"
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E973-E325-11CE-BFC1-08002BE10318}",,0x00000000,"Network Client"
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E973-E325-11CE-BFC1-08002BE10318}","Class",0x00000000,"NetClient"
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E974-E325-11CE-BFC1-08002BE10318}",,0x00000000,"Network Service"
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E974-E325-11CE-BFC1-08002BE10318}","Class",0x00000000,"NetService"
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E975-E325-11CE-BFC1-08002BE10318}",,0x00000000,"Network Protocol"
+HKLM,"SYSTEM\CurrentControlSet\Control\Network\{4D36E975-E325-11CE-BFC1-08002BE10318}","Class",0x00000000,"NetTrans"
+HKLM,"SYSTEM\CurrentControlSet\Control\NetworkProvider\Order","ProviderOrder",0x00000000,"nfs41_driver"
 
 ; NLS Files
 HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","37",0x00000000,"c_037.nls"
@@ -999,14 +1364,30 @@ HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Ali",0x00030003,\
 
 
 ; Printing
-;
+HKLM,"SYSTEM\CurrentControlSet\Control\Print","BeepEnabled",0x00010001,0
+HKLM,"SYSTEM\CurrentControlSet\Control\Print","MajorVersion",0x00010001,2
+HKLM,"SYSTEM\CurrentControlSet\Control\Print","MinorVersion",0x00010001,0
+HKLM,"SYSTEM\CurrentControlSet\Control\Print","PortThreadPriority",0x00010001,0
+HKLM,"SYSTEM\CurrentControlSet\Control\Print","PriorityClass",0x00010001,0
+HKLM,"SYSTEM\CurrentControlSet\Control\Print","SchedulerThreadPriority",0x00010001,0
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Environments",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86","Directory",,"W32X86"
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Print Processors",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Print Processors\winprint","Driver",,"winprint.dll"
 
 [AddReg.NTamd64]
-;
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Environments\Windows x64","Directory",,"x64"
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Environments\Windows x64\Print Processors",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Environments\Windows x64\Print Processors\winprint","Driver",,"winprint.dll"
 
 [AddReg]
 
-; SYSTEM\CurrentControlSet\Control\Print\
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Monitors",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Monitors\Local Port","Driver",,"localmon.dll"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Providers",,0x00000010
+
 
 HKLM,"SYSTEM\CurrentControlSet\Control\ProductOptions","ProductType",2,"ServerNT"
 HKLM,"SYSTEM\CurrentControlSet\Control\ProductOptions","ProductSuite",0x00010002,"Terminal Server"
@@ -1023,7 +1404,8 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Windows","NoInteractiveServices",0x000100
 HKLM,"SYSTEM\CurrentControlSet\Control\Windows","ShellErrorMode",0x00010003,0x00000001
 HKLM,"SYSTEM\CurrentControlSet\Control\Windows","SystemDirectory",0x00020002,"%SystemRoot%\system32"
 
-; SYSTEM\CurrentControlSet\Control\SecurityProviders
+HKLM,"SYSTEM\CurrentControlSet\Control\SecurityProviders","SecurityProviders",2,"schannel.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\SecurityProviders\SaslProfiles",,0x00000012
 
 ; Service groups
 HKLM,"SYSTEM\CurrentControlSet\Control\ServiceGroupOrder","List",0x00010000, \
@@ -1128,16 +1510,51 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","PRN",0x0000
 ;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","UNC",0x00000002,"\Device\Mup"
 
 ; System environment settings
-; SYSTEM\CurrentControlSet\Control\Session Manager\
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","ComSpec",0x00020002,"%SystemRoot%\system32\cmd.exe"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","Path",0x00020002,"%SystemRoot%\bin;%SystemRoot%\System32;%SystemRoot%;%SystemRoot%\System32\Wbem"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","PATHEXT",0x00000002,".COM;.EXE;.BAT;.CMD"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","PROMPT",0x00000002,"$P$G$I"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","TEMP",0x00020002,"%SystemRoot%\TEMP"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","TMP",0x00020002,"%SystemRoot%\TEMP"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","windir",0x00020002,"%SystemRoot%"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","SHIMENG_DEBUG_LEVEL",0x00000000,"4"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","SHIM_DEBUG_LEVEL",0x00000000,"4"
+
 
 ; Known DLLs
-;
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","DllDirectory",0x00020000,"%SystemRoot%\system32"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","advapi32",0x00000000,"advapi32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","comdlg32",0x00000000,"comdlg32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","gdi32",0x00000000,"gdi32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","imagehlp",0x00000000,"imagehlp.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","kernel32",0x00000000,"kernel32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","lz32",0x00000000,"lz32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","msvcrt",0x00000000,"msvcrt.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","ole32",0x00000000,"ole32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","oleaut32",0x00000000,"oleaut32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","olecli32",0x00000000,"olecli32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","olesvr32",0x00000000,"olesvr32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","olethk32",0x00000000,"olethk32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","rpcrt4",0x00000000,"rpcrt4.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","setupapi",0x00000000,"setupapi.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","shell32",0x00000000,"shell32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","url",0x00000000,"url.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","urlmon",0x00000000,"urlmon.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","user32",0x00000000,"user32.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","version",0x00000000,"version.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","wininet",0x00000000,"wininet.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls","wldap32",0x00000000,"wldap32.dll"
 
 ; Memory Management
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management",,0x00000012
 
 ; SubSystems
-;
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems","Debug",0x00020002,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems","Kmode",0x00020000,"%SystemRoot%\system32\win32k.sys"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems","Optional",0x00010000,"Posix"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems","Posix",0x00020000,"%SystemRoot%\system32\psxss.exe"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems","Required",0x00010000,"Debug","Windows"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems","Windows",0x00020000,"%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,12288,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestThreads=16"
 
 ; This is an empty App Compat cache
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache","AppCompatCache", 0x00000001, \
@@ -1153,13 +1570,30 @@ HKLM,"SYSTEM\CurrentControlSet\Control\WOW",,0x00000012
 HKLM,"SYSTEM\CurrentControlSet\Enum\HTREE\ROOT\0","",0x00000000,""
 
 ; SWENUM driver
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\swenum","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\swenum","ImagePath",0x00020000,"system32\drivers\swenum.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\swenum","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\swenum","Type",0x00010001,0x00000001
 
 ; Audio Service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","DisplayName",0x00000000,%AUDIO_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","Description",0x00000000,%AUDIO_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","Group",0x00000000,"AudioGroup"
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","ImagePath",0x00020000,"%SystemRoot%\system32\audiosrv.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\AudioSrv","Type",0x00010001,0x00000010
 
 ; Background Intelligent Transfer Service (BITS)
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS","DisplayName",0x00000000,%BITS_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS","Description",0x00000000,%BITS_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\BITS\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\qmgr.dll"
 
 ; BlueScreen device driver
 HKLM,"SYSTEM\CurrentControlSet\Services\Blue","ErrorControl",0x00010001,0x00000000
@@ -1169,17 +1603,55 @@ HKLM,"SYSTEM\CurrentControlSet\Services\Blue","Start",0x00010001,0x00000001
 HKLM,"SYSTEM\CurrentControlSet\Services\Blue","Type",0x00010001,0x00000001
 
 ; Browser service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","DisplayName",0x00000000,%BROWSER_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","Description",0x00000000,%BROWSER_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","DependOnService",0x00010000,"LanmanWorkstation","LanmanServer"
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\Browser\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\browser.dll"
 
 ; EMS Serial Administration Console Driver
-;HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","ErrorControl",0x00010001,0x00000000
-;HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Group",0x00000000,"EMS"
-;HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","ImagePath",0x00020000,"system32\drivers\sacdrv.sys"
-;HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Start",0x00010001,0x00000000
-vHKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Type",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Group",0x00000000,"EMS"
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","ImagePath",0x00020000,"system32\drivers\sacdrv.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Type",0x00010001,0x00000001
 
 ; Event logging service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","DisplayName",0x00000000,%EVENTLOG_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","Description",0x00000000,%EVENTLOG_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","Group",0x00000000,"Event Log"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","ImagePath",0x00020000,"%SystemRoot%\system32\eventlog.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog","Type",0x00010001,0x00000010
+
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Application",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Application","File",0x00020000,"%SystemRoot%\system32\config\AppEvent.Evt"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Application","MaxSize",0x00010003,5242880
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Application","Retention",0x00010003,0
+
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Security",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Security","File",0x00020000,"%SystemRoot%\system32\config\SecEvent.Evt"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Security","MaxSize",0x00010003,5242880
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\Security","Retention",0x00010003,0
+
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System","File",0x00020000,"%SystemRoot%\system32\config\SysEvent.Evt"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System","MaxSize",0x00010003,5242880
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System","Retention",0x00010003,0
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System\Application Popup","EventMessageFile",0x00020000,"%SystemRoot%\system32\ntdll.dll"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System\Application Popup","TypesSupported",0x00010003,0x00000007
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System\EventLog","EventMessageFile",0x00020000,"%SystemRoot%\system32\netevent.dll"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System\EventLog","TypesSupported",0x00010003,0x00000007
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System\Service Control Manager","EventMessageFile",0x00020000,"%SystemRoot%\system32\netevent.dll"
+HKLM,"SYSTEM\CurrentControlSet\Services\EventLog\System\Service Control Manager","TypesSupported",0x00010003,0x00000007
 
 ; Filesystem recognizer driver
 HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","ErrorControl",0x00010001,0x00000000
@@ -1189,19 +1661,48 @@ HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","Start",0x00010001,0x00000001
 HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","Type",0x00010001,0x00000008
 
 ; Server service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver","DisplayName",0x00000000,%SERVER_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver","Description",0x00000000,%SERVER_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanserver\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\srvsvc.dll"
 
 ; Workstation service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","DisplayName",0x00000000,%WORKSTATION_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","Description",0x00000000,%WORKSTATION_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","Group",0x00000000,"NetworkProvider"
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\lanmanworkstation\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\wkssvc.dll"
 
 ; Multiple UNC provider driver
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Mup","Description",0x00000000,"Multiple UNC Provider (MUP)"
+HKLM,"SYSTEM\CurrentControlSet\Services\Mup","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Mup","Group",0x00000000,"Network"
+HKLM,"SYSTEM\CurrentControlSet\Services\Mup","ImagePath",0x00020000,"system32\drivers\mup.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Mup","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Mup","Type",0x00010001,0x00000002
 
 ; NDIS driver - the only boot-start network driver
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","Group",0x00000000,"NDIS"
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","ImagePath",0x00020000,"system32\drivers\ndis.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","Type",0x00010001,0x00000001
 
 ; NetLogon
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\NetLogon","DisplayName",0x00000000,%NETLOGON_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\NetLogon","Description",0x00000000,%NETLOGON_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\NetLogon","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Netlogon","ImagePath",0x00020000,"%SystemRoot%\system32\lsass.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\NetLogon","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\Netlogon","Type",0x00010001,0x00000020
 
 ; NTFS filesystem driver
 HKLM,"SYSTEM\CurrentControlSet\Services\Ntfs","ErrorControl",0x00010001,0x00000001
@@ -1228,10 +1729,18 @@ HKLM,"SYSTEM\CurrentControlSet\Services\NMIDebug","Start",0x00010001,0x00000000
 HKLM,"SYSTEM\CurrentControlSet\Services\NMIDebug","Type",0x00010001,0x00000001
 
 ; NDIS User I/O driver (FIXME: Should be installed via INF and started on demand)
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndisuio","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndisuio","Group",0x00000000,"NDIS"
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndisuio","ImagePath",0x00020000,"system32\drivers\ndisuio.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndisuio","Start",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndisuio","Type",0x00010001,0x00000001
 
 ; Packet driver
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Packet","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Packet","Group",0x00000000,"PNP_TDI"
+HKLM,"SYSTEM\CurrentControlSet\Services\Packet","ImagePath",0x00020000,"system32\drivers\packet.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Packet","Start",0x00010001,0x00000004
+HKLM,"SYSTEM\CurrentControlSet\Services\Packet","Type",0x00010001,0x00000001
 
 ; USB HID driver
 HKLM,"SYSTEM\CurrentControlSet\Services\hidusb","ErrorControl",0x00010001,0x00000001
@@ -1500,46 +2009,167 @@ HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE002F",0x00030003,00
 HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","101300D6101880D6",0x00030003,00,00,00,00,00,00,00,00
 
 ; Plug and Play manager
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","DisplayName",0x00000000,%PLUGPLAY_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","Description",0x00000000,%PLUGPLAY_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","Group",0x00000000,"PlugPlay"
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k DcomLaunch"
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\PlugPlay\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\umpnpmgr.dll"
 
 ; RPC service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","DisplayName",0x00000000,%RPCSS_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","Description",0x00000000,%RPCSS_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","FailureActions",0x00030003, \
+    00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,60,ea,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","Group",0x00000000,"COM Infrastructure"
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","ImagePath",0x00020000,"%SystemRoot%\system32\rpcss.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\Rpcss","Type",0x00010001,0x00000010
 
 ; SamSs service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","DependOnService",0x00010000,"RPCSS"
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","Description",0x00000000,%SAMSS_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","DisplayName",0x00000000,%SAMSS_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","Group",0x00000000,"LocalValidation"
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","ImagePath",0x00020000,"%SystemRoot%\system32\lsass.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\SamSs","Type",0x00010001,0x00000020
 
 ; Scheduler service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","DependOnService",0x00010000,"RPCSS"
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","Description",0x00000000,%SCHEDULE_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","DisplayName",0x00000000,%SCHEDULE_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","Group",0x00000000,"SchedulerGroup"
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\schedsvc.dll"
+HKLM,"SYSTEM\CurrentControlSet\Services\Schedule\Parameters","ServiceMain",0x00000000,"SchedServiceMain"
 
 ; Secondary Logon service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","DependOnService",0x00010000,"RPCSS"
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","Description",0x00000000,%SECLOGON_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","DisplayName",0x00000000,%SECLOGON_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","Group",0x00000000,"SchedulerGroup"
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\seclogon.dll"
+HKLM,"SYSTEM\CurrentControlSet\Services\Seclogon\Parameters","ServiceMain",0x00000000,"SvcEntry_Seclogon"
 
 ; Spooler service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","DependOnService",0x00010000,"RPCSS"
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","Description",0x00000000,%SPOOLER_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","DisplayName",0x00000000,%SPOOLER_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","FailureActions",0x00000003, \
+    60,54,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00, \
+    01,00,00,00,60,ea,00,00,01,00,00,00,60,ea,00,00,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","Group",0x00000000,"SpoolerGroup"
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","ImagePath",0x00020000,"%SystemRoot%\system32\spoolsv.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\Spooler","Type",0x00010001,0x00000110
 
 ; WLAN service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","DependOnService",0x00010000,"RPCSS"
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","DisplayName",0x00000000,%WLANSVC_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","Description",0x00000000,%WLANSVC_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","Group",0x00000000,"TDI"
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","ImagePath",0x00020000,"%SystemRoot%\system32\wlansvc.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\WlanSvc","Type",0x00010001,0x00000110
 
 ; Simple TCP services
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","Description",0x00000000,%TCPSVCS_SERVICE_DECRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","DisplayName",0x00000000,%TCPSVCS_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","Group",0x00000000,"Network"
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","ImagePath",0x00020000,"%SystemRoot%\system32\tcpsvcs.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\tcpsvcs","Type",0x00010001,0x00000020
 
 ; ReactOS Telnet Service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","Description",0x00000000,%TELNETD_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","DisplayName",0x00000000,%TELNETD_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","Group",0x00000000,"Network"
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","ImagePath",0x00020000,"%SystemRoot%\system32\telnetd.exe"
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\telnetd","Type",0x00010001,0x00000020
 
 ; Themes service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","DisplayName",0x00000000,%THEMES_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","Description",0x00000000,%THEMES_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","FailureActions",0x00000003, \
+    80,51,01,00,00,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00, \
+    01,00,00,00,60,ea,00,00,01,00,00,00,60,ea,00,00,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","Group",0x00000000,"UIGroup"
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\shsvcs.dll"
+HKLM,"SYSTEM\CurrentControlSet\Services\Themes\Parameters","ServiceMain",0x00000000,"ThemeServiceMain"
 
 ; ReactOS Installer Service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","DependOnService",0x00010000,"RPCSS"
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","DisplayName",0x00000000,%MSISERVER_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","Description",0x00000000,%MSISERVER_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","ImagePath",0x00020000,"%SystemRoot%\system32\msiexec.exe /V"
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\MSIServer","Type",0x00010001,0x00000020
 
 ; WMI Service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","DependOnService",0x00010000,"RPCSS"
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","DisplayName",0x00000000,%WINMGMT_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","Description",0x00000000,%WINMGMT_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","Group",0x00000000,"WMI"
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\winmgmt\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\wbem\wmisvc.dll"
 
 ; AutoUpdate Service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv","DisplayName",0x00000000,%WUAUSERV_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv","Description",0x00000000,%WUAUSERV_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k netsvcs"
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\wuauserv\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\wuauserv.dll"
 
 ; DCOMLAUNCH Service
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","DisplayName",0x00000000,%DCOMLAUNCH_SERVICE%
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","Description",0x00000000,%DCOMLAUNCH_SERVICE_DESCRIPTION%
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","Group",0x00000000,"Event log"
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","ImagePath",0x00020000,"%SystemRoot%\system32\svchost.exe -k DcomLaunch"
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","ObjectName",0x00000000,"LocalSystem"
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","Start",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch","Type",0x00010001,0x00000020
+HKLM,"SYSTEM\CurrentControlSet\Services\DcomLaunch\Parameters","ServiceDll",0x00020000,"%SystemRoot%\system32\dcomlaunch.dll"
 
 ; Sound Blaster (NT4)
 ;HKLM,"SYSTEM\CurrentControlSet\Services\sndblst","Description",0x00000000,"Sound Blaster (NT4)"
@@ -1563,7 +2193,11 @@ HKLM,"SYSTEM\CurrentControlSet\Services\RamDisk","Start",0x00010001,0x00000000
 HKLM,"SYSTEM\CurrentControlSet\Services\RamDisk","Type",0x00010001,0x00000001
 
 ; Filesystem Filter Manager driver
-;
+HKLM,"SYSTEM\CurrentControlSet\Services\fltmgr","ErrorControl",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\fltmgr","Group",0x00000000,"FSFilter Infrastructure"
+HKLM,"SYSTEM\CurrentControlSet\Services\fltmgr","ImagePath",0x00020000,"system32\drivers\fltmgr.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\fltmgr","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\fltmgr","Type",0x00010001,0x00000002
 
 ; ControlSet selection settings
 HKLM,"SYSTEM\Select","Current",0x00010003,0x00000001
