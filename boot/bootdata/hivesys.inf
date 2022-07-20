@@ -3,6 +3,563 @@ Signature = "$Windows NT$"
 
 [AddReg]
 
+; NLS Files
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","37",0x00000000,"c_037.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","424",0x00000000,"c_424.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","437",0x00000000,"c_437.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","500",0x00000000,"c_500.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","708",0x00000000,"c_708.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","720",0x00000000,"c_720.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","737",0x00000000,"c_737.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","775",0x00000000,"c_775.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","850",0x00000000,"c_850.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","852",0x00000000,"c_852.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","855",0x00000000,"c_855.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","856",0x00000000,"c_856.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","857",0x00000000,"c_857.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","858",0x00000000,"c_858.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","860",0x00000000,"c_860.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","861",0x00000000,"c_861.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","862",0x00000000,"c_862.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","863",0x00000000,"c_863.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","864",0x00000000,"c_864.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","865",0x00000000,"c_865.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","866",0x00000000,"c_866.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","869",0x00000000,"c_869.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","870",0x00000000,"c_870.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","874",0x00000000,"c_874.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","875",0x00000000,"c_875.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","878",0x00000000,"c_878.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","932",0x00000000,"c_932.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","936",0x00000000,"c_936.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","949",0x00000000,"c_949.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","950",0x00000000,"c_950.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1006",0x00000000,"c_1006.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1026",0x00000000,"c_1026.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1047",0x00000000,"c_1047.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1140",0x00000000,"c_1140.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1141",0x00000000,"c_1141.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1142",0x00000000,"c_1142.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1143",0x00000000,"c_1143.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1144",0x00000000,"c_1144.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1145",0x00000000,"c_1145.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1146",0x00000000,"c_1146.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1147",0x00000000,"c_1147.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1148",0x00000000,"c_1148.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1149",0x00000000,"c_1149.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1250",0x00000000,"c_1250.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1251",0x00000000,"c_1251.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1252",0x00000000,"c_1252.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1253",0x00000000,"c_1253.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1254",0x00000000,"c_1254.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1255",0x00000000,"c_1255.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1256",0x00000000,"c_1256.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1257",0x00000000,"c_1257.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","1258",0x00000000,"c_1258.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10000",0x00000000,"c_10000.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10004",0x00000000,"c_10004.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10005",0x00000000,"c_10005.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10006",0x00000000,"c_10006.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10007",0x00000000,"c_10007.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10010",0x00000000,"c_10010.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10017",0x00000000,"c_10017.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10021",0x00000000,"c_10021.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10029",0x00000000,"c_10029.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10079",0x00000000,"c_10079.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10081",0x00000000,"c_10081.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","10082",0x00000000,"c_10082.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20105",0x00000000,"c_20105.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20106",0x00000000,"c_20106.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20107",0x00000000,"c_20107.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20108",0x00000000,"c_20108.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20127",0x00000000,"c_20127.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20269",0x00000000,"c_20269.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20273",0x00000000,"c_20273.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20277",0x00000000,"c_20277.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20278",0x00000000,"c_20278.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20280",0x00000000,"c_20280.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20284",0x00000000,"c_20284.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20285",0x00000000,"c_20285.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20290",0x00000000,"c_20290.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20297",0x00000000,"c_20297.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20420",0x00000000,"c_20420.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20423",0x00000000,"c_20423.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20424",0x00000000,"c_20424.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20833",0x00000000,"c_20833.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20838",0x00000000,"c_20838.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20866",0x00000000,"c_20866.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20871",0x00000000,"c_20871.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20880",0x00000000,"c_20880.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20905",0x00000000,"c_20905.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","20924",0x00000000,"c_20924.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","21025",0x00000000,"c_21025.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","21027",0x00000000,"c_21027.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","21866",0x00000000,"c_21866.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28591",0x00000000,"c_28591.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28592",0x00000000,"c_28592.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28593",0x00000000,"c_28593.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28594",0x00000000,"c_28594.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28595",0x00000000,"c_28595.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28596",0x00000000,"c_28596.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28597",0x00000000,"c_28597.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28598",0x00000000,"c_28598.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28599",0x00000000,"c_28599.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28600",0x00000000,"c_28600.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28601",0x00000000,"c_28601.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28603",0x00000000,"c_28603.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28604",0x00000000,"c_28604.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28605",0x00000000,"c_28605.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","28606",0x00000000,"c_28606.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","ACP",0x00000000,"1252"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","OEMCP",0x00000000,"437"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","MACCP",0x00000000,"10000"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage","OEMHAL",0x00000000,"vgaoem.fon"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage\EUDCCodeRange","932",2,"F040-F9FC"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage\EUDCCodeRange","936",2,"AAA1-AFFE,F8A1-FEFE,A140-A7A0"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage\EUDCCodeRange","949",2,"C9A1-C9FE,FEA1-FEFE"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage\EUDCCodeRange","950",2,"FA40-FEFE,8E40-A0FE,8140-8DFE,C6A1-C8FE"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\CodePage\EUDCCodeRange","Unicode",2,"E000-F8FF"
+
+; NLS Language settings
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0401",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0801",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0c01",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1001",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1401",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1801",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1c01",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","2001",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","2401",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","2801",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","2c01",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","3001",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","3401",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","3801",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","3c01",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","4001",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0401",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0402",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0403",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0404",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0804",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0c04",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1004",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1404",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0405",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0406",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0407",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0807",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0c07",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1407",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0408",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0409",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0809",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0c09",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1009",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1409",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1809",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1c09",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","2009",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","3009",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","3409",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","040a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","080a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0c0a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","100a",0x00000000,"l_intl.nls"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","140a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","180a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","1c0a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","200a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","240a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","280a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","2c0a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","300a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","340a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","380a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","3c0a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","400a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","440a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","480a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","4c0a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","500a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","040b",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","040c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","080c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0c0c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","100c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","140c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","180c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","040d",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","040e",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","040f",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0410",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0810",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0411",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0412",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0413",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0414",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0813",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0414",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0814",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0415",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0416",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0816",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0417",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0418",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0419",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","041a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","081a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0c1a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","041b",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","041c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","041d",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","081d",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","041e",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","041f",0x00000000,"l_intl.nls"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0420",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0421",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0422",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0423",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0424",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0425",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0426",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0427",0x00000000,"l_intl.nls"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0429",0x00000000,"l_intl.nls"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","042a",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","042b",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","042c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","082c",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","042d",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","042f",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0436",0x00000000,"l_intl.nls"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0437",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0438",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0439",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","043e",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","083e",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","043f",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0440",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0441",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0443",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0843",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0444",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0445",0x00000000,"l_intl.nls"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0455",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0456",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","048f",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0490",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","0845",0x00000000,"l_intl.nls"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","Default",0x00000000,"0409"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language","InstallLanguage",0x00000000,"0409"
+
+; Supported and installed locales
+; If you add/uncomment an entry here, please also add the appropriate Language
+; in the previous section.
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale",,0x00000012
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000401",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000801",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000c01",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001001",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001401",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001801",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001c01",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00002001",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00002401",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00002801",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00002c01",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00003001",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00003401",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00003801",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00003c01",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00004001",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000402",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000403",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000404",0x00000000,"9"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000804",0x00000000,"a"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000405",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000406",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000407",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000807",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000c07",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001407",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000408",0x00000000,"4"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000409",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000809",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000c09",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001009",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001409",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001809",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001c09",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00002009",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00003009",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00003409",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000040a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000080a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000c0a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000100a",0x00000000,"1"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000140a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000180a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00001c0a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000200a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000240a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000280a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00002c0a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000300a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000340a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000380a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00003c0a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000400a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000440a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000480a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00004c0a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000500a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000040b",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000040c",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000080c",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000c0c",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000100c",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000140c",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000180c",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000040d",0x00000000,"c"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000040e",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000040f",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000410",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000810",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000411",0x00000000,"7"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000412",0x00000000,"8"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000413",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000813",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000414",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000814",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000415",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000416",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000816",0x00000000,"1"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000417",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000418",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000419",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000041a",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000081a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000c1a",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000041b",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000041c",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000041d",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000081d",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000041e",0x00000000,"b"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000041f",0x00000000,"6"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000420",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000421",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000422",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000423",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000424",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000425",0x00000000,"3"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000426",0x00000000,"3"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000427",0x00000000,"3"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000429",0x00000000,""
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000042a",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000042b",0x00000000,"11"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000042c",0x00000000,"6"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000082c",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000042d",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000042f",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000436",0x00000000,"1"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000437",0x00000000,"10"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000438",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000439",0x00000000,"f"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000043e",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000083e",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000043f",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000440",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000441",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000443",0x00000000,"6"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000843",0x00000000,"5"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000444",0x00000000,"5"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000445",0x00000000,"f"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000455",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000456",0x00000000,"1"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","0000048f",0x00000000,"1"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale","00000490",0x00000000,"1"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","1",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","2",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","3",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","4",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","5",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","6",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","7",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","8",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","9",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","10",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","11",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","a",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","b",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","c",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","d",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","e",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Language Groups","f",0x00000000,"1"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale\Alternate Sorts","00010407",0x00000000,"1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale\Alternate Sorts","0001040e",0x00000000,"2"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale\Alternate Sorts","00010437",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale\Alternate Sorts","00020804",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale\Alternate Sorts","00021004",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale\Alternate Sorts","00021404",0x00000000,""
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Locale\Alternate Sorts","00030404",0x00000000,""
+
+; Japanese calendar support
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese","InitialEraYear",0x00000000,"元年"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras","1868 01 01",0x00000000,"明治_明_Meiji_M"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras","1912 07 30",0x00000000,"大正_大_Taisho_T"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras","1926 12 25",0x00000000,"昭和_昭_Showa_S"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras","1989 01 08",0x00000000,"平成_平_Heisei_H"
+HKLM,"SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras","2019 05 01",0x00000000,"令和_令_Reiwa_R"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Intel 82441FX",0x00030003,\
+01,00,00,00,86,80,37,12,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Intel 82439HX",0x00030003,\
+01,00,00,00,86,80,50,12,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Intel 82439TX",0x00030003,\
+01,00,00,00,86,80,00,71,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Intel 82443LX/EX",0x00030003,\
+01,00,00,00,86,80,80,71,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Intel 82443BX1",0x00030003,\
+01,00,00,00,86,80,90,71,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Intel 82443BX2",0x00030003,\
+01,00,00,00,86,80,92,71,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Intel 82443GX",0x00030003,\
+01,00,00,00,86,80,a0,71,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","VIA Tech1",0x00030003,\
+01,00,00,00,06,11,01,05,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","VIA Tech2",0x00030003,\
+01,00,00,00,06,11,91,06,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Toshiba",0x00030003,\
+01,00,00,00,79,11,01,06,00,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP\Pci\CardList","Ali",0x00030003,\
+01,00,00,00,b9,10,21,15,00,00,00,00,00,00,00,00
+
+
+HKLM,"SYSTEM\CurrentControlSet\Control","CurrentUser",2,"USERNAME"
+HKLM,"SYSTEM\CurrentControlSet\Control","WaitToKillServiceTimeout",2,"20000"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Biosinfo","InfName",2,"biosinfo.inf"
+HKLM,"SYSTEM\CurrentControlSet\Control\PnP",,0x00000012
+HKLM,"SYSTEM\CurrentControlSet\Control\Video",,0x00000012
+
+; Critical Device Database
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0A03","Service",0x00000000,"pci"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0A03","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0A08","Service",0x00000000,"pci"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0A08","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0604","Service",0x00000000,"pci"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0604","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0601","Service",0x00000000,"isapnp"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0601","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#VEN_1033&DEV_0001","Service",0x00000000,"isapnp"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#VEN_1033&DEV_0001","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#VEN_1033&DEV_002D","Service",0x00000000,"isapnp"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#VEN_1033&DEV_002D","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#VEN_1033&DEV_003B","Service",0x00000000,"isapnp"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#VEN_1033&DEV_003B","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0C08","Service",0x00000000,"acpi"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0C08","ClassGUID",0x00000000,"{4D36E97D-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0C0300","Service",0x00000000,"usbuhci"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0C0300","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0C0310","Service",0x00000000,"usbohci"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0C0310","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0C0320","Service",0x00000000,"usbehci"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0C0320","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_08&SubClass_06&Prot_50","Service",0x00000000,"usbstor"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_08&SubClass_06&Prot_50","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_08&SubClass_02&Prot_50","Service",0x00000000,"usbstor"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_08&SubClass_02&Prot_50","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_08&SubClass_05&Prot_50","Service",0x00000000,"usbstor"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_08&SubClass_05&Prot_50","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#COMPOSITE","Service",0x00000000,"usbccgp"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#COMPOSITE","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#CLASS_09","Service",0x00000000,"usbhub"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#CLASS_09","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#ROOT_HUB","Service",0x00000000,"usbhub"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#ROOT_HUB","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#ROOT_HUB20","Service",0x00000000,"usbhub"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#ROOT_HUB20","ClassGUID",0x00000000,"{36FC9E60-C465-11CF-8056-444553540000}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\GenCdRom","Service",0x00000000,"cdrom"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\GenCdRom","ClassGUID",0x00000000,"{4D36E965-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\GenDisk","Service",0x00000000,"disk"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\GenDisk","ClassGUID",0x00000000,"{4D36E967-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_03","Service",0x00000000,"hidusb"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\USB#Class_03","ClassGUID",0x00000000,"{745a17a0-74d3-11d0-b6fe-00a0c90f57da}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\GENERIC_HID_DEVICE","Service",0x00000000,"hidusb"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\GENERIC_HID_DEVICE","ClassGUID",0x00000000,"{745a17a0-74d3-11d0-b6fe-00a0c90f57da}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\HID_DEVICE_SYSTEM_KEYBOARD","Service",0x00000000,"kbdhid"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\HID_DEVICE_SYSTEM_KEYBOARD","ClassGUID",0x00000000,"{4D36E96B-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\HID_DEVICE_SYSTEM_MOUSE","Service",0x00000000,"mouhid"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\HID_DEVICE_SYSTEM_MOUSE","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0000","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0000","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0001","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0001","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0300","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0300","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0301","Service",0x00000000,"vga"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PCI#CC_0301","ClassGUID",0x00000000,"{4D36E968-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0303","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0303","ClassGUID",0x00000000,"{4D36E96B-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F0E","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F0E","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F19","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F19","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PS2_MOUSE","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\PS2_MOUSE","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F13","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F13","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*IBM3780","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*IBM3780","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F12","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F12","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F03","Service",0x00000000,"i8042prt"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\*PNP0F03","ClassGUID",0x00000000,"{4D36E96F-E325-11CE-BFC1-08002BE10318}"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\ROOT#SWENUM","Service",0x00000000,"swenum"
+HKLM,"SYSTEM\CurrentControlSet\Control\CriticalDeviceDatabase\ROOT#SWENUM","ClassGUID",0x00000000,"{4d36e97d-e325-11ce-bfc1-08002be10318}"
+
+
+HKLM,"SYSTEM\CurrentControlSet\Control\SafeBoot","AlternateShell",2,"cmd.exe"
+
 ; ControlSet selection settings
 HKLM,"SYSTEM\Select","Current",0x00010003,0x00000001
 HKLM,"SYSTEM\Select","Default",0x00010003,0x00000001
@@ -17,9 +574,1495 @@ HKLM,"SYSTEM\Setup","SystemPartition",0x00000000,"\Device\Harddisk0\Partition1"
 HKLM,"SYSTEM\Setup","SystemPrefix",0x00000001
 HKLM,"SYSTEM\Setup","SystemSetupInProgress",0x00010001,0x00000001
 
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Monitors",,0x00000010
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Monitors\Local Port","Driver",,"localmon.dll"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Print\Providers",,0x00000010
+
+
+HKLM,"SYSTEM\CurrentControlSet\Control\ProductOptions","ProductType",2,"ServerNT"
+HKLM,"SYSTEM\CurrentControlSet\Control\ProductOptions","ProductSuite",0x00010002,"Terminal Server"
+; ReactOS specific - by default we report ourselves as Server for the user,
+; but we can also report as Workstation if some application needs it.
+HKLM,"SYSTEM\CurrentControlSet\Control\ReactOS\Settings\Version","ReportAsWorkstation",0x00010001,0x00000000
+; Some installers check for SP2
+HKLM,"SYSTEM\CurrentControlSet\Control\Windows","CSDReleaseType",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Control\Windows","CSDVersion",0x00010001,0x00000200
+
+HKLM,"SYSTEM\CurrentControlSet\Control\Windows","Directory",0x00020002,"%SystemRoot%"
+HKLM,"SYSTEM\CurrentControlSet\Control\Windows","ErrorMode",0x00010003,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Control\Windows","NoInteractiveServices",0x00010003,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Control\Windows","ShellErrorMode",0x00010003,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Control\Windows","SystemDirectory",0x00020002,"%SystemRoot%\system32"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\SecurityProviders","SecurityProviders",2,"schannel.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\SecurityProviders\SaslProfiles",,0x00000012
+
+; Service groups
+HKLM,"SYSTEM\CurrentControlSet\Control\ServiceGroupOrder","List",0x00010000, \
+ "System Reserved", \
+ "EMS", \
+ "Boot Bus Extender", \
+ "System Bus Extender", \
+ "SCSI Miniport", \
+ "Port", \
+ "Primary Disk", \
+ "SCSI Class", \
+ "SCSI CDROM Class", \
+ "FSFilter Infrastructure", \
+ "FSFilter System", \
+ "FSFilter Bottom", \
+ "FSFilter Copy Protection", \
+ "FSFilter Security Enhancer", \
+ "FSFilter Open File", \
+ "FSFilter Physical Quota Management", \
+ "FSFilter Encryption", \
+ "FSFilter Compression", \
+ "FSFilter HSM", \
+ "FSFilter Cluster File System", \
+ "FSFilter System Recovery", \
+ "FSFilter Quota Management", \
+ "FSFilter Content Screener", \
+ "FSFilter Continuous Backup", \
+ "FSFilter Replication", \
+ "FSFilter Anti-Virus", \
+ "FSFilter Undelete", \
+ "FSFilter Activity Monitor", \
+ "FSFilter Top", \
+ "Filter", \
+ "Boot File System", \
+ "Base", \
+ "Pointer Port", \
+ "Keyboard Port", \
+ "Pointer Class", \
+ "Keyboard Class", \
+ "Debug", \
+ "Video Init", \
+ "Video", \
+ "Video Save", \
+ "File System", \
+ "Event Log", \
+ "Streams Drivers", \
+ "NDIS Wrapper", \
+ "COM Infrastructure", \
+ "UIGroup", \
+ "LocalValidation", \
+ "PlugPlay", \
+ "PNP_TDI", \
+ "NDIS", \
+ "TDI", \
+ "NetBIOSGroup", \
+ "ShellSvcGroup", \
+ "SchedulerGroup", \
+ "SpoolerGroup", \
+ "AudioGroup", \
+ "SmartCardGroup", \
+ "NetworkProvider", \
+ "RemoteValidation", \
+ "NetDDEGroup", \
+ "Parallel arbitrator", \
+ "Extended Base", \
+ "PCI Configuration", \
+ "MS Transactions"
+
+; Set the timeout for directx/ReactX graphic surface lock see _EDD_DIRECTDRAW_GLOBAL struct for more info
+HKLM,"SYSTEM\CurrentControlSet\Control\GraphicsDrivers\DCI","Timeout",0x00010001,0x00000007
+
+; Group order, the first DWORD is the count of entries,
+; the following dwords are the tag entries for the load order.
+HKLM,"SYSTEM\CurrentControlSet\Control\GroupOrderList","Base", 0x00000001, \
+  0x02, 0x00, 0x00, 0x00, \
+  0x01, 0x00, 0x00, 0x00, \
+  0x02, 0x00, 0x00, 0x00
+HKLM,"SYSTEM\CurrentControlSet\Control\GroupOrderList","Video Save", 0x00000001, \
+  0x02, 0x00, 0x00, 0x00, \
+  0x01, 0x00, 0x00, 0x00, \
+  0x02, 0x00, 0x00, 0x00
+HKLM,"SYSTEM\CurrentControlSet\Control\GroupOrderList","SCSI Miniport", 0x00000001, \
+  0x02, 0x00, 0x00, 0x00, \
+  0x10, 0x00, 0x00, 0x00, \
+  0x20, 0x00, 0x00, 0x00
+
+
+; DOS devices
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","AUX",0x00000002,"\DosDevices\COM1"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","MAILSLOT",0x00000002,"\Device\MailSlot"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","NUL",0x00000002,"\Device\Null"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","PIPE",0x00000002,"\Device\NamedPipe"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","PRN",0x00000002,"\DosDevices\LPT1"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","UNC",0x00000002,"\Device\Mup"
+
+; Memory Management
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management",,0x00000012
+
+; WOW Support
+HKLM,"SYSTEM\CurrentControlSet\Control\WOW",,0x00000012
+
+; PNP Root device
+HKLM,"SYSTEM\CurrentControlSet\Enum\HTREE\ROOT\0","",0x00000000,""
+
 ; Debug channels
 ;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","DEBUGCHANNEL",0x00020000,"+ole,+rpc"
 
 ; Winsrv configuration
 HKLM,"SYSTEM\CurrentControlSet\Control\PriorityControl",,0x00000012
 HKLM,"SYSTEM\CurrentControlSet\Control\PriorityControl","Win32PrioritySeparation",0x00010001,0x2
+
+; ReactOS specific - required to load in Safe Mode and for debugging in Safe Mode (until vga.sys and vgasave.sys are implemented)
+HKLM,"SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\Debug","",0x00000000,"Driver Group"
+
+HKLM,"SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Debug","",0x00000000,"Driver Group"
+
+; BlueScreen device driver
+HKLM,"SYSTEM\CurrentControlSet\Services\Blue","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Blue","Group",0x00000000,"Video Init"
+HKLM,"SYSTEM\CurrentControlSet\Services\Blue","ImagePath",0x00020000,"drivers\blue.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Blue","Start",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Blue","Type",0x00010001,0x00000001
+
+; Null device driver
+HKLM,"SYSTEM\CurrentControlSet\Services\Null","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Null","Group",0x00000000,"Base"
+HKLM,"SYSTEM\CurrentControlSet\Services\Null","ImagePath",0x00020000,"drivers\null.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Null","Start",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Null","Tag",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Null","Type",0x00010001,0x00000001
+
+; NMI device driver
+HKLM,"SYSTEM\CurrentControlSet\Services\NMIDebug","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\NMIDebug","Group",0x00000000,"Base"
+HKLM,"SYSTEM\CurrentControlSet\Services\NMIDebug","ImagePath",0x00020000,"drivers\nmidebug.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\NMIDebug","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\NMIDebug","Type",0x00010001,0x00000001
+
+; ACPI driver
+HKLM,"SYSTEM\CurrentControlSet\Services\acpi","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\acpi","Group",0x00000000,"Boot Bus Extender"
+HKLM,"SYSTEM\CurrentControlSet\Services\acpi","ImagePath",0x00020000,"drivers\acpi.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\acpi","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\acpi","Tag",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\acpi","Type",0x00010001,0x00000001
+
+; PCI Bus driver
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci","Group",0x00000000,"Boot Bus Extender"
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci","ImagePath",0x00020000,"drivers\pci.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci","Tag",0x00010001,0x00000002
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci","Type",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1045C621",0x00030003,04,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10950640",0x00030003,04,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80861230",0x00030003,04,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867010",0x00030003,04,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","104B0140",0x00030003,08,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11790603",0x00030003,08,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867113",0x00030003,08,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","497884C5",0x00030003,08,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11063040",0x00030003,08,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","0E111000",0x00030003,10,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","0E112000",0x00030003,10,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10390406",0x00030003,10,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80860482",0x00030003,00,40,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80860008",0x00030003,10,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10140002",0x00030003,10,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10800600",0x00030003,20,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10131100",0x00030003,40,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10B95219",0x00030003,80,00,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1C1C0001",0x00030003,00,01,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10970038",0x00030003,00,01,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","100BD001",0x00030003,00,04,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","808604A3",0x00030003,00,08,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10AA0000",0x00030003,00,08,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","533388D1",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11790605",0x00030003,00,10,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10131110",0x00030003,00,20,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11800478",0x00030003,00,20,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11800475",0x00030003,00,20,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11800476",0x00030003,00,20,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10040101",0x00030003,00,40,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10421000",0x00030003,00,40,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","104CAC12",0x00030003,00,00,01,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11800466",0x00030003,00,00,01,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10140095",0x00030003,00,00,04,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80862418",0x00030003,00,00,04,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80862428",0x00030003,00,00,04,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","8086244E",0x00030003,00,00,04,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80862448",0x00030003,00,00,04,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","8086122E",0x00030003,00,00,08,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867000",0x00030003,00,00,08,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867110",0x00030003,00,00,08,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867600",0x00030003,00,00,08,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024747",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024754",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338901",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","101300D6",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","104CAC15",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","110B0004",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1000000F",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","104CAC17",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10239397",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024742",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024744",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024749",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024750",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024751",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024755",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024757",0x00030003,00,00,40,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024759",0x00030003,00,00,40,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C42",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C44",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C47",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C49",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C50",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C51",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10025654",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10025655",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10025656",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","121A0003",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1045C861107B9300",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1045C8611045C861",0x00030003,00,00,40,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80861231",0x00030003,00,00,00,01,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","12730002",0x00030003,00,00,00,01,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1014007D",0x00030003,00,00,00,01,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","12850100",0x00030003,00,00,00,01,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","12176836",0x00030003,00,00,00,08,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","12176832",0x00030003,00,00,00,08,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","109107A0",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867800",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10c88005",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10c88006",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10c80005",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10c80006",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","102B1001",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DD0100",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10950646",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10950670",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10950648",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10110026",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","8086B154",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338904",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11068598",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11068605",0x00030003,00,00,00,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","11790609",0x00030003,00,00,00,40,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10140047",0x00030003,00,00,00,40,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","102B051B",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","102B0520",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","102B0521",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","102B1025",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","102B0525",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867121",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867123",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80867125",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","80861132",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","90050050",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","9005005F",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024752",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1002474F",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1002474D",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024753",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1002474C",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1002474E",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C4D",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C4E",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C52",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C53",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10239880",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE00A0",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE00A1",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE00A3",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE00B0",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE00B1",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE00B3",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0100",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0101",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0102",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0103",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0120",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0121",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0122",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0123",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0150",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0151",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0152",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0153",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0200",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0201",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0202",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0203",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","12D20018",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","12D20019",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10136003",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","3D3D000A",0x00030003,00,00,00,80,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024158",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024354",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024358",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024554",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024758",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024C54",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338810",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338811",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338812",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338814",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338880",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","533388B0",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","533388C0",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","533388C1",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","533388D0",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","533388F0",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","53338902",0x00030003,00,00,00,00,01,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","0E11B109",0x00030003,00,00,00,00,02,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","100C3202",0x00030003,00,8a,00,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10668002",0x00030003,00,00,30,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10660002",0x00030003,00,00,30,00,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10040102",0x00030003,00,40,00,02,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1045C814",0x00030003,00,00,40,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10024756",0x00030003,00,00,40,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1002475A",0x00030003,00,00,40,20,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","1000000B",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0020",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0028",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE0029",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE002A",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE002B",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE002C",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE002D",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE002E",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","10DE002F",0x00030003,00,00,00,a0,00,00,00,00
+HKLM,"SYSTEM\CurrentControlSet\Services\Pci\Parameters","101300D6101880D6",0x00030003,00,00,00,00,00,00,00,00
+
+; EMS Serial Administration Console Driver
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Group",0x00000000,"EMS"
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","ImagePath",0x00020000,"drivers\sacdrv.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\sacdrv","Type",0x00010001,0x00000001
+
+; Virtual FAT filesystem driver
+HKLM,"SYSTEM\CurrentControlSet\Services\fastfat","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\fastfat","Group",0x00000000,"Boot File System"
+HKLM,"SYSTEM\CurrentControlSet\Services\fastfat","ImagePath",0x00020000,"drivers\fastfat.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\fastfat","Start",0x00010001,0x00000003
+HKLM,"SYSTEM\CurrentControlSet\Services\fastfat","Type",0x00010001,0x00000002
+
+; RAM Disk class driver
+HKLM,"SYSTEM\CurrentControlSet\Services\RamDisk","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\RamDisk","ImagePath",0x00020000,"drivers\ramdisk.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\RamDisk","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\RamDisk","Type",0x00010001,0x00000001
+
+; Filesystem recognizer driver
+HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","Group",0x00000000,"Boot File System"
+HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","ImagePath",0x00020000,"drivers\fs_rec.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","Start",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\Fs_Rec","Type",0x00010001,0x00000008
+
+; MountMgr driver
+HKLM,"SYSTEM\CurrentControlSet\Services\MountMgr","ErrorControl",0x00010001,0x00000001
+HKLM,"SYSTEM\CurrentControlSet\Services\MountMgr","Group",0x00000000,"System Bus Extender"
+HKLM,"SYSTEM\CurrentControlSet\Services\MountMgr","ImagePath",0x00020000,"drivers\mountmgr.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\MountMgr","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\MountMgr","Tag",0x00010001,0x00000008
+HKLM,"SYSTEM\CurrentControlSet\Services\MountMgr","Type",0x00010001,0x00000001
+
+[AddReg.NTarm]
+; RAM Disk class driver
+HKLM,"SYSTEM\CurrentControlSet\Services\Disk","ErrorControl",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Disk","ImagePath",0x00020000,"system32\drivers\ramdisk.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\Disk","Start",0x00010001,0x00000000
+HKLM,"SYSTEM\CurrentControlSet\Services\Disk","Type",0x00010001,0x00000001
+
+HKLM,"SYSTEM\CurrentControlSet\Services\fastfat","Start",0x00010001,0x00000003
+
+LM,"SYSTEM\CurrentControlSet\Services\fastfat","Start",0x00010001,0x00000003
+
+[Strings]
+
+; Services names and descriptions
+AUDIO_SERVICE="Audio Service"
+AUDIO_SERVICE_DESCRIPTION="Provides audio facilities to applications"
+
+BITS_SERVICE="Background Intelligent Transfer Service"
+BITS_SERVICE_DESCRIPTION="Transfers files in the background using idle network bandwidth."
+
+BROWSER_SERVICE="Computer Browser"
+BROWSER_SERVICE_DESCRIPTION="Maintains an updated list of computers on the network and supplies this list to computers designated as browsers."
+
+DCOMLAUNCH_SERVICE="DcomLaunch service"
+DCOMLAUNCH_SERVICE_DESCRIPTION="DcomLaunch service stub."
+
+EVENTLOG_SERVICE="Event Logger"
+EVENTLOG_SERVICE_DESCRIPTION="Logs events or messages sent by the operating system in a database accessible via the event log viewer."
+
+MSISERVER_SERVICE="ReactOS Installer"
+MSISERVER_SERVICE_DESCRIPTION="Controls installation, maintenance, and removal of software packaged as an MSI (Windows Installer)."
+
+NETLOGON_SERVICE="Net Logon"
+NETLOGON_SERVICE_DESCRIPTION="Sets up a secure channel to a domain controller for domain authentication."
+
+PLUGPLAY_SERVICE="Plug and Play"
+PLUGPLAY_SERVICE_DESCRIPTION="Detects hardware changes and installs needed software if possible."
+
+RPCSS_SERVICE="Remote Procedure Call"
+RPCSS_SERVICE_DESCRIPTION="RPC subsystem which is responsible for Remote Procedure Calls on the local machine."
+
+SAMSS_SERVICE="Security Accounts Manager"
+SAMSS_SERVICE_DESCRIPTION="The startup of this service signals other services that the Security Accounts Manager (SAM) is ready to accept requests.  Disabling this service will prevent other services in the system from being notified when the SAM is ready, which may in turn cause those services to fail to start correctly.  This service should not be disabled."
+
+SCHEDULE_SERVICE="Scheduler service"
+SCHEDULE_SERVICE_DESCRIPTION="Allows starting of programs at specific times."
+
+SECLOGON_SERVICE="Secondary Logon"
+SECLOGON_SERVICE_DESCRIPTION="Allows to start processes under alternative credentials."
+
+SERVER_SERVICE="Server"
+SERVER_SERVICE_DESCRIPTION="Supports sharing for file, printers and resources on the network."
+
+SPOOLER_SERVICE="Printer Spooler"
+SPOOLER_SERVICE_DESCRIPTION="Loads files to memory for later printing."
+
+TCPSVCS_SERVICE="Simple TCP/IP Services"
+TCPSVCS_SERVICE_DECRIPTION="Supports the following TCP/IP services: Chargen, Daytime, Discard, Echo, QOTD."
+
+TELNETD_SERVICE="ReactOS Telnet Service"
+TELNETD_SERVICE_DESCRIPTION="ReactOS Telnet Service"
+
+THEMES_SERVICE="Themes"
+THEMES_SERVICE_DESCRIPTION="Themes support"
+
+WINMGMT_SERVICE="ReactOS Management Infrastructure"
+WINMGMT_SERVICE_DESCRIPTION="Provides interface to system management information."
+
+WLANSVC_SERVICE="WLAN Service"
+WLANSVC_SERVICE_DESCRIPTION="WLAN Service"
+
+WORKSTATION_SERVICE="Workstation"
+WORKSTATION_SERVICE_DESCRIPTION="Responsible for creating and maintaining network connections to servers."
+
+WUAUSERV_SERVICE="Automatic Updates"
+WUAUSERV_SERVICE_DESCRIPTION="AutoUpdate Service stub."
+
+; Keyboard layouts
+ALBANIAN = "Albanian"
+ARABIC_101 = "Arabic (101)"
+ARABIC_102 = "Arabic (102)"
+ARABIC_102_AZERTY = "Arabic (102) AZERTY"
+ARMENIAN_EASTERN = "Armenian Eastern"
+ARMENIAN_WESTERN = "Armenian Western"
+ASSAMESE = "ASSAMESE - INSCRIPT"
+AZERI_CYRILLIC = "Azeri Cyrillic"
+AZERI_LATIN = "Azeri Latin"
+BELARUSIAN = "Belarusian"
+BELGIAN_DUTCH = "Belgian (Dutch)"
+BELGIAN_FRENCH = "Belgian (French)"
+BENGALI = "Bengali"
+BENGALI_INSCRIPT = "Bengali - INSCRIPT"
+BULGARIAN_BDS = "Bulgarian BDS 5237-1978"
+BULGARIAN_PHONETIC = "Bulgarian phonetic classic"
+BULGARIAN_PHONETIC_BDS = "Bulgarian phonetic BDS 5237-2006"
+BURMESE = "Burmese"
+CANADIAN_FRENCH = "Canadian French (Legacy)"
+CANADIAN_MULTILINGUAL = "Canadian Multilingual Standard"
+CROATIAN = "Croatian"
+CZECH = "Czech"
+CZECH_QWERTY = "Czech (QWERTY)"
+DANISH = "Danish"
+DEVANAGARI = "Devanagari - INSCRIPT"
+DUTCH = "Dutch"
+ESPERANTO = "Esperanto"
+ESTONIAN = "Estonian"
+GERMAN_ERGO = "German (de_ergo)"
+GERMAN_NEO = "German (NEO-1.1)"
+GERMAN_RISTOME = "German (RISTOME)"
+GERMAN = "German"
+GREEK = "Greek"
+GUJARATI = "Gujarati"
+IRISH = "Irish"
+FAEROESE = "Faeroese"
+FINNISH = "Finnish"
+FRENCH = "French"
+GEORGIAN = "Georgian"
+HEBREW = "Hebrew"
+HUNGARIAN = "Hungarian"
+ICELANDIC = "Icelandic"
+ITALIAN = "Italian"
+JAPANESE = "Japanese"
+KAZAKH = "Kazakh"
+KOREAN = "Korean"
+LATIN_AMERICAN = "Latin American"
+LATVIAN = "Latvian"
+LATVIAN_QWERTY = "Latvian (QWERTY)"
+LITHUANIAN = "Lithuanian"
+MACEDONIAN = "Macedonian (FYRO)"
+MALAYALAM = "Malayalam"
+NORWEGIAN = "Norwegian"
+POLISH_214 = "Polish (214)"
+POLISH_PROGRAMMERS = "Polish (Programmers)"
+PORTUGESE = "Portuguese (Portugal)"
+PORTUGESE_BRAZILIAN = "Portuguese (Brazilian ABNT2)"
+ROMANIAN_LEGACY = "Romanian (Legacy)"
+ROMANIAN_STANDARD = "Romanian (Standard)"
+RUSSIAN = "Russian"
+RUSSIAN_TYPEWRITER = "Russian (Typewriter)"
+SERBIAN_CYRILLIC = "Serbian (Cyrillic)"
+SERBIAN_LATIN = "Serbian (Latin)"
+SLOVAK = "Slovak"
+SLOVAK_QWERTY = "Slovak (QWERTY)"
+SPANISH = "Spanish"
+SWEDISH = "Swedish"
+SWISS_FRENCH = "Swiss (French)"
+SWISS_GERMAN = "Swiss (German)"
+TATAR = "Tatar"
+THAI_KEDMANEE = "Thai Kedmanee"
+THAI_KEDMANEE_NON_SHIFTLOCK = "Thai Kedmanee (non-ShiftLock)"
+THAI_PATTACHOTE = "Thai Pattachote"
+THAI_PATTACHOTE_NON_SHIFTLOCK = "Thai Pattachote (non-ShiftLock)"
+TURKISH_Q = "Turkish Q"
+TURKISH_F = "Turkish F"
+UK = "United Kingdom"
+UKRAINIAN = "Ukrainian"
+UKRAINIAN_STUDENT = "Ukrainian (Student)"
+US = "United States"
+US_ARABIC = "US English (IBM Arabic 238_L)"
+US_DVORAK = "US-Dvorak"
+US_DVORAK_LEFT = "US Dvorak for left hand"
+US_DVORAK_RIGHT = "US Dvorak for right hand"
+US_INTERNATIONAL = "US International"
+UZBEK_CYRILLIC = "Uzbek (Cyrillic)"
+VIETNAMESE = "Vietnamese"
+
+; LANG_SPANISH SUBLANG_NEUTRAL
+[Strings.000A]
+
+; Services names and descriptions
+AUDIO_SERVICE="Audio de ReactOS"
+AUDIO_SERVICE_DESCRIPTION="Proporciona facilidades de audio para las aplicaciones."
+
+BITS_SERVICE="Servicio de transferencia inteligente en segundo plano (BITS)"
+BITS_SERVICE_DESCRIPTION="Transfiere archivos en segundo plano usando el ancho de banda de red inactiva."
+
+BROWSER_SERVICE="Examinador de Equipos"
+BROWSER_SERVICE_DESCRIPTION="Mantiene una lista actualizada de los equipos en la red y proporciona esta lista a los equipos designados como exploradores."
+
+DCOMLAUNCH_SERVICE="Servicio iniciador del Dcom (stub)"
+DCOMLAUNCH_SERVICE_DESCRIPTION="Servicio simulado del iniciador Dcom."
+
+EVENTLOG_SERVICE="Registrador de Eventos"
+EVENTLOG_SERVICE_DESCRIPTION="Registro de eventos o mensajes enviados por el sistema operativo en una base de datos accesible desde el Visor de Eventos."
+
+MSISERVER_SERVICE="Instalador MSI de ReactOS"
+MSISERVER_SERVICE_DESCRIPTION="Controla la instalación, mantenimiento y desinstalado del software empaquetado en un MSI (Windows Installer)."
+
+NETLOGON_SERVICE="Net Logon"
+NETLOGON_SERVICE_DESCRIPTION="Inicia un canal seguro entre el equipo y el controlador de dominio para autenticar usuarios y servicios."
+
+PLUGPLAY_SERVICE="Plug and Play"
+PLUGPLAY_SERVICE_DESCRIPTION="Detecta cambios del hardware e instala el software necesario si es posible."
+
+RPCSS_SERVICE="Llamada al procedimiento remoto (RPC)"
+RPCSS_SERVICE_DESCRIPTION="Es el subsistema RPC, que es el responsable de las llamadas al procedimiento remoto (RPC) en el equipo local."
+
+SAMSS_SERVICE="Administrador de cuentas de seguridad"
+SAMSS_SERVICE_DESCRIPTION="El arranque de este servicio señala a otros servicios que el Administrador de cuentas de seguridad (SAM) está listo para aceptar solicitudes. Deshabilitar este servicio evitará que otros servicios en el sistema puedan ser notificados cuando el SAM esté preparado, lo que podría causar a dichos servicios que no iniciaran correctamente. Este servicio no puede ser deshabilitado."
+
+SCHEDULE_SERVICE="Programador de tareas"
+SCHEDULE_SERVICE_DESCRIPTION="Permite iniciar programas automáticamente en unas horas o instantes específicos."
+
+SECLOGON_SERVICE="Secondary Logon"
+SECLOGON_SERVICE_DESCRIPTION="Allows to start processes under alternative credentials."
+
+SERVER_SERVICE="Servidor"
+SERVER_SERVICE_DESCRIPTION="Ofrece compatibilidad para archivos, impresoras y recursos en la red."
+
+SPOOLER_SERVICE="Cola de impresión"
+SPOOLER_SERVICE_DESCRIPTION="Carga los archivos a la memoria para una posterior impresión."
+
+TCPSVCS_SERVICE="Servicios sencillos TCP/IP"
+TCPSVCS_SERVICE_DECRIPTION="Soporta los siguientes servicios de TCP/IP: Chargen, Daytime, Discard, Echo, QOTD."
+
+TELNETD_SERVICE="Servicio Telnet de ReactOS"
+TELNETD_SERVICE_DESCRIPTION="Servicio Telnet de ReactOS."
+
+THEMES_SERVICE="Temas"
+THEMES_SERVICE_DESCRIPTION="Soporte para los diferentes Temas."
+
+WINMGMT_SERVICE="Instrumental de administración de ReactOS"
+WINMGMT_SERVICE_DESCRIPTION="Proporciona una interfaz para la gestión de la información del sistema (winmgmt)."
+
+WLANSVC_SERVICE="Servicio de WLAN"
+WLANSVC_SERVICE_DESCRIPTION="Servicio de redes inalámbricas WLAN."
+
+WORKSTATION_SERVICE="Estación de trabajo"
+WORKSTATION_SERVICE_DESCRIPTION="Es el responsable de crear y mantener las conexiones de redes LAN a los servidores."
+
+WUAUSERV_SERVICE="Actualizaciones automáticas (stub)"
+WUAUSERV_SERVICE_DESCRIPTION="Servicio simulado de Actualizaciones automáticas."
+
+; Keyboard layouts
+ALBANIAN = "Albanés"
+ARABIC_101 = "Árabe (101)"
+ARABIC_102 = "Árabe (102)"
+ARABIC_102_AZERTY = "Árabe (102) AZERTY"
+ARMENIAN_EASTERN = "Armenio oriental"
+ARMENIAN_WESTERN = "Armenio occidental"
+ASSAMESE = "Asamés"
+AZERI_CYRILLIC = "Azerí cirílico"
+AZERI_LATIN = "Azerí latino"
+BELARUSIAN = "Bielorruso"
+BELGIAN_DUTCH = "Belga (Holandés)"
+BELGIAN_FRENCH = "Belga (Francés)"
+BENGALI = "Bengalí"
+BENGALI_INSCRIPT = "Bengalí - INSCRIPT"
+BULGARIAN_BDS = "Búlgaro BDS 5237-1978"
+BULGARIAN_PHONETIC = "Búlgaro fonético clásico"
+BULGARIAN_PHONETIC_BDS = "Búlgaro fonético BDS 5237-2006"
+BURMESE = "Birmano"
+CANADIAN_FRENCH = "Francés canadiense (Heredado)"
+CANADIAN_MULTILINGUAL = "Canadiense estándar multilingüe"
+CROATIAN = "Croata"
+CZECH = "Checo"
+CZECH_QWERTY = "Checo (QWERTY)"
+DANISH = "Danés"
+DEVANAGARI = "Devanagari - INSCRIPT"
+DUTCH = "Holandés"
+ESPERANTO = "Esperanto"
+ESTONIAN = "Estonio"
+GERMAN_ERGO = "Alemán (de_ergo)"
+GERMAN_NEO = "Alemán (NEO-1.1)"
+GERMAN_RISTOME = "Alemán (RISTOME)"
+GERMAN = "Alemán"
+GREEK = "Griego"
+GUJARATI = "Gujarati"
+IRISH = "Irlandés"
+FAEROESE = "Faeroese"
+FINNISH = "Finés"
+FRENCH = "Francés"
+GEORGIAN = "Georgiano"
+HEBREW = "Hebreo"
+HUNGARIAN = "Húngaro"
+ICELANDIC = "Islandés"
+ITALIAN = "Italiano"
+JAPANESE = "Japonés"
+KAZAKH = "Kazajo"
+KOREAN = "Coreano"
+LATIN_AMERICAN = "Español (America Latina)"
+LATVIAN = "Letón"
+LATVIAN_QWERTY = "Letón (QWERTY)"
+LITHUANIAN = "Lituano"
+MACEDONIAN = "Macedonia (FYRO)"
+MALAYALAM = "Malabari"
+NORWEGIAN = "Noruego"
+POLISH_214 = "Polaco (214)"
+POLISH_PROGRAMMERS = "Polaco (Programmers)"
+PORTUGESE = "Portugués (Portugal)"
+PORTUGESE_BRAZILIAN = "Portugués (Brasil ABNT2)"
+ROMANIAN_LEGACY = "Rumano (Legacy)"
+ROMANIAN_STANDARD = "Rumano (Standard)"
+RUSSIAN = "Ruso"
+RUSSIAN_TYPEWRITER = "Ruso (Máquina de escribir)"
+SERBIAN_CYRILLIC = "Serbio (Cirílico)"
+SERBIAN_LATIN = "Serbio (Latin)"
+SLOVAK = "Eslovaco"
+SLOVAK_QWERTY = "Eslovaco (QWERTY)"
+SPANISH = "Español"
+SWEDISH = "Sueco"
+SWISS_FRENCH = "Suizo (Francés)"
+SWISS_GERMAN = "Suizo (Alemán)"
+TATAR = "Tártaro"
+THAI_KEDMANEE = "Tailandés Kedmanee"
+THAI_KEDMANEE_NON_SHIFTLOCK = "Tailandés Kedmanee (sin-BloqMayus)"
+THAI_PATTACHOTE = "Tailandés Pattachote"
+THAI_PATTACHOTE_NON_SHIFTLOCK = "Tailandés Pattachote (sin-BloqMayus)"
+TURKISH_Q = "Turco Q"
+TURKISH_F = "Turco F"
+UK = "Reino Unido"
+UKRAINIAN = "Ucraniano"
+UKRAINIAN_STUDENT = "Ucraniano (Estudiantil)"
+US = "Estado Unidos"
+US_ARABIC = "Inglés EEUU (IBM Arabic 238_L)"
+US_DVORAK = "EEUU-Dvorak"
+US_DVORAK_LEFT = "EEUU Dvorak para zurdos"
+US_DVORAK_RIGHT = "EEUU Dvorak para diestros"
+US_INTERNATIONAL = "EEUU Internacional"
+UZBEK_CYRILLIC = "Uzbek (Cyrillic)"
+VIETNAMESE = "Vietnamita"
+
+; LANG_POLISH SUBLANG_NEUTRAL
+[Strings.0015]
+
+; Services names and descriptions
+AUDIO_SERVICE="Usługa Audio"
+AUDIO_SERVICE_DESCRIPTION="Zapewnia aplikacjom dostęp do urządzeń audio."
+
+BITS_SERVICE="Usługa inteligentnego transferu w tle"
+BITS_SERVICE_DESCRIPTION="Przenosi dane pomiędzy klientami a serwerami w tle."
+
+BROWSER_SERVICE="Przeglądarka komputera"
+BROWSER_SERVICE_DESCRIPTION="Utrzymuje aktualną listę komputerów w sieci i dostarcza ją do komputerów wyznaczonych jako przeglądarki."
+
+DCOMLAUNCH_SERVICE="Usługa DcomLaunch"
+DCOMLAUNCH_SERVICE_DESCRIPTION="Namiastka usługi DcomLaunch"
+
+EVENTLOG_SERVICE="Dziennik zdarzeń"
+EVENTLOG_SERVICE_DESCRIPTION="Zapisuje zdarzenia lub wiadomości wysyłane przez system operacyjny do bazy danych dostępnej za pomocą podglądu zdarzeń."
+
+MSISERVER_SERVICE="Instalator ReactOS"
+MSISERVER_SERVICE_DESCRIPTION="Dodaje, modyfikuje i usuwa aplikacje dostarczane jako pakiet MSI (Windows Installer)."
+
+NETLOGON_SERVICE="Logowanie do sieci"
+NETLOGON_SERVICE_DESCRIPTION="Obsługuje uwierzytelnienie przekazjące zdarzeż logowania na konta w komputerach domeny."
+
+PLUGPLAY_SERVICE="Plug and Play"
+PLUGPLAY_SERVICE_DESCRIPTION="Wykrywa zmiany w sprzęcie i instaluje potrzebne oprogramowanie, jeśli to możliwe."
+
+RPCSS_SERVICE="Zdalne wykonywanie procedur"
+RPCSS_SERVICE_DESCRIPTION="Podsystem RPC, który jest odpowiedzialny za zdalne wykonywanie procedur na tym komputerze."
+
+SAMSS_SERVICE="Menedżer kont zabezpieczeń"
+SAMSS_SERVICE_DESCRIPTION="Uruchomienie tej usługi informuje inne usługi, że Menedżer kont zabezpieczeń jest gotowy do akceptowania żądań. Wyłączenie tej usługi spowoduje, że inne usługi w systemie nie będą powiadamiane o gotowości Menedżera kont zabezpieczeń, przez co te usługi mogą być uruchamiane nieprawidłowo. Tej usługi nie należy wyłączać."
+
+SCHEDULE_SERVICE="Usługa Harmonogram"
+SCHEDULE_SERVICE_DESCRIPTION="Umożliwia uruchamianie programów w określonym czasie."
+
+SECLOGON_SERVICE="Secondary Logon"
+SECLOGON_SERVICE_DESCRIPTION="Allows to start processes under alternative credentials."
+
+SERVER_SERVICE="Serwer"
+SERVER_SERVICE_DESCRIPTION="Oferuje udostępnianie w sieci plików, drukarek i potoków dla tego komputera."
+
+SPOOLER_SERVICE="Bufor wydruku"
+SPOOLER_SERVICE_DESCRIPTION="Ładuje pliki do pamięci w celu późniejszego wydrukowania."
+
+TCPSVCS_SERVICE="Podstawowe usługi TCP/IP"
+TCPSVCS_SERVICE_DECRIPTION="Oferuje następujące usługi TCP/IP: Chargen, Daytime, Discard, Echo, QOTD."
+
+TELNETD_SERVICE="Usługa ReactOS Telnet"
+TELNETD_SERVICE_DESCRIPTION="Usługa ReactOS Telnet"
+
+THEMES_SERVICE="Motywy"
+THEMES_SERVICE_DESCRIPTION="Oferuje wsparcie dla motywów."
+
+WINMGMT_SERVICE="Infrastruktura zarządzania ReactOS"
+WINMGMT_SERVICE_DESCRIPTION="Dostarcza interfejs w celu uzyskiwania dostępu do informacji zarządzania o systemie operacyjnym, urządzeniach, aplikacjach i usługach."
+
+WLANSVC_SERVICE="Usługa WLAN"
+WLANSVC_SERVICE_DESCRIPTION="Usługa WLAN"
+
+WORKSTATION_SERVICE="Stacja robocza"
+WORKSTATION_SERVICE_DESCRIPTION="Tworzy i zachowuje połączenia sieciowe klientów z serwerami."
+
+WUAUSERV_SERVICE="Aktualizacje automatyczne"
+WUAUSERV_SERVICE_DESCRIPTION="Namiastka usługi Aktualizacje automatyczne."
+
+; Keyboard layouts
+ALBANIAN = "Albański"
+ARABIC_101 = "Arabski (101)"
+ARABIC_102 = "Arabski (102)"
+ARABIC_102_AZERTY = "Arabski (102, AZERTY)"
+ARMENIAN_EASTERN = "Armeński wschodni"
+ARMENIAN_WESTERN = "Armeński zachodni"
+ASSAMESE = "ASSAMESE - INSCRIPT"
+AZERI_CYRILLIC = "Azerski (Cyrylica)"
+AZERI_LATIN = "Azerski (Latin)"
+BELARUSIAN = "Białoruski"
+BELGIAN_DUTCH = "Belgijski (Period)"
+BELGIAN_FRENCH = "Belgijski Francuski"
+BENGALI = "Bengalski"
+BENGALI_INSCRIPT = "Bengalski - INSCRIPT"
+BULGARIAN_BDS = "Bułgarski BDS 5237-1978"
+BULGARIAN_PHONETIC = "Bułgarski (Fonetyczny)"
+BULGARIAN_PHONETIC_BDS = "Bułgarski (Fonetyczny, BDS)"
+BURMESE = "Burmański"
+CANADIAN_FRENCH = "Kanadyjski francuski (Legacy)"
+CANADIAN_MULTILINGUAL = "Kanadyjski wielojęzykowy"
+CROATIAN = "Chorwacki"
+CZECH = "Czeski"
+CZECH_QWERTY = "Czeski (QWERTY)"
+DANISH = "Duński"
+DEVANAGARI = "Devanagari - INSCRIPT"
+DUTCH = "Holenderski"
+ESPERANTO = "Esperanto"
+ESTONIAN = "Estoński"
+GERMAN_ERGO = "Niemiecki (de_ergo)"
+GERMAN_NEO = "Niemiecki (NEO-1.1)"
+GERMAN_RISTOME = "Niemiecki (RISTOME)"
+GERMAN = "Niemiecki"
+GREEK = "Grecki"
+GUJARATI = "Gujarati"
+IRISH = "Irlandzki"
+FAEROESE = "Faeroese"
+FINNISH = "Fiński"
+FRENCH = "Francuski"
+GEORGIAN = "Gruziński"
+HEBREW = "Hebrajski"
+HUNGARIAN = "Węgierski"
+ICELANDIC = "Islandzki"
+ITALIAN = "Włoski"
+JAPANESE = "Japoński"
+KAZAKH = "Kazachski"
+KOREAN = "Koreański"
+LATIN_AMERICAN = "Latynoamerykański"
+LATVIAN = "Łotewski"
+LATVIAN_QWERTY = "Łotewski (QWERTY)"
+LITHUANIAN = "Litewski"
+MACEDONIAN = "Macedoński (FYRO)"
+MALAYALAM = "Malajalam"
+NORWEGIAN = "Norweski"
+POLISH_214 = "Polski (214)"
+POLISH_PROGRAMMERS = "Polski (Programisty)"
+PORTUGESE = "Portugalski"
+PORTUGESE_BRAZILIAN = "Portugalski (Brazylijski ABNT2)"
+ROMANIAN_LEGACY = "Rumuński (Legacy)"
+ROMANIAN_STANDARD = "Rumuński (Standard)"
+RUSSIAN = "Rosyjski"
+RUSSIAN_TYPEWRITER = "Rosyjski (Maszynisty)"
+SERBIAN_CYRILLIC = "Serbski (Cyrylica)"
+SERBIAN_LATIN = "Serbski (Latin)"
+SLOVAK = "Słowacki"
+SLOVAK_QWERTY = "Słowacki (QWERTY)"
+SPANISH = "Hiszpański"
+SWEDISH = "Szwedzki"
+SWISS_FRENCH = "Szwajcarski Francuski"
+SWISS_GERMAN = "Szwajcarski Niemiecki"
+TATAR = "Tatarski"
+THAI_KEDMANEE = "Tajski Kedmanee"
+THAI_KEDMANEE_NON_SHIFTLOCK = "Tajski (Kedmanee, bez ShiftLock)"
+THAI_PATTACHOTE = "Tajski Pattachote"
+THAI_PATTACHOTE_NON_SHIFTLOCK = "Tajski (Pattachote bez ShiftLock)"
+TURKISH_Q = "Turecki Q"
+TURKISH_F = "Turecki F"
+UK = "Angielski (Wielka Brytania)"
+UKRAINIAN = "Ukraiński"
+UKRAINIAN_STUDENT = "Ukraiński (Student)"
+US = "Angielski (USA)"
+US_ARABIC = "Tablica Angielska (US) dla Arabskiego (IBM 238_L)"
+US_DVORAK = "Angielski (US-Dvorak)"
+US_DVORAK_LEFT = "Angielski (Dvoraka dla leworęcznych)"
+US_DVORAK_RIGHT = "Angielski (Dvoraka dla praworęcznych)"
+US_INTERNATIONAL = "Międzynarodowy (USA)"
+UZBEK_CYRILLIC = "Uzbecki (Cyrylica)"
+VIETNAMESE = "Wietnamski"
+
+; LANG_PORTUGUESE SUBLANG_NEUTRAL
+[Strings.0016]
+
+; Services names and descriptions
+AUDIO_SERVICE="Serviços de Audio do ReactOS"
+AUDIO_SERVICE_DESCRIPTION="Fornece recursos de áudio para aplicações"
+
+BITS_SERVICE="Serviço de transferência inteligente em segundo plano"
+BITS_SERVICE_DESCRIPTION="Transfere dados entre clientes e servidores em segundo plano."
+
+BROWSER_SERVICE="Navegador de computador"
+BROWSER_SERVICE_DESCRIPTION="Mantém uma lista actualizada de computadores na rede e fornece essa lista aos computadores designados como navegadores."
+
+DCOMLAUNCH_SERVICE="DCOM - Lançador de processo de servidor"
+DCOMLAUNCH_SERVICE_DESCRIPTION="Fornece funcionalidades de lançamento para serviços DCOM."
+
+EVENTLOG_SERVICE="Registo de Eventos"
+EVENTLOG_SERVICE_DESCRIPTION="Regista eventos ou mensagens enviadas pelo sistema operativo num banco de dados acessíveis através do visualizador de eventos."
+
+MSISERVER_SERVICE="Instalador do ReactOS"
+MSISERVER_SERVICE_DESCRIPTION="Controla a instalação, manutenção e remoção de software empacotado como um MSI (Instalador do Windows)."
+
+NETLOGON_SERVICE="Inicio de sessão de rede"
+NETLOGON_SERVICE_DESCRIPTION="Suporta a autenticação pass-through dos eventos de início de sessão de conta para os computadores num domínio."
+
+PLUGPLAY_SERVICE="Plug and Play"
+PLUGPLAY_SERVICE_DESCRIPTION="Permite que o computador identifique e se adapte a alterações de hardware com pouca ou nenhuma intervenção do utilizador."
+
+RPCSS_SERVICE="Chamada de procedimento remoto (RPC)"
+RPCSS_SERVICE_DESCRIPTION="Fornece um mapeador de pontos finais e outros serviços RPC."
+
+SAMSS_SERVICE="Gestor de contas de segurança"
+SAMSS_SERVICE_DESCRIPTION="A iniciação deste serviço sinaliza a outros serviços que o Gestor de contas de segurança (SAM) está pronto para aceitar solicitações. A desactivação deste serviço impedirá que outros serviços no sistema sejam notificados quando o SAM estiver pronto, o que provocará a incorrecta iniciação desses serviços. Este serviço não deve ser desactivado."
+
+SCHEDULE_SERVICE="Programador de tarefas"
+SCHEDULE_SERVICE_DESCRIPTION="Permite ao utilizador configurar e agendar tarefas automatizadas neste computador. Se este serviço estiver parado, estas tarefas não serão executadas nas horas agendadas."
+
+SECLOGON_SERVICE="Inicio de sessão secundário"
+SECLOGON_SERVICE_DESCRIPTION="Activa processos de início sob credenciais alternativas."
+
+SERVER_SERVICE="Servidor"
+SERVER_SERVICE_DESCRIPTION="Suporta a partilha de ficheiros, impressoras e recursos de rede."
+
+SPOOLER_SERVICE="Spooler de impressão"
+SPOOLER_SERVICE_DESCRIPTION="Carrega ficheiros na memória para impressão posterior."
+
+TCPSVCS_SERVICE="Serviços TCP/IP simples"
+TCPSVCS_SERVICE_DECRIPTION="Soporta os seguintes serviços TCP/IP: Chargen, Daytime, Discard, Echo, QOTD."
+
+TELNETD_SERVICE="Serviço Telnet do ReactOS"
+TELNETD_SERVICE_DESCRIPTION="Permite que um utilizador remoto inicie sessão e execute programas neste computador."
+
+THEMES_SERVICE="Temas"
+THEMES_SERVICE_DESCRIPTION="Fornece a gestão de temas por parte dos utilizadores.."
+
+WINMGMT_SERVICE="Infra-estrutura de gestão do ReactOS"
+WINMGMT_SERVICE_DESCRIPTION="Fornece interface para informações de gestão do sistema."
+
+WLANSVC_SERVICE="Serviço WLAN"
+WLANSVC_SERVICE_DESCRIPTION="Serviço de redes inalámbricas WLAN."
+
+WORKSTATION_SERVICE="Estação de trabalho"
+WORKSTATION_SERVICE_DESCRIPTION="Cria e mantém cliente de ligações de rede a servidores remotos."
+
+WUAUSERV_SERVICE="Actualizações automáticas"
+WUAUSERV_SERVICE_DESCRIPTION="Permite a transferência e instalação de actualizações do ReactOS."
+
+; Keyboard layouts
+ALBANIAN = "Albanês"
+ARABIC_101 = "Árabe (101)"
+ARABIC_102 = "Árabe (102)"
+ARABIC_102_AZERTY = "Árabe (102) AZERTY"
+ARMENIAN_EASTERN = "Arménio oriental"
+ARMENIAN_WESTERN = "Arménio ocidental"
+ASSAMESE = "Asamês"
+AZERI_CYRILLIC = "Azerí cirílico"
+AZERI_LATIN = "Azerí latino"
+BELARUSIAN = "Bielorrusso"
+BELGIAN_DUTCH = "Belga (Holandês)"
+BELGIAN_FRENCH = "Belga (Francês)"
+BENGALI = "Bengalí"
+BENGALI_INSCRIPT = "Bengalí - INSCRIPT"
+BULGARIAN_BDS = "Búlgaro BDS 5237-1978"
+BULGARIAN_PHONETIC = "Búlgaro fonético clássico"
+BULGARIAN_PHONETIC_BDS = "Búlgaro fonético BDS 5237-2006"
+BURMESE = "Birmano"
+CANADIAN_FRENCH = "Francês canadense (Herdado)"
+CANADIAN_MULTILINGUAL = "Canadense estandarte multilingüe"
+CROATIAN = "Croata"
+CZECH = "Checo"
+CZECH_QWERTY = "Checo (QWERTY)"
+DANISH = "Danês"
+DEVANAGARI = "Devanagari - INSCRIPT"
+DUTCH = "Holandês"
+ESPERANTO = "Esperanto"
+ESTONIAN = "Estonio"
+GERMAN_ERGO = "Alemão (de_ergo)"
+GERMAN_NEO = "Alemão (NEO-1.1)"
+GERMAN_RISTOME = "Alemão (RISTOME)"
+GERMAN = "Alemão"
+GREEK = "Grêgo"
+GUJARATI = "Gujarati"
+IRISH = "Irlandês"
+FAEROESE = "Faeroese"
+FINNISH = "Finês"
+FRENCH = "Francês"
+GEORGIAN = "Georgiano"
+HEBREW = "Hebreu"
+HUNGARIAN = "Húngaro"
+ICELANDIC = "Islandês"
+ITALIAN = "Italiano"
+JAPANESE = "Japonês"
+KAZAKH = "Kazajo"
+KOREAN = "Coreano"
+LATIN_AMERICAN = "Espanhol (America Latina)"
+LATVIAN = "Letão"
+LATVIAN_QWERTY = "Letão (QWERTY)"
+LITHUANIAN = "Lituano"
+MACEDONIAN = "Macedonia (FYRO)"
+MALAYALAM = "Malabari"
+NORWEGIAN = "Norueguês"
+POLISH_214 = "Polaco (214)"
+POLISH_PROGRAMMERS = "Polaco (Programmers)"
+PORTUGESE = "Português (Portugal)"
+PORTUGESE_BRAZILIAN = "Português (Brasil ABNT2)"
+ROMANIAN_LEGACY = "Romano (Legacy)"
+ROMANIAN_STANDARD = "Romano (Standard)"
+RUSSIAN = "Russo"
+RUSSIAN_TYPEWRITER = "Russo (Máquina de escrever)"
+SERBIAN_CYRILLIC = "Sérvio (Cirílico)"
+SERBIAN_LATIN = "Sérvio (Latin)"
+SLOVAK = "Eslovaco"
+SLOVAK_QWERTY = "Eslovaco (QWERTY)"
+SPANISH = "Espanhol"
+SWEDISH = "Sueco"
+SWISS_FRENCH = "Suiço (Francês)"
+SWISS_GERMAN = "Suiço (Alemão)"
+TATAR = "Tártaro"
+THAI_KEDMANEE = "Tailandês Kedmanee"
+THAI_KEDMANEE_NON_SHIFTLOCK = "Tailandês Kedmanee (sin-BloqMayus)"
+THAI_PATTACHOTE = "Tailandês Pattachote"
+THAI_PATTACHOTE_NON_SHIFTLOCK = "Tailandês Pattachote (sin-BloqMayus)"
+TURKISH_Q = "Turco Q"
+TURKISH_F = "Turco F"
+UK = "Reino Unido"
+UKRAINIAN = "Ucraniano"
+UKRAINIAN_STUDENT = "Ucraniano (Estudantil)"
+US = "Estados Unidos"
+US_ARABIC = "Inglês EEUU (IBM Arabic 238_L)"
+US_DVORAK = "EEUU-Dvorak"
+US_DVORAK_LEFT = "EEUU Dvorak para surdos"
+US_DVORAK_RIGHT = "EEUU Dvorak para destros"
+US_INTERNATIONAL = "EEUU Internacional"
+UZBEK_CYRILLIC = "Uzbek (Cyrillic)"
+VIETNAMESE = "Vietnamita"
+
+; LANG_ROMANIAN SUBLANG_NEUTRAL
+[Strings.0018]
+
+; Services names and descriptions
+AUDIO_SERVICE="Serviciu audio"
+AUDIO_SERVICE_DESCRIPTION="Oferă aplicațiilor funcționalități audio."
+
+BITS_SERVICE="Serviciu de transfer inteligent în fundal"
+BITS_SERVICE_DESCRIPTION="Transferă fișiere în fundal utilizând lățimea de bandă nefolosită a rețelei."
+
+DCOMLAUNCH_SERVICE="DcomLaunch service"
+DCOMLAUNCH_SERVICE_DESCRIPTION="DcomLaunch service stub."
+
+EVENTLOG_SERVICE="Jurnal de evenimente"
+EVENTLOG_SERVICE_DESCRIPTION="Jurnalizează mesajele sau evenimentele transmise de sistemul de operare într-o bază de date accesibilă cu instrumentul „observator de evenimente”."
+
+MSISERVER_SERVICE="Instalare ReactOS"
+MSISERVER_SERVICE_DESCRIPTION="Controlează instalarea, mentenanța, și eliminarea de programe de instalare MSI (Windows Installer)."
+
+NETLOGON_SERVICE="Autentificare în rețea"
+NETLOGON_SERVICE_DESCRIPTION="Stabilește un canal securizat către un controlor de domentiu pentru autentificarea domeniului."
+
+PLUGPLAY_SERVICE="Plug and Play"
+PLUGPLAY_SERVICE_DESCRIPTION="Detectează schimbările în configurația fizică și instalează programele necesare dacă este posibil."
+
+RPCSS_SERVICE="Apel procedural la distanță"
+RPCSS_SERVICE_DESCRIPTION="Subsistemul responsabil pentru apel procedural la distanță în calculatorul local."
+
+SAMSS_SERVICE="Security Accounts Manager"
+SAMSS_SERVICE_DESCRIPTION="The startup of this service signals other services that the Security Accounts Manager (SAM) is ready to accept requests.  Disabling this service will prevent other services in the system from being notified when the SAM is ready, which may in turn cause those services to fail to start correctly.  This service should not be disabled."
+
+SCHEDULE_SERVICE="Serviciu de planificare"
+SCHEDULE_SERVICE_DESCRIPTION="Permite pornirea de programe la o anumită oră."
+
+SECLOGON_SERVICE="Secondary Logon"
+SECLOGON_SERVICE_DESCRIPTION="Allows to start processes under alternative credentials."
+
+SERVER_SERVICE="Server"
+SERVER_SERVICE_DESCRIPTION="Permite partajarea în rețea a fișierelor, imprimantelor și a altor resurse."
+
+SPOOLER_SERVICE="Coadă de imprimare"
+SPOOLER_SERVICE_DESCRIPTION="Încarcă fișierele în memorie pentru imprimare ulterioară."
+
+TCPSVCS_SERVICE="Servicii TCP/IP simple"
+TCPSVCS_SERVICE_DECRIPTION="Permite următoarele servicii (protocoale) TCP/IP: Chargen, Daytime, Discard, Echo, QOTD."
+
+TELNETD_SERVICE="Serviciu Telnet"
+TELNETD_SERVICE_DESCRIPTION="Serviciul Telnet al ReactOS."
+
+THEMES_SERVICE="Teme"
+THEMES_SERVICE_DESCRIPTION="Permite teme pentru interfața grafică de utilizare."
+
+WINMGMT_SERVICE="Infrastructură de gestiune"
+WINMGMT_SERVICE_DESCRIPTION="Furnizează interfața pentru informațiile de gestiune ale sistemului."
+
+WLANSVC_SERVICE="Serviciu WLAN"
+WLANSVC_SERVICE_DESCRIPTION="Serviciu pentru rețele locale fără fir."
+
+WORKSTATION_SERVICE="Stație de lucru"
+WORKSTATION_SERVICE_DESCRIPTION="Serviciu responsabil pentru crearea și menținerea conexiunilor la servere în rețea."
+
+WUAUSERV_SERVICE="Automatic Updates"
+WUAUSERV_SERVICE_DESCRIPTION="AutoUpdate Service stub."
+
+; Keyboard layouts
+ALBANIAN = "Albaneză"
+ARABIC_101 = "Arabă (101)"
+ARABIC_102 = "Arabă (102)"
+ARABIC_102_AZERTY = "Arabă (102) AZERTY"
+ARMENIAN_EASTERN = "Armeană Estică"
+ARMENIAN_WESTERN = "Armeană Vestică"
+ASSAMESE = "Assameză - INSCRIPT"
+AZERI_CYRILLIC = "Azeră alfabet chirilic"
+AZERI_LATIN = "Azeră alfabet latin"
+BELARUSIAN = "Belarusă"
+BELGIAN_DUTCH = "Belgiană (Olandeză)"
+BELGIAN_FRENCH = "Belgiană (Franceză)"
+BENGALI = "Bengaleză"
+BENGALI_INSCRIPT = "Bengaleză - INSCRIPT"
+BULGARIAN_BDS = "Bulgară BDS 5237-1978"
+BULGARIAN_PHONETIC = "Bulgară, fonetică clasică"
+BULGARIAN_PHONETIC_BDS = "Bulgară, fonetică BDS 5237-2006"
+BURMESE = "Birmană"
+CANADIAN_FRENCH = "Canadiană Franceză (moștenire)"
+CANADIAN_MULTILINGUAL = "Canadiană Multilingvă Standard"
+CROATIAN = "Croată"
+CZECH = "Cehă"
+CZECH_QWERTY = "Cehă (QWERTY)"
+DANISH = "Daneză"
+DEVANAGARI = "Devanagari - INSCRIPT"
+DUTCH = "Olandeză"
+ESPERANTO = "Esperanto"
+ESTONIAN = "Estonă"
+GERMAN_ERGO = "Germană (de_ergo)"
+GERMAN_NEO = "Germană (NEO-1.1)"
+GERMAN_RISTOME = "Germană (RISTOME)"
+GERMAN = "Germană"
+GREEK = "Greacă"
+GUJARATI = "Gujarati"
+IRISH = "Irlandeză"
+FAEROESE = "Faeroese"
+FINNISH = "Finlandeză"
+FRENCH = "Franceză"
+GEORGIAN = "Georgiană"
+HEBREW = "Abraică"
+HUNGARIAN = "Maghiară"
+ICELANDIC = "Islandeză"
+ITALIAN = "Italiană"
+JAPANESE = "Japoneză"
+KAZAKH = "Kazahă"
+KOREAN = "Coreeană"
+LATIN_AMERICAN = "Iberoamericană"
+LATVIAN = "Letonă"
+LATVIAN_QWERTY = "Letonă (QWERTY)"
+LITHUANIAN = "Lituaniană"
+MACEDONIAN = "Macedonă (FYRO)"
+MALAYALAM = "Malayalam"
+NORWEGIAN = "Norvegiană"
+POLISH_214 = "Poloneză (214)"
+POLISH_PROGRAMMERS = "Poloneză (programatori)"
+PORTUGESE = "Portugheză (Portugalia)"
+PORTUGESE_BRAZILIAN = "Portugheză (Braziliană ABNT2)"
+ROMANIAN_LEGACY = "Română (moștenire)"
+ROMANIAN_STANDARD = "Română (standard)"
+RUSSIAN = "Rusă"
+RUSSIAN_TYPEWRITER = "Rusă (dactilografiere)"
+SERBIAN_CYRILLIC = "Sârbă (alfabet chirilic)"
+SERBIAN_LATIN = "Sârbă (alfabet latin)"
+SLOVAK = "Slovacă"
+SLOVAK_QWERTY = "Slovacă (QWERTY)"
+SPANISH = "Spaniolă"
+SWEDISH = "Suedeză"
+SWISS_FRENCH = "Elvețiană (Franceză)"
+SWISS_GERMAN = "Elvețiană (Germană)"
+TATAR = "Tatară"
+THAI_KEDMANEE = "Thai Kedmanee"
+THAI_KEDMANEE_NON_SHIFTLOCK = "Thai Kedmanee (non-ShiftLock)"
+THAI_PATTACHOTE = "Thai Pattachote"
+THAI_PATTACHOTE_NON_SHIFTLOCK = "Thai Pattachote (non-ShiftLock)"
+TURKISH_Q = "Turcă Q"
+TURKISH_F = "Turcă F"
+UK = "Britanică"
+UKRAINIAN = "Ukraineană"
+UKRAINIAN_STUDENT = "Ukraineană (studențească)"
+US = "Statele Unite"
+US_ARABIC = "Engleză SUA (IBM Arabic 238_L)"
+US_DVORAK = "Dvorak SUA"
+US_DVORAK_LEFT = "Dvorak SUA pentru mâna stângă"
+US_DVORAK_RIGHT = "Dvorak SUA pentru mâna dreaptă"
+US_INTERNATIONAL = "SUA internațională"
+UZBEK_CYRILLIC = "Uzbecă (alfabet chirilic)"
+VIETNAMESE = "Vietnameză"
+
+; LANG_RUSSIAN SUBLANG_NEUTRAL
+[Strings.0019]
+
+; Services names and descriptions
+AUDIO_SERVICE="Звук и аудио"
+AUDIO_SERVICE_DESCRIPTION="Обеспечивает звуковыми устройствами программы."
+
+BITS_SERVICE="Фоновая интеллектуальная служба передачи (BITS)"
+BITS_SERVICE_DESCRIPTION="Обеспечивает передачу данных между клиентами и серверами в фоновом режиме с использованием пропускной способности простаивающей сети."
+
+BROWSER_SERVICE="Обозреватель компьютеров"
+BROWSER_SERVICE_DESCRIPTION="Обслуживает список компьютеров в сети и выдает его программам по запросу."
+
+DCOMLAUNCH_SERVICE="DcomLaunch service"
+DCOMLAUNCH_SERVICE_DESCRIPTION="DcomLaunch service stub."
+
+EVENTLOG_SERVICE="Журнал событий"
+EVENTLOG_SERVICE_DESCRIPTION="Регистрирует события или сообщения, отправленные операционной системой в базе данных, доступной через средство просмотра журнала событий."
+
+MSISERVER_SERVICE="Установщик ReactOS"
+MSISERVER_SERVICE_DESCRIPTION="Управляет установкой, изменением и удалением программ, упакованных в MSI (установщик Windows)."
+
+NETLOGON_SERVICE="Сетевой вход в систему"
+NETLOGON_SERVICE_DESCRIPTION="Устанавливает безопасный канал связи с контроллером домена для проверки его подлинности."
+
+PLUGPLAY_SERVICE="Plug and Play"
+PLUGPLAY_SERVICE_DESCRIPTION="Обнаруживает изменения оборудования и по возможности устанавливает необходимое программное обеспечение."
+
+RPCSS_SERVICE="Удаленный вызов процедур (RPC)"
+RPCSS_SERVICE_DESCRIPTION="Подсистема для вызова удаленных процедур на локальной машине."
+
+SAMSS_SERVICE="Security Accounts Manager"
+SAMSS_SERVICE_DESCRIPTION="The startup of this service signals other services that the Security Accounts Manager (SAM) is ready to accept requests.  Disabling this service will prevent other services in the system from being notified when the SAM is ready, which may in turn cause those services to fail to start correctly.  This service should not be disabled."
+
+SCHEDULE_SERVICE="Планировщик заданий"
+SCHEDULE_SERVICE_DESCRIPTION="Позволяет запускать программы в определенное время."
+
+SECLOGON_SERVICE="Вторичный вход в систему"
+SECLOGON_SERVICE_DESCRIPTION="Позволяет запускать процессы под другими учётными данными."
+
+SERVER_SERVICE="Сервер"
+SERVER_SERVICE_DESCRIPTION="Поддержка совместного использования файлов, принтеров и ресурсов в сети."
+
+SPOOLER_SERVICE="Диспетчер очереди печати"
+SPOOLER_SERVICE_DESCRIPTION="Загружает файлы в память для последующей печати."
+
+TCPSVCS_SERVICE="Простые службы TCP/IP"
+TCPSVCS_SERVICE_DECRIPTION="Поддержка следующих служб TCP/IP: Chargen, Daytime, Discard, Echo, QOTD."
+
+TELNETD_SERVICE="ReactOS Telnet Service"
+TELNETD_SERVICE_DESCRIPTION="ReactOS Telnet Service"
+
+THEMES_SERVICE="Темы"
+THEMES_SERVICE_DESCRIPTION="Поддержка тем оформления."
+
+WINMGMT_SERVICE="Инструментарий управления ReactOS"
+WINMGMT_SERVICE_DESCRIPTION="Предоставляет общий интерфейс для доступа к информации об управлении операционной системой."
+
+WLANSVC_SERVICE="Беспроводная локальная сеть (WLAN)"
+WLANSVC_SERVICE_DESCRIPTION="Обеспечивает поддержку беспроводной сети."
+
+WORKSTATION_SERVICE="Рабочая станция"
+WORKSTATION_SERVICE_DESCRIPTION="Обеспечивает поддержку сетевых подключений и связь."
+
+WUAUSERV_SERVICE="Automatic Updates"
+WUAUSERV_SERVICE_DESCRIPTION="AutoUpdate Service stub."
+
+; Keyboard layouts
+ALBANIAN = "Албанская"
+ARABIC_101 = "Арабская (101)"
+ARABIC_102 = "Арабская (102)"
+ARABIC_102_AZERTY = "Арабская (102) AZERTY"
+ARMENIAN_EASTERN = "Армянская восточная"
+ARMENIAN_WESTERN = "Армянская западная"
+ASSAMESE = "Ассамская - инскрипт"
+AZERI_CYRILLIC = "Азербайджанская (кир)"
+AZERI_LATIN = "Азербайджанская (лат)"
+BELARUSIAN = "Белорусская"
+BELGIAN_DUTCH = "Бельгийская (голландская)"
+BELGIAN_FRENCH = "Бельгийская (французская)"
+BENGALI = "Бенгальская"
+BENGALI_INSCRIPT = "Бенгальская - инскрипт"
+BULGARIAN_BDS = "Болгарская (BDS 5237-1978)"
+BULGARIAN_PHONETIC = "Болгарская фонетическая (классическая)"
+BULGARIAN_PHONETIC_BDS = "Болгарская фонетическая (BDS 5237-2006)"
+BURMESE = "Бирманская"
+CANADIAN_FRENCH = "Канадская (французская традиционная)"
+CANADIAN_MULTILINGUAL = "Канадская стандартная (многоязычная)"
+CROATIAN = "Хорватская"
+CZECH = "Чешская"
+CZECH_QWERTY = "Чешская (QWERTY)"
+DANISH = "Датская"
+DEVANAGARI = "Деванагари - инскрипт"
+DUTCH = "Голландская"
+ESPERANTO = "Эсперанто"
+ESTONIAN = "Эстонская"
+GERMAN_ERGO = "Немецкая (de_ergo)"
+GERMAN_NEO = "Немецкая (NEO-1.1)"
+GERMAN_RISTOME = "Немецкая (RISTOME)"
+GERMAN = "Немецкая"
+GREEK = "Греческая"
+GUJARATI = "Гуджарати"
+IRISH = "Ирландская"
+FAEROESE = "Фарерская"
+FINNISH = "Финская"
+FRENCH = "Французская"
+GEORGIAN = "Грузинская"
+HEBREW = "Иврит"
+HUNGARIAN = "Венгерская"
+ICELANDIC = "Исландская"
+ITALIAN = "Итальянская"
+JAPANESE = "Японская"
+KAZAKH = "Казахская"
+KOREAN = "Корейская"
+LATIN_AMERICAN = "Латиноамериканская"
+LATVIAN = "Латышская"
+LATVIAN_QWERTY = "Латышская (QWERTY)"
+LITHUANIAN = "Литовская"
+MACEDONIAN = "Македонская (FYROM)"
+MALAYALAM = "Малаялам"
+NORWEGIAN = "Норвежская"
+POLISH_214 = "Польская (214)"
+POLISH_PROGRAMMERS = "Польская (программистская)"
+PORTUGESE = "Португальская (Португалия)"
+PORTUGESE_BRAZILIAN = "Португальская (Бразилия ABNT2)"
+ROMANIAN_LEGACY = "Румынская (традиционная)"
+ROMANIAN_STANDARD = "Румынская (стандартная)"
+RUSSIAN = "Русская"
+RUSSIAN_TYPEWRITER = "Русская (машинопись)"
+SERBIAN_CYRILLIC = "Сербская (кириллица)"
+SERBIAN_LATIN = "Сербская (латиница)"
+SLOVAK = "Словацкая"
+SLOVAK_QWERTY = "Словацкая (QWERTY)"
+SPANISH = "Испанская"
+SWEDISH = "Шведская"
+SWISS_FRENCH = "Швейцарская французская"
+SWISS_GERMAN = "Швейцарская немецкая"
+TATAR = "Татарская"
+THAI_KEDMANEE = "Тайская Кедмани"
+THAI_KEDMANEE_NON_SHIFTLOCK = "Тайская Кедмани (без ShiftLock)"
+THAI_PATTACHOTE = "Тайская Паташот"
+THAI_PATTACHOTE_NON_SHIFTLOCK = "Тайская Паташот (без ShiftLock)"
+TURKISH_Q = "Турецкая Q"
+TURKISH_F = "Турецкая F"
+UK = "Британская"
+UKRAINIAN = "Украинская"
+UKRAINIAN_STUDENT = "Украинская (студенческая)"
+US = "США"
+US_ARABIC = "США английская табличная для IBM арабского 238_L"
+US_DVORAK = "США - по Двораку"
+US_DVORAK_LEFT = "США - по Двораку для левой руки"
+US_DVORAK_RIGHT = "США - по Двораку для правой руки"
+US_INTERNATIONAL = "США - международная"
+UZBEK_CYRILLIC = "Узбекская кириллица"
+VIETNAMESE = "Вьетнамская"
+
+; LANG_TURKISH SUBLANG_NEUTRAL
+[Strings.041F]
+
+; Services names and descriptions
+AUDIO_SERVICE="Ses Hizmeti"
+AUDIO_SERVICE_DESCRIPTION="Uygulamalara ses bileşenlerini sağlar."
+
+BITS_SERVICE="Arka Plan Akıllı Aktarım Hizmeti"
+BITS_SERVICE_DESCRIPTION="Boştaki ağ bant genişliğini kullanarak, arka planda dosyaları aktarır."
+
+BROWSER_SERVICE="Bilgisayar Tarayıcısı"
+BROWSER_SERVICE_DESCRIPTION="Ağdaki bilgisayarların güncel listesini tutar ve bu listeyi tarayıcı bilgisayarlara sunar."
+
+DCOMLAUNCH_SERVICE="DcomLaunch hizmeti"
+DCOMLAUNCH_SERVICE_DESCRIPTION="DcomLaunch hizmetinin taslağı."
+
+EVENTLOG_SERVICE="Olay Günlüğü"
+EVENTLOG_SERVICE_DESCRIPTION="İşletim sisteminin gönderdiği olayları veya iletileri, olay görüntüsü ile erişilebilen bir veritabanına kaydeder."
+
+MSISERVER_SERVICE="ReactOS Yükleyicisi"
+MSISERVER_SERVICE_DESCRIPTION="MSI (Windows Yükleyicisi) olarak paketlenmiş yazılımların yüklenmesini, bakımını ve kaldırılmasını denetler."
+
+NETLOGON_SERVICE="Ağda Oturum Açma"
+NETLOGON_SERVICE_DESCRIPTION="Etki alanı yetkilendirmesi için, bir etki alanı denetleyicisine güvenli bir kanal açar."
+
+PLUGPLAY_SERVICE="Tak ve Çalıştır"
+PLUGPLAY_SERVICE_DESCRIPTION="Donanım değişiklikleri algılar ve mümkünse gereken yazılımı yükler."
+
+RPCSS_SERVICE="Uzak Yordam Çağrıları"
+RPCSS_SERVICE_DESCRIPTION="Yerel makinedeki Uzak Yordam Çağrılarından sorumlu RPC altsistemi."
+
+SAMSS_SERVICE="Güvenlik Hesapları Yöneticisi"
+SAMSS_SERVICE_DESCRIPTION="Bu hizmetin başlaması, diğer hizmetlere Güvenlik Hesapları Yöneticisi'nin (SAM) istekleri kabul etmeye hazır olduğunu bildirir. Bu hizmeti devre dışı bırakmak, sistemdeki diğer hizmetlere SAM'ın başladığının bildirilmesini engeller, bu da bazı hizmetlerin düzgün başlatılamamasına yol açabilir. Bu hizmet devre dışı bırakılmamalıdır."
+
+SCHEDULE_SERVICE="Zamanlayıcı hizmeti"
+SCHEDULE_SERVICE_DESCRIPTION="Programların belirli zamanlarda başlatılmasını sağlar."
+
+SECLOGON_SERVICE="Secondary Logon"
+SECLOGON_SERVICE_DESCRIPTION="Allows to start processes under alternative credentials."
+
+SERVER_SERVICE="Sunucu"
+SERVER_SERVICE_DESCRIPTION="Ağda dosya, yazıcı ve kaynakların paylaşımını destekler."
+
+SPOOLER_SERVICE="Yazıcı Kuyruğu"
+SPOOLER_SERVICE_DESCRIPTION="Dosyaları, sonra yazdırılması için belleğe yükler."
+
+TCPSVCS_SERVICE="Basit TCP/IP Hizmetleri"
+TCPSVCS_SERVICE_DECRIPTION="Şu TCP/IP hizmetlerini destekler: Güçlendirme, Günışığı, Kesme, Yankı ve QOTD."
+
+TELNETD_SERVICE="ReactOS Telnet Hizmeti"
+TELNETD_SERVICE_DESCRIPTION="ReactOS Telnet Hizmeti"
+
+THEMES_SERVICE="Temalar"
+THEMES_SERVICE_DESCRIPTION="Tema desteği"
+
+WINMGMT_SERVICE="ReactOS Yönetim Altyapısı"
+WINMGMT_SERVICE_DESCRIPTION="Sistem yönetim bilgisine arayüz sağlar."
+
+WLANSVC_SERVICE="WLAN Hizmeti"
+WLANSVC_SERVICE_DESCRIPTION="WLAN Hizmeti"
+
+WORKSTATION_SERVICE="İş İstasyonu"
+WORKSTATION_SERVICE_DESCRIPTION="Sunuculara ağ bağlantılarını oluşturmaktan ve yönetmekten sorumludur."
+
+WUAUSERV_SERVICE="Otomatik Güncelleştirmeler"
+WUAUSERV_SERVICE_DESCRIPTION="Otomatik Güncelleştirme Hizmeti taslağı."
+
+; Keyboard layouts
+ALBANIAN = "Arnavutça"
+ARABIC_101 = "Arapça (101)"
+ARABIC_102 = "Arapça (102)"
+ARABIC_102_AZERTY = "Arapça (102) AZERTY"
+ARMENIAN_EASTERN = "Doğu Ermenice"
+ARMENIAN_WESTERN = "Batı Ermenice"
+ASSAMESE = "ASSAM DİLİ - INSCRIPT"
+AZERI_CYRILLIC = "Azerbaycan dili (Kiril)"
+AZERI_LATIN = "Azerbaycan dili (Latin)"
+BELARUSIAN = "Belarusça"
+BELGIAN_DUTCH = "Felemenkçe (Hollanda)"
+BELGIAN_FRENCH = "Felemenkçe (Fransa)"
+BENGALI = "Bengalce"
+BENGALI_INSCRIPT = "Bengalce - INSCRIPT"
+BULGARIAN_BDS = "Bulgarca BDS 5237-1978"
+BULGARIAN_PHONETIC = "Bulgarca klasik fonetik"
+BULGARIAN_PHONETIC_BDS = "Bulgarca fonetik BDS 5237-2006"
+BURMESE = "Burma dili"
+CANADIAN_FRENCH = "Kanada Fransızcası (Eski)"
+CANADIAN_MULTILINGUAL = "Kanada Çok Dilli Standardı"
+CROATIAN = "Hırvatça"
+CZECH = "Çekçe"
+CZECH_QWERTY = "Çekçe (QWERTY)"
+DANISH = "Danca"
+DEVANAGARI = "Devanagari - INSCRIPT"
+DUTCH = "Hollandaca"
+ESPERANTO = "Esperanto"
+ESTONIAN = "Estonca"
+GERMAN_ERGO = "Almanca (de_ergo)"
+GERMAN_NEO = "Almanca (NEO-1.1)"
+GERMAN_RISTOME = "Almanca (RISTOME)"
+GERMAN = "Almanca"
+GREEK = "Yunanca"
+GUJARATI = "Gucerat dili"
+IRISH = "İrlandaca"
+FAEROESE = "Faroe dili"
+FINNISH = "Fince"
+FRENCH = "Fransızca"
+GEORGIAN = "Gürcüce"
+HEBREW = "İbranice"
+HUNGARIAN = "Macarca"
+ICELANDIC = "İzlandaca"
+ITALIAN = "İtalyanca"
+JAPANESE = "Japonca"
+KAZAKH = "Kazakça"
+KOREAN = "Korece"
+LATIN_AMERICAN = "Latin Amerikanca"
+LATVIAN = "Letonca"
+LATVIAN_QWERTY = "Letonca (QWERTY)"
+LITHUANIAN = "Litvcanyaca"
+MACEDONIAN = "Makedonca (FYRO)"
+MALAYALAM = "Malayalam"
+NORWEGIAN = "Norveççe"
+POLISH_214 = "Polonezce (214)"
+POLISH_PROGRAMMERS = "Polonezce (Programcılar)"
+PORTUGESE = "Portekizce (Portekiz)"
+PORTUGESE_BRAZILIAN = "Portekizce (Brezilya ABNT2)"
+ROMANIAN_LEGACY = "Rumence (Eski)"
+ROMANIAN_STANDARD = "Rumence (Standart)"
+RUSSIAN = "Rusça"
+RUSSIAN_TYPEWRITER = "Rusça (Daktilo)"
+SERBIAN_CYRILLIC = "Sırpça (Kiril)"
+SERBIAN_LATIN = "Sırpça (Latin)"
+SLOVAK = "Slovakça"
+SLOVAK_QWERTY = "Slovakça (QWERTY)"
+SPANISH = "İspanyolca"
+SWEDISH = "İsveççe"
+SWISS_FRENCH = "İsviçre (Fransızca)"
+SWISS_GERMAN = "Swiss (Almanca)"
+TATAR = "Tatarca"
+THAI_KEDMANEE = "Tay dili Kedmanee"
+THAI_KEDMANEE_NON_SHIFTLOCK = "Tayca Kedmanee (Shift kilitsiz)"
+THAI_PATTACHOTE = "Tay dili Pattachote"
+THAI_PATTACHOTE_NON_SHIFTLOCK = "Thai Pattachote (Shift kilitsiz)"
+TURKISH_Q = "Türkçe Q"
+TURKISH_F = "Türkçe F"
+UK = "Birleşik Krallık"
+UKRAINIAN = "Ukraynaca"
+UKRAINIAN_STUDENT = "Ukraynaca (Öğrenci)"
+US = "Amerika Birleşik Devletleri"
+US_ARABIC = "ABD İngilizcesi (IBM Arapça 238_L)"
+US_DVORAK = "ABD-Dvorak"
+US_DVORAK_LEFT = "ABD Dvorak, sol el için"
+US_DVORAK_RIGHT = "ABD Dvorak, sağ el için"
+US_INTERNATIONAL = "ABD Uluslararası"
+UZBEK_CYRILLIC = "Özbekçe (Kiril)"
+VIETNAMESE = "Vietnamca"
+
+; EOF
