@@ -1,0 +1,3 @@
+repo: https://github.com/reactos/reactos
+commit: 8d520f3c27ad0f8a2836c092dfdf6787c6598c0c
+branch: master
