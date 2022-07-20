@@ -641,12 +641,15 @@ IoInitSystem(IN PLOADER_PARAMETER_BLOCK LoaderBlock)
     }
 
     /* Load the System DLL and its Entrypoints */
+
+#ifndef __REACTOS__ // [miniros]
     Status = PsLocateSystemDll();
     if (!NT_SUCCESS(Status))
     {
         DPRINT1("PsLocateSystemDll failed: %lx\n", Status);
         return FALSE;
     }
+#endif
 
     /* Return success */
     return TRUE;
