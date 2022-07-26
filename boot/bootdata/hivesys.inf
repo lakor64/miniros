@@ -1566,6 +1566,8 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","ObUnsecureGlobal
 ; [miniros]
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","SysDll",0x00020000,"\SystemRoot\lib\ntdll.dll"
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","UserInit",0x00020000,"\SystemRoot\sbin\smss.exe"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","ForwardManifest",0x00020000,"\etc\manifests\forwardcompatible.manifest"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","SystemManifest",0x00020000,"\etc\manifests\systemcompatible.manifest"
 
 ; WOW Support
 HKLM,"SYSTEM\CurrentControlSet\Control\WOW",,0x00000012

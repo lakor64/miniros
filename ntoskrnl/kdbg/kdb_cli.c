@@ -3843,7 +3843,7 @@ KdbpCliInit(VOID)
     ULONG OldEflags;
 
     /* Initialize the object attributes */
-    RtlInitUnicodeString(&FileName, L"\\SystemRoot\\System32\\drivers\\etc\\KDBinit");
+    RtlInitUnicodeString(&FileName, L"\\SystemRoot\\etc\\KDBinit");
     InitializeObjectAttributes(&ObjectAttributes,
                                &FileName,
                                OBJ_CASE_INSENSITIVE | OBJ_KERNEL_HANDLE,
