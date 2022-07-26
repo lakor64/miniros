@@ -2,7 +2,7 @@
 [AddReg]
 HKLM,"SYSTEM\CurrentControlSet\Services\kbdclass","ErrorControl",0x00010001,0x00000000
 HKLM,"SYSTEM\CurrentControlSet\Services\kbdclass","Group",0x00000000,"Keyboard Class"
-HKLM,"SYSTEM\CurrentControlSet\Services\kbdclass","ImagePath",0x00020000,"system32\drivers\kbdclass.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\kbdclass","ImagePath",0x00020000,"boot\drivers\kbdclass.sys"
 HKLM,"SYSTEM\CurrentControlSet\Services\kbdclass","Start",0x00010001,0x00000001
 HKLM,"SYSTEM\CurrentControlSet\Services\kbdclass","Type",0x00010001,0x00000001
 HKLM,"SYSTEM\CurrentControlSet\Services\kbdclass\Parameters","ConnectMultiplePorts",0x00010001,1

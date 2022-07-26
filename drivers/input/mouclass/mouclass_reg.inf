@@ -2,7 +2,7 @@
 [AddReg]
 HKLM,"SYSTEM\CurrentControlSet\Services\mouclass","ErrorControl",0x00010001,0x00000000
 HKLM,"SYSTEM\CurrentControlSet\Services\mouclass","Group",0x00000000,"Pointer Class"
-HKLM,"SYSTEM\CurrentControlSet\Services\mouclass","ImagePath",0x00020000,"system32\drivers\mouclass.sys"
+HKLM,"SYSTEM\CurrentControlSet\Services\mouclass","ImagePath",0x00020000,"boot\drivers\mouclass.sys"
 HKLM,"SYSTEM\CurrentControlSet\Services\mouclass","Start",0x00010001,0x00000001
 HKLM,"SYSTEM\CurrentControlSet\Services\mouclass","Type",0x00010001,0x00000001
 HKLM,"SYSTEM\CurrentControlSet\Services\mouclass\Parameters","ConnectMultiplePorts",0x00010001,1
