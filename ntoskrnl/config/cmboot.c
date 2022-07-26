@@ -13,6 +13,9 @@
 
 #include <ntoskrnl.h>
 
+#include <reactos/debug.h>
+#undef UNIMPLEMENTED
+
 #define NDEBUG
 #include <debug.h>
 

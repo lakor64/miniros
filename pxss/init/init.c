@@ -7,6 +7,8 @@ _main(IN INT argc,
       IN PCHAR envp[],
       IN ULONG DebugFlag)
 {
+    DPRINT1("smss init start\n");
+
     while (1);
     return STATUS_SUCCESS;
 }

@@ -874,6 +874,7 @@ CmpInitializeSystemHive(IN PLOADER_PARAMETER_BLOCK LoaderBlock)
     PCMHIVE SystemHive = NULL;
     PSECURITY_DESCRIPTOR SecurityDescriptor;
     BOOLEAN Success;
+	WCHAR SystemHivePath[MAX_WIN32_PATH];
 
     PAGED_CODE();
 
@@ -920,9 +921,15 @@ CmpInitializeSystemHive(IN PLOADER_PARAMETER_BLOCK LoaderBlock)
         return FALSE;
     }
 
+	DPRINT1("################### REGHIVE INIT %S\n", LoaderBlock->NtHivePathName);
+
     /* Set the hive filename */
-    Success = RtlCreateUnicodeString(&SystemHive->FileFullPath,
-                                     L"\\SystemRoot\\System32\\Config\\SYSTEM");
+
+	RtlStringCbCopyW(SystemHivePath, sizeof(SystemHivePath), LoaderBlock->NtHivePathName);
+	/* should result in eg:\\SystemRoot\\boot\\hive\\SYSTEM */
+	RtlStringCbCatW(SystemHivePath, sizeof(SystemHivePath), L"SYSTEM");
+
+	Success = RtlCreateUnicodeString(&SystemHive->FileFullPath, SystemHivePath);
     if (!Success)
     {
         return FALSE;
@@ -1169,20 +1176,8 @@ CmpCreateRegistryRoot(VOID)
 static PCWSTR
 CmpGetRegistryPath(VOID)
 {
-    PCWSTR ConfigPath;
-
-    /* Check if we are booted in setup */
-    if (!ExpInTextModeSetup)
-    {
-        ConfigPath = L"\\SystemRoot\\System32\\Config\\";
-    }
-    else
-    {
-        ConfigPath = L"\\SystemRoot\\";
-    }
-
+    PCWSTR ConfigPath = KeLoaderBlock->NtHivePathName;
     DPRINT1("CmpGetRegistryPath: ConfigPath = '%S'\n", ConfigPath);
-
     return ConfigPath;
 }
 

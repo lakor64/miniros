@@ -22,5 +22,7 @@
 
 #include <ntstrsafe.h>
 
+#include <reactos/debug.h>
+
 #endif
 

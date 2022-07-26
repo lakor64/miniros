@@ -174,7 +174,7 @@ WinLdrInitializePhase1(PLOADER_PARAMETER_BLOCK LoaderBlock,
     LoaderBlock->NtBootPathName = WinLdrSystemBlock->NtBootPathName;
     RtlStringCbCopyA(LoaderBlock->NtBootPathName, sizeof(WinLdrSystemBlock->NtBootPathName), SystemRoot);
     LoaderBlock->NtBootPathName = PaToVa(LoaderBlock->NtBootPathName);
-
+	
     /* Fill NtHalPathName */
     LoaderBlock->NtHalPathName = WinLdrSystemBlock->NtHalPathName;
     RtlStringCbCopyA(LoaderBlock->NtHalPathName, sizeof(WinLdrSystemBlock->NtHalPathName), HalPath);
@@ -603,7 +603,7 @@ BOOLEAN
 LoadWindowsCore(IN USHORT OperatingSystemVersion,
                 IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
                 IN PCSTR BootOptions,
-                IN PCSTR BootPath,
+                IN PCSTR DirPath,
                 IN OUT PLDR_DATA_TABLE_ENTRY* KernelDTE)
 {
     BOOLEAN Success;
@@ -611,16 +611,11 @@ LoadWindowsCore(IN USHORT OperatingSystemVersion,
     ULONG OptionLength;
     PVOID KernelBase, HalBase, KdDllBase = NULL;
     PLDR_DATA_TABLE_ENTRY HalDTE, KdDllDTE = NULL;
-    CHAR DirPath[MAX_PATH];
     CHAR HalFileName[MAX_PATH];
     CHAR KernelFileName[MAX_PATH];
     CHAR KdDllName[MAX_PATH];
 
     if (!KernelDTE) return FALSE;
-
-    /* Initialize SystemRoot\System32 path */
-    RtlStringCbCopyA(DirPath, sizeof(DirPath), BootPath);
-    RtlStringCbCatA(DirPath, sizeof(DirPath), "system32\\");
 
     /* Parse the boot options */
     TRACE("LoadWindowsCore: BootOptions '%s'\n", BootOptions);
@@ -1115,11 +1110,41 @@ LoadAndBootWindows(
 
     /* Load the system hive */
     UiUpdateProgressBar(15, "Loading system hive...");
-    Success = WinLdrInitSystemHive(LoaderBlock, BootPath, FALSE);
+
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "HIVEPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 9))
+    {
+		FileName += 9; FileNameLength -= 9;
+		RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
+		if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+    else
+    {
+        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\config\\");
+    }
+
+    TRACE("HivePath: %s\n", FilePath);
+
+    Success = WinLdrInitSystemHive(LoaderBlock, FilePath, FALSE);
     TRACE("SYSTEM hive %s\n", (Success ? "loaded" : "not loaded"));
     /* Bail out if failure */
     if (!Success)
+	{
         return ENOEXEC;
+	}
+	
+	/* Fill the registry hive path name in loader */
+	LoaderBlock->NtHivePathName = WinLdrSystemBlock->NtHivePathName;
+	Success = RtlMultiByteToUnicodeN(LoaderBlock->NtHivePathName, sizeof(WinLdrSystemBlock->NtHivePathName), NULL, FilePath, strlen(FilePath)+1);
+	if (!NT_SUCCESS(Success))
+	{
+		TRACE("RtlMultiByteToUnicodeN hive convert fail\n");
+		return EINVAL;
+	}
+	LoaderBlock->NtHivePathName = PaToVa(LoaderBlock->NtHivePathName);
 
     /* Fixup the version number using data from the registry */
     if (OperatingSystemVersion == 0)
@@ -1128,21 +1153,63 @@ LoadAndBootWindows(
     LoaderBlock->Extension->MinorVersion = (OperatingSystemVersion & 0xFF);
 
     /* Load NLS data, OEM font, and prepare boot drivers list */
-    Success = WinLdrScanSystemHive(LoaderBlock, BootPath);
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "NLSPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 8))
+    {
+		FileName += 8; FileNameLength -= 8;
+        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
+        if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+    else
+    {
+        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\");
+    }
+
+    Success = WinLdrScanSystemHive(LoaderBlock, FilePath);
     TRACE("SYSTEM hive %s\n", (Success ? "scanned" : "not scanned"));
     /* Bail out if failure */
     if (!Success)
         return ENOEXEC;
 
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "INFPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 8))
+    {
+		FileName += 8; FileNameLength -= 8;
+        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
+        if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+
     /* Load the Firmware Errata file */
-    Success = WinLdrInitErrataInf(LoaderBlock, OperatingSystemVersion, BootPath);
+    Success = WinLdrInitErrataInf(LoaderBlock, OperatingSystemVersion, FilePath);
     TRACE("Firmware Errata file %s\n", (Success ? "loaded" : "not loaded"));
     /* Not necessarily fatal if not found - carry on going */
+
+    RtlStringCbCopyA(FilePath, sizeof(FilePath), BootPath);
+
+    FileName = NtLdrGetOptionEx(BootOptions, "KRNLPATH=", &FileNameLength);
+    if (FileName && (FileNameLength > 9))
+    {
+		FileName += 9; FileNameLength -= 9;
+        RtlStringCbCatNA(FilePath, sizeof(FilePath), FileName, FileNameLength);
+        if (FileName[strlen(FileName) - 1] != '\\')
+            RtlStringCbCatA(FilePath, sizeof(FilePath), "\\");
+    }
+    else
+    {
+        RtlStringCbCatA(FilePath, sizeof(FilePath), "system32\\");
+    }
 
     /* Finish loading */
     return LoadAndBootWindowsCommon(OperatingSystemVersion,
                                     LoaderBlock,
                                     BootOptions,
+                                    FilePath,
                                     BootPath);
 }
 
@@ -1151,15 +1218,15 @@ LoadAndBootWindowsCommon(
     IN USHORT OperatingSystemVersion,
     IN PLOADER_PARAMETER_BLOCK LoaderBlock,
     IN PCSTR BootOptions,
-    IN PCSTR BootPath)
+    IN PCSTR BootPath,
+    IN PCSTR SystemRoot)
 {
     PLOADER_PARAMETER_BLOCK LoaderBlockVA;
     BOOLEAN Success;
     PLDR_DATA_TABLE_ENTRY KernelDTE;
     KERNEL_ENTRY_POINT KiSystemStartup;
-    PCSTR SystemRoot;
 
-    TRACE("LoadAndBootWindowsCommon()\n");
+    TRACE("LoadAndBootWindowsCommon() Core: %s Root: %s\n", BootPath, SystemRoot);
 
     ASSERT(OperatingSystemVersion != 0);
 
@@ -1167,9 +1234,6 @@ LoadAndBootWindowsCommon(
     /* Setup redirection support */
     WinLdrSetupEms(BootOptions);
 #endif
-
-    /* Convert BootPath to SystemRoot */
-    SystemRoot = strstr(BootPath, "\\");
 
     /* Detect hardware */
     UiUpdateProgressBar(20, "Detecting hardware...");
@@ -1205,7 +1269,7 @@ LoadAndBootWindowsCommon(
 
     /* Load boot drivers */
     UiSetProgressBarText("Loading boot drivers...");
-    Success = WinLdrLoadBootDrivers(LoaderBlock, BootPath);
+    Success = WinLdrLoadBootDrivers(LoaderBlock, SystemRoot);
     TRACE("Boot drivers loading %s\n", Success ? "successful" : "failed");
 
     UiSetProgressBarSubset(0, 100);

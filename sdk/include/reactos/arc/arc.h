@@ -519,6 +519,7 @@ typedef struct _LOADER_PARAMETER_BLOCK
         ARM_LOADER_BLOCK Arm;
     } u;
     FIRMWARE_INFORMATION_LOADER_BLOCK FirmwareInformation;
+	PWSTR NtHivePathName; /* arc custom edit for \boot\hive */
 } LOADER_PARAMETER_BLOCK, *PLOADER_PARAMETER_BLOCK;
 
 typedef int CONFIGTYPE;

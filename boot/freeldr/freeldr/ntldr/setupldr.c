@@ -494,6 +494,7 @@ LoadReactOSSetup(
     CHAR FilePath[MAX_PATH];
     CHAR UserBootOptions[256];
     PCSTR BootOptions;
+    PCSTR SystemRoot;
 
     static PCSTR SourcePaths[] =
     {
@@ -810,9 +811,13 @@ LoadReactOSSetup(
 
     UiDrawStatusText("The Setup program is starting...");
 
+    /* Convert BootPath to SystemRoot */
+    SystemRoot = strstr(BootPath, "\\");
+
     /* Finish loading */
     return LoadAndBootWindowsCommon(_WIN32_WINNT_WS03,
                                     LoaderBlock,
                                     BootOptions,
-                                    BootPath);
+                                    BootPath,
+                                    SystemRoot);
 }
