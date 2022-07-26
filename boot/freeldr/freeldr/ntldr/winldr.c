@@ -174,7 +174,7 @@ WinLdrInitializePhase1(PLOADER_PARAMETER_BLOCK LoaderBlock,
     LoaderBlock->NtBootPathName = WinLdrSystemBlock->NtBootPathName;
     RtlStringCbCopyA(LoaderBlock->NtBootPathName, sizeof(WinLdrSystemBlock->NtBootPathName), SystemRoot);
     LoaderBlock->NtBootPathName = PaToVa(LoaderBlock->NtBootPathName);
-	
+
     /* Fill NtHalPathName */
     LoaderBlock->NtHalPathName = WinLdrSystemBlock->NtHalPathName;
     RtlStringCbCopyA(LoaderBlock->NtHalPathName, sizeof(WinLdrSystemBlock->NtHalPathName), HalPath);
@@ -1209,8 +1209,8 @@ LoadAndBootWindows(
     return LoadAndBootWindowsCommon(OperatingSystemVersion,
                                     LoaderBlock,
                                     BootOptions,
-                                    FilePath,
-                                    BootPath);
+                                    BootPath,
+                                    FilePath);
 }
 
 ARC_STATUS
@@ -1219,14 +1219,15 @@ LoadAndBootWindowsCommon(
     IN PLOADER_PARAMETER_BLOCK LoaderBlock,
     IN PCSTR BootOptions,
     IN PCSTR BootPath,
-    IN PCSTR SystemRoot)
+    IN PCSTR KernelPath)
 {
     PLOADER_PARAMETER_BLOCK LoaderBlockVA;
     BOOLEAN Success;
     PLDR_DATA_TABLE_ENTRY KernelDTE;
     KERNEL_ENTRY_POINT KiSystemStartup;
+    PCSTR SystemRoot;
 
-    TRACE("LoadAndBootWindowsCommon() Core: %s Root: %s\n", BootPath, SystemRoot);
+    TRACE("LoadAndBootWindowsCommon()\n");
 
     ASSERT(OperatingSystemVersion != 0);
 
@@ -1234,6 +1235,9 @@ LoadAndBootWindowsCommon(
     /* Setup redirection support */
     WinLdrSetupEms(BootOptions);
 #endif
+
+    /* Convert BootPath to SystemRoot */
+    SystemRoot = strstr(BootPath, "\\");
 
     /* Detect hardware */
     UiUpdateProgressBar(20, "Detecting hardware...");
@@ -1247,7 +1251,7 @@ LoadAndBootWindowsCommon(
     Success = LoadWindowsCore(OperatingSystemVersion,
                               LoaderBlock,
                               BootOptions,
-                              BootPath,
+                              KernelPath,
                               &KernelDTE);
     if (!Success)
     {
@@ -1269,7 +1273,7 @@ LoadAndBootWindowsCommon(
 
     /* Load boot drivers */
     UiSetProgressBarText("Loading boot drivers...");
-    Success = WinLdrLoadBootDrivers(LoaderBlock, SystemRoot);
+    Success = WinLdrLoadBootDrivers(LoaderBlock, BootPath);
     TRACE("Boot drivers loading %s\n", Success ? "successful" : "failed");
 
     UiSetProgressBarSubset(0, 100);

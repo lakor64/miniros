@@ -58,7 +58,7 @@ typedef struct _LOADER_SYSTEM_BLOCK
     CHAR NtBootPathName[MAX_PATH+1];
     CHAR NtHalPathName[MAX_PATH+1];
     ARC_DISK_INFORMATION ArcDiskInformation;
-	WCHAR NtHivePathName[MAX_PATH+1];
+    WCHAR NtHivePathName[MAX_PATH+1];
 } LOADER_SYSTEM_BLOCK, *PLOADER_SYSTEM_BLOCK;
 
 extern PLOADER_SYSTEM_BLOCK WinLdrSystemBlock;
@@ -160,7 +160,7 @@ LoadAndBootWindowsCommon(
     IN PLOADER_PARAMETER_BLOCK LoaderBlock,
     IN PCSTR BootOptions,
     IN PCSTR BootPath,
-    IN PCSTR SystemRoot);
+    IN PCSTR KernelPath);
 
 VOID
 WinLdrSetupMachineDependent(PLOADER_PARAMETER_BLOCK LoaderBlock);
