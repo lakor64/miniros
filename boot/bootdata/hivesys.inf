@@ -1565,6 +1565,7 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","ObUnsecureGlobal
 
 ; [miniros]
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","SysDll",0x00020000,"\SystemRoot\lib\ntdll.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","UserInit",0x00020000,"\SystemRoot\sbin\smss.exe"
 
 ; WOW Support
 HKLM,"SYSTEM\CurrentControlSet\Control\WOW",,0x00000012

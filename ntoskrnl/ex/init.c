@@ -74,12 +74,6 @@ BOOLEAN InitIsWinPEMode, InitWinPEModeType;
 /* NT Boot Path */
 UNICODE_STRING NtSystemRoot;
 
-/* NT Initial User Application */
-WCHAR NtInitialUserProcessBuffer[128] = L"\\SystemRoot\\System32\\smss.exe";
-ULONG NtInitialUserProcessBufferLength = sizeof(NtInitialUserProcessBuffer) -
-                                         sizeof(WCHAR);
-ULONG NtInitialUserProcessBufferType = REG_SZ;
-
 /* Boot NLS information */
 PVOID ExpNlsTableBase;
 ULONG ExpAnsiCodePageDataOffset, ExpOemCodePageDataOffset;
@@ -397,6 +391,14 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     PVOID EnvironmentPtr = NULL;
     PRTL_USER_PROCESS_INFORMATION ProcessInformation;
     PRTL_USER_PROCESS_PARAMETERS ProcessParams = NULL;
+    UNICODE_STRING szDllRegPath;
+    HANDLE hHive;
+    UNICODE_STRING szValue;
+    CHAR ValueBuffer[256];
+    ULONG ulKeyInfoSz = 0;
+    PWSTR NtInitialUserProcessBuffer;
+    OBJECT_ATTRIBUTES ObjectAttributes;
+    WCHAR szPath2[256]; /* ReactOS DOES NOT HAVE RtlUnicodeStringCbCat* functions so we have to do this */
 
     NullString.Length = sizeof(WCHAR);
 
@@ -472,31 +474,61 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     ProcessParams->DllPath.Buffer = p;
     ProcessParams->DllPath.MaximumLength = MAX_WIN32_PATH * sizeof(WCHAR);
 
+
+    /* Load kernel hive */
+    RtlInitUnicodeString(&szDllRegPath, L"\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel");
+    InitializeObjectAttributes(&ObjectAttributes, &szDllRegPath, OBJ_KERNEL_HANDLE | OBJ_CASE_INSENSITIVE, NULL, NULL);
+    Status = ZwOpenKey(&hHive, KEY_READ, &ObjectAttributes);
+
+    if (!NT_SUCCESS(Status))
+    {
+        KeBugCheckEx(SESSION2_INITIALIZATION_FAILED, Status, 9, 0, 0);
+    }
+
+    /* get the smss path */
+    RtlInitUnicodeString(&szValue, L"UserInit");
+    Status = ZwQueryValueKey(hHive, &szValue, KeyValueFullInformation, ValueBuffer, sizeof(ValueBuffer), &ulKeyInfoSz);
+    if (!NT_SUCCESS(Status))
+    {
+        /* Cannot get the value of UserInit, bugcheck! */
+        KeBugCheckEx(PROCESS1_INITIALIZATION_FAILED, Status, 7, 0, 0);
+    }
+
+    if (((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->Type != REG_EXPAND_SZ)
+    {
+        /* Cannot get the value of SysDll, bugcheck! */
+        KeBugCheckEx(SESSION2_INITIALIZATION_FAILED, Status, 8, ((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->Type, 0);
+    }
+
+    NtInitialUserProcessBuffer = (PWSTR)(ValueBuffer + ((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->DataOffset);
+
     /* Copy the DLL path and append the system32 directory */
     RtlCopyUnicodeString(&ProcessParams->DllPath,
                          &ProcessParams->CurrentDirectory.DosPath);
-    RtlAppendUnicodeToString(&ProcessParams->DllPath, L"\\System32");
+
+    /* Gets the first path (SHOULD BE \SystemRoot\) */
+    p = NtInitialUserProcessBuffer;
+	ulKeyInfoSz = 0;
+
+    if (p[0] == L'\\') { p++; }
+    while ((*p) && (*p != L'\\')) { p++; }
+
+    RtlStringCbCopyW(szPath2, sizeof(szPath2), p);
+
+    /* Gets the last path */
+    ulKeyInfoSz = wcslen(szPath2);
+    p = szPath2 + ulKeyInfoSz - 1;
+    while ((*p) && (*p != L'\\')) { p--; ulKeyInfoSz--; }
+    ulKeyInfoSz--;
+    szPath2[ulKeyInfoSz] = L'\0';
+
+    RtlAppendUnicodeToString(&ProcessParams->DllPath, szPath2);
 
     /* Make a buffer for the image name */
     p = (PWSTR)((PCHAR)ProcessParams->DllPath.Buffer +
                 ProcessParams->DllPath.MaximumLength);
     ProcessParams->ImagePathName.Buffer = p;
     ProcessParams->ImagePathName.MaximumLength = MAX_WIN32_PATH * sizeof(WCHAR);
-
-    /* Make sure the buffer is a valid string which within the given length */
-    if ((NtInitialUserProcessBufferType != REG_SZ) ||
-        ((NtInitialUserProcessBufferLength != MAXULONG) &&
-         ((NtInitialUserProcessBufferLength < sizeof(WCHAR)) ||
-          (NtInitialUserProcessBufferLength >
-           sizeof(NtInitialUserProcessBuffer) - sizeof(WCHAR)))))
-    {
-        /* Invalid initial process string, bugcheck */
-        KeBugCheckEx(SESSION2_INITIALIZATION_FAILED,
-                     STATUS_INVALID_PARAMETER,
-                     NtInitialUserProcessBufferType,
-                     NtInitialUserProcessBufferLength,
-                     sizeof(NtInitialUserProcessBuffer));
-    }
 
     /* Cut out anything after a space */
     p = NtInitialUserProcessBuffer;
@@ -548,6 +580,9 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     RtlAppendUnicodeToString(&Environment, L"SystemRoot=");
     RtlAppendUnicodeStringToString(&Environment, &NtSystemRoot);
     RtlAppendUnicodeStringToString(&Environment, &NullString);
+
+    /* close the hive */
+    ZwClose(hHive);
 
     /* Prepare the prefetcher */
     //CcPfBeginBootPhase(150);

@@ -289,7 +289,7 @@ PsLocateSystemDll(VOID)
     CHAR ValueBuffer[256];
     ULONG ulKeyInfoSz = 0;
 
-    /* Load the ntdll.dll kernel path */
+    /* Load kernel hive */
     RtlInitUnicodeString(&szDllRegPath, L"\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel");
     InitializeObjectAttributes(&ObjectAttributes, &szDllRegPath, OBJ_KERNEL_HANDLE | OBJ_CASE_INSENSITIVE, NULL, NULL);
     Status = ZwOpenKey(&hHive, KEY_READ, &ObjectAttributes);
