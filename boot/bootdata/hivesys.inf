@@ -1563,6 +1563,9 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache","AppCompa
 ; Unsecure objects names
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","ObUnsecureGlobalNames",0x00010000,"netfxcustomerfcounters.1.0","SharedPerfIPCBlock","Cor_Private_IPCBlock","Cor_Public_IPCBlock_"
 
+; [miniros]
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\kernel","SysDll",0x00020000,"\SystemRoot\lib\ntdll.dll"
+
 ; WOW Support
 HKLM,"SYSTEM\CurrentControlSet\Control\WOW",,0x00000012
 

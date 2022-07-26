@@ -42,8 +42,7 @@ PVOID PspSystemDllBase;
 PVOID PspSystemDllSection;
 PVOID PspSystemDllEntryPoint;
 
-UNICODE_STRING PsNtDllPathName =
-    RTL_CONSTANT_STRING(L"\\SystemRoot\\System32\\ntdll.dll");
+UNICODE_STRING PsNtDllPathName;
 
 PHANDLE_TABLE PspCidTable;
 
@@ -284,6 +283,47 @@ PsLocateSystemDll(VOID)
     NTSTATUS Status;
     ULONG_PTR HardErrorParameters;
     ULONG HardErrorResponse;
+    UNICODE_STRING szDllRegPath;
+    HANDLE hHive;
+    UNICODE_STRING szNtDllValue;
+    CHAR ValueBuffer[256];
+    ULONG ulKeyInfoSz = 0;
+
+    /* Load the ntdll.dll kernel path */
+    RtlInitUnicodeString(&szDllRegPath, L"\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel");
+    InitializeObjectAttributes(&ObjectAttributes, &szDllRegPath, OBJ_KERNEL_HANDLE | OBJ_CASE_INSENSITIVE, NULL, NULL);
+    Status = ZwOpenKey(&hHive, KEY_READ, &ObjectAttributes);
+
+    if (!NT_SUCCESS(Status))
+    {
+        /* Cannot get the ntdll.dll path */
+        KeBugCheckEx(PROCESS1_INITIALIZATION_FAILED, Status, 6, 0, 0);
+    }
+
+    /* get the ntdll.dll path */
+    RtlInitUnicodeString(&szNtDllValue, L"SysDll");
+    Status = ZwQueryValueKey(hHive, &szNtDllValue, KeyValueFullInformation, ValueBuffer, sizeof(ValueBuffer), &ulKeyInfoSz);
+    if (!NT_SUCCESS(Status))
+    {
+        /* Cannot get the value of SysDll, bugcheck! */
+        KeBugCheckEx(PROCESS1_INITIALIZATION_FAILED, Status, 7, 0, 0);
+    }
+
+    if (((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->Type != REG_EXPAND_SZ)
+    {
+        /* Cannot get the value of SysDll, bugcheck! */
+        KeBugCheckEx(PROCESS1_INITIALIZATION_FAILED, Status, 8, 0, 0);
+    }
+
+    /* initialize PsNtDllPathName */
+    if (!RtlCreateUnicodeString(&PsNtDllPathName, (PCWSTR)(ValueBuffer + ((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->DataOffset)))
+    {
+        /* Cannot allocate memory for PsNtDllPathName */
+        KeBugCheckEx(PROCESS1_INITIALIZATION_FAILED, Status, 9, 0, 0);
+    }
+
+    /* close the hive */
+    ZwClose(hHive);
 
     /* Locate and open NTDLL to determine ImageBase and LdrStartup */
     InitializeObjectAttributes(&ObjectAttributes,

@@ -804,7 +804,7 @@ IopInitializeBuiltinDriver(IN PLDR_DATA_TABLE_ENTRY BootLdrEntry)
     /*
      * Display 'Loading XXX...' message
      */
-    IopDisplayLoadingMessage(ModuleName);
+    IopDisplayLoadingMessage(&BootLdrEntry->FullDllName);
     InbvIndicateProgress();
 
     Buffer = ExAllocatePoolWithTag(PagedPool,

@@ -92,7 +92,6 @@ DbgkCreateThread(IN PETHREAD Thread,
     IMAGE_INFO ImageInfo;
     PIMAGE_NT_HEADERS NtHeader;
     POBJECT_NAME_INFORMATION ModuleName;
-    UNICODE_STRING NtDllName;
     NTSTATUS Status;
     PVOID DebugPort;
     DBGKM_MSG ApiMessage;
@@ -166,9 +165,7 @@ DbgkCreateThread(IN PETHREAD Thread,
         }
 
         /* Call the notify routines */
-        RtlInitUnicodeString(&NtDllName,
-                             L"\\SystemRoot\\System32\\ntdll.dll");
-        PspRunLoadImageNotifyRoutines(&NtDllName,
+        PspRunLoadImageNotifyRoutines(&PsNtDllPathName,
                                       Process->UniqueProcessId,
                                       &ImageInfo);
     }

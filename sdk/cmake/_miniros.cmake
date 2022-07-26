@@ -1,6 +1,7 @@
 ###
 
 set(BOOT_TARGETS "hal;halacpi;halaacpi;halapic;halxbox;halpc98;bootvid;ntoskrnl;ntkrnlmp;kdcom;kdvbox")
+set(LIB_TARGETS "ntdll;ntdll_vista")
 
 macro(fix_cd_path)
     set(_CD_NO_CAB 1)
@@ -29,6 +30,10 @@ macro(fix_cd_path)
         list(FIND BOOT_TARGETS ${_TARGET} HAVE_BOOT)
         if (NOT "${HAVE_BOOT}" STREQUAL "-1")
             set(_CD_DESTINATION "reactos/boot")
+        endif()
+        list(FIND LIB_TARGETS ${_TARGET} HAVE_LIB)
+        if (NOT "${HAVE_LIB}" STREQUAL "-1")
+            set(_CD_DESTINATION "reactos/lib")
         endif()
     endif()
 
