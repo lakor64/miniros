@@ -50,3 +50,7 @@ macro(fix_cd_path)
         set(_CD_DESTINATION "reactos/etc/nls")
     endif()
 endmacro()
+
+function(rm_ros_inc TARGET)
+    set_property(TARGET "${TARGET}" PROPERTY INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/pxss/include")
+endfunction()
