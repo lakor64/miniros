@@ -34,4 +34,5 @@ target_include_directories(musl PUBLIC
 
     PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/musl/src/internal
+	${CMAKE_CURRENT_LIST_DIR}/musl/include
 )

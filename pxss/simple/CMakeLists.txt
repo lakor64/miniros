@@ -1,0 +1,5 @@
+add_executable(simple simple.c)
+rm_ros_inc(simple)
+target_link_libraries(simple psxdll)
+add_cd_file(TARGET simple DESTINATION reactos/bin FOR all)
+set_module_type(simple posix)

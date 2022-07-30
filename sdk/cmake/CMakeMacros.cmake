@@ -578,9 +578,9 @@ function(add_importlibs _module)
 endfunction()
 
 # Some helper lists
-list(APPEND VALID_MODULE_TYPES kernel kerneldll kernelmodedriver wdmdriver nativecui nativedll win32cui win32gui win32dll win32ocx cpl module)
+list(APPEND VALID_MODULE_TYPES kernel kerneldll kernelmodedriver wdmdriver nativecui nativedll win32cui win32gui win32dll win32ocx cpl module posix) # [miniros]
 list(APPEND KERNEL_MODULE_TYPES kernel kerneldll kernelmodedriver wdmdriver)
-list(APPEND NATIVE_MODULE_TYPES kernel kerneldll kernelmodedriver wdmdriver nativecui nativedll)
+list(APPEND NATIVE_MODULE_TYPES kernel kerneldll kernelmodedriver wdmdriver nativecui nativedll posix) # [miniros]
 
 function(set_module_type MODULE TYPE)
     cmake_parse_arguments(__module "UNICODE" "IMAGEBASE" "ENTRYPOINT" ${ARGN})
@@ -644,6 +644,8 @@ function(set_module_type MODULE TYPE)
         set_entrypoint(${MODULE} KiSystemStartup 4)
     elseif(${TYPE} STREQUAL module)
         set_entrypoint(${MODULE} 0)
+	elseif(${TYPE} STREQUAL posix) # [miniros]
+		set_entrypoint(${MODULE} _start)
     endif()
 
     # Set base address
