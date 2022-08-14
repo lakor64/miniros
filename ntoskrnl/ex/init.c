@@ -530,6 +530,7 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     ProcessParams->ImagePathName.Buffer = p;
     ProcessParams->ImagePathName.MaximumLength = MAX_WIN32_PATH * sizeof(WCHAR);
 
+
     /* Cut out anything after a space */
     p = NtInitialUserProcessBuffer;
     while ((*p) && (*p != L' ')) p++;

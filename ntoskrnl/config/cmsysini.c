@@ -921,8 +921,6 @@ CmpInitializeSystemHive(IN PLOADER_PARAMETER_BLOCK LoaderBlock)
         return FALSE;
     }
 
-	DPRINT1("################### REGHIVE INIT %S\n", LoaderBlock->NtHivePathName);
-
     /* Set the hive filename */
 
 	RtlStringCbCopyW(SystemHivePath, sizeof(SystemHivePath), LoaderBlock->NtHivePathName);

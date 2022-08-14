@@ -316,6 +316,10 @@ ENDFUNC
 
 PUBLIC KiDoubleFaultAbort
 FUNC KiDoubleFaultAbort
+
+    /* Hack for VBox, which "forgets" to push an error code on the stack! */
+    and rsp, HEX(FFFFFFFFFFFFFFF0)
+
     /* A zero error code is pushed */
     EnterTrap (TF_HAS_ERROR_CODE OR TF_SAVE_ALL)
 
@@ -424,6 +428,10 @@ FUNC KiPageFault
     /* Save page fault address */
     mov rdx, cr2
     mov [rbp  + KTRAP_FRAME_FaultAddress], rdx
+    
+    /* If interrupts are off, treat this as an access violation */
+    test dword ptr [rbp + KTRAP_FRAME_EFlags], EFLAGS_IF_MASK
+    jz AccessViolation
 
     /* Enable interrupts for the page fault handler */
     sti
