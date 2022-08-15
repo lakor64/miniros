@@ -569,10 +569,10 @@ int adns_init(adns_state *ads_r, adns_initflags flags, FILE *diagfile) {
   adns_state ads;
   const char *res_options, *adns_res_options;
   int r;
-#ifdef ADNS_JGAA_WIN32
+/*#ifdef ADNS_JGAA_WIN32
   #define SECURE_PATH_LEN (MAX_PATH - 64)
   char PathBuf[MAX_PATH];
-#endif
+#endif*/
 
   r= init_begin(&ads, flags, diagfile ? diagfile : stderr);
   if (r) return r;
