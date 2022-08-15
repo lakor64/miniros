@@ -10,7 +10,7 @@ _main(IN INT argc,
     NTSTATUS Status;
     KPRIORITY SetBasePriority;
 
-    DPRINT1("smss init start\n");
+    DPRINT1("psxss init start\n");
 
     /* Make us critical */
     RtlSetProcessIsCritical(TRUE, NULL, FALSE);

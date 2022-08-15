@@ -1,5 +1,5 @@
-#ifndef FAKESMSS_H
-#define FAKESMSS_H
+#ifndef PSXSS_PCH_H
+#define PSXSS_PCH_H
 
 /* Native Headers */
 #define WIN32_NO_STATUS
@@ -24,5 +24,5 @@
 
 #include <reactos/debug.h>
 
-#endif
+#endif // PSXSS_PCH_H
 

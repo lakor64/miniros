@@ -9,4 +9,4 @@ set_module_type(psxdll win32dll)
 set_subsystem(psxdll console)
 ################# END  HACK #################
 
-target_include_directories(psxdll PRIVATE ${CMAKE_SOURCE_DIR}/pxss/include/nt)
+target_include_directories(psxdll PRIVATE ${CMAKE_SOURCE_DIR}/psxss/include/nt)
