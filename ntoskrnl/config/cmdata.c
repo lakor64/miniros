@@ -19,6 +19,8 @@ ULONG DummyData;
 ULONG CmNtGlobalFlag;
 extern ULONG MmProductType;
 
+WCHAR CmRegistryHivePath[MAX_WIN32_PATH];
+
 WCHAR CmDefaultLanguageId[12];
 ULONG CmDefaultLanguageIdLength = sizeof(CmDefaultLanguageId);
 ULONG CmDefaultLanguageIdType;
