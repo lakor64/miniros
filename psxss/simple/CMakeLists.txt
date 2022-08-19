@@ -1,6 +1,6 @@
 add_executable(simple simple.c)
-rm_ros_inc(simple)
-add_importlibs(simple psxdll)
+#rm_ros_inc(simple)
+add_importlibs(simple psxdll ntdll)
 add_cd_file(TARGET simple DESTINATION reactos/bin FOR all)
 set_module_type(simple posix)
 target_include_directories(simple PRIVATE ${CMAKE_SOURCE_DIR}/psxss/include)
