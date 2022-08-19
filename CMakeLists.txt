@@ -365,7 +365,7 @@ Enable this if the module uses typeid or dynamic_cast. You will probably need to
 
     #begin with boot so reactos_cab target is defined before all other modules
     add_subdirectory(boot)
-    #add_subdirectory(base)
+    add_subdirectory(base)
     add_subdirectory(dll)
     add_subdirectory(drivers)
     add_subdirectory(hal)
