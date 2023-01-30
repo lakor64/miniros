@@ -391,6 +391,7 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     PVOID EnvironmentPtr = NULL;
     PRTL_USER_PROCESS_INFORMATION ProcessInformation;
     PRTL_USER_PROCESS_PARAMETERS ProcessParams = NULL;
+    /* miniros { */
     UNICODE_STRING szDllRegPath;
     HANDLE hHive;
     UNICODE_STRING szValue;
@@ -399,7 +400,8 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     PWSTR NtInitialUserProcessBuffer;
     OBJECT_ATTRIBUTES ObjectAttributes;
     WCHAR szPath2[256]; /* ReactOS DOES NOT HAVE RtlUnicodeStringCbCat* functions so we have to do this */
-
+	/* } miniros */
+	
     NullString.Length = sizeof(WCHAR);
 
     /* Use the initial buffer, after the strings */
@@ -474,7 +476,7 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     ProcessParams->DllPath.Buffer = p;
     ProcessParams->DllPath.MaximumLength = MAX_WIN32_PATH * sizeof(WCHAR);
 
-
+	/* miniros { */
     /* Load kernel hive */
     RtlInitUnicodeString(&szDllRegPath, L"\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel");
     InitializeObjectAttributes(&ObjectAttributes, &szDllRegPath, OBJ_KERNEL_HANDLE | OBJ_CASE_INSENSITIVE, NULL, NULL);
@@ -501,11 +503,12 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     }
 
     NtInitialUserProcessBuffer = (PWSTR)(ValueBuffer + ((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->DataOffset);
-
+	/* } miniros*/
+	
     /* Copy the DLL path and append the system32 directory */
     RtlCopyUnicodeString(&ProcessParams->DllPath,
                          &ProcessParams->CurrentDirectory.DosPath);
-
+	/* miniros { */
     /* Gets the first path (SHOULD BE \SystemRoot\) */
     p = NtInitialUserProcessBuffer;
 	ulKeyInfoSz = 0;
@@ -523,6 +526,7 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     szPath2[ulKeyInfoSz] = L'\0';
 
     RtlAppendUnicodeToString(&ProcessParams->DllPath, szPath2);
+    /* } miniros*/
 
     /* Make a buffer for the image name */
     p = (PWSTR)((PCHAR)ProcessParams->DllPath.Buffer +
@@ -582,7 +586,7 @@ ExpLoadInitialProcess(IN PINIT_BUFFER InitBuffer,
     RtlAppendUnicodeStringToString(&Environment, &NtSystemRoot);
     RtlAppendUnicodeStringToString(&Environment, &NullString);
 
-    /* close the hive */
+    /* close the hive miniros */
     ZwClose(hHive);
 
     /* Prepare the prefetcher */
@@ -685,6 +689,7 @@ ExpInitSystemPhase0(VOID)
     /* Initialize the Firmware Table resource and listhead */
     InitializeListHead(&ExpFirmwareTableProviderListHead);
     ExInitializeResourceLite(&ExpFirmwareTableResource);
+    ExInitializeResourceLite(&ExpTimeRefreshLock);
 
     /* Set the suite mask to maximum and return */
     ExSuiteMask = 0xFFFFFFFF;

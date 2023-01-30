@@ -1,4 +1,4 @@
-include(_miniros)
+include(_miniros) # miniros
 
 function(add_dependency_node _node)
     if(GENERATE_DEPENDENCY_GRAPH)

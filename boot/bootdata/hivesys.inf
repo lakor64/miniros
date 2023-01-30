@@ -524,7 +524,8 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020407","Layout File",
 HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020407","Layout Text",0x00000000,%GERMAN_NEO%
 HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00020407","Layout Display Name",0x00000000,"@%SystemRoot%\lib\input.dll,-5138"
 
-HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout File",0x00000000,"kbdgrist.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout File",0x00000000,"kbdgr1.dll"
+HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout Id",  0x00000000,"0012"
 HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout Text",0x00000000,%GERMAN_RISTOME%
 HKLM,"SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00010407","Layout Display Name",0x00000000,"@%SystemRoot%\lib\input.dll,-5137"
 
@@ -1493,11 +1494,9 @@ HKLM,"SYSTEM\CurrentControlSet\Control\GroupOrderList","SCSI Miniport", 0x000000
   0x20, 0x00, 0x00, 0x00
 
 ; Session Manager stuff
+HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager","BootExecute", 0x00010000, \
+ "autocheck autochk"
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager","GlobalFlag", 0x00010003, 0x00000000
-
-; Reset BootExecute to an empty value: AutoChk should not start in MiniNT mode
-HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager","BootExecute",0x00010000,""
-
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager","ObjectDirectories",0x00010000, \
  "\Windows", \
  "\RPC Control"
@@ -1509,7 +1508,7 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","MAILSLOT",0
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","NUL",0x00000002,"\Device\Null"
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","PIPE",0x00000002,"\Device\NamedPipe"
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","PRN",0x00000002,"\DosDevices\LPT1"
-HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","UNC",0x00000002,"\Device\Mup"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices","UNC",0x00000002,"\Device\Mup"
 
 ; System environment settings
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","ComSpec",0x00020002,"%SystemRoot%\bin\sh.exe"
@@ -1519,8 +1518,8 @@ HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","PROMPT",0x0
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","TEMP",0x00020002,"%SystemRoot%\tmp"
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","TMP",0x00020002,"%SystemRoot%\tmp"
 HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","windir",0x00020002,"%SystemRoot%"
-HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","SHIMENG_DEBUG_LEVEL",0x00000000,"4"
-HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","SHIM_DEBUG_LEVEL",0x00000000,"4"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","SHIMENG_DEBUG_LEVEL",0x00000000,"4"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","SHIM_DEBUG_LEVEL",0x00000000,"4"
 
 
 ; Known DLLs
@@ -1698,9 +1697,9 @@ HKLM,"SYSTEM\CurrentControlSet\Services\Mup","ImagePath",0x00020000,"boot\driver
 HKLM,"SYSTEM\CurrentControlSet\Services\Mup","Start",0x00010001,0x00000000
 HKLM,"SYSTEM\CurrentControlSet\Services\Mup","Type",0x00010001,0x00000002
 
-; NDIS driver - the only boot-start network driver
+; NDIS driver - needs to load before any drivers in the NDIS group
 HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","ErrorControl",0x00010001,0x00000001
-HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","Group",0x00000000,"NDIS"
+HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","Group",0x00000000,"NDIS Wrapper"
 HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","ImagePath",0x00020000,"boot\drivers\ndis.sys"
 HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","Start",0x00010001,0x00000000
 HKLM,"SYSTEM\CurrentControlSet\Services\Ndis","Type",0x00010001,0x00000001
@@ -2223,7 +2222,7 @@ HKLM,"SYSTEM\Setup","SystemPrefix",0x00000001
 HKLM,"SYSTEM\Setup","SystemSetupInProgress",0x00010001,0x00000001
 
 ; Debug channels
-HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","DEBUGCHANNEL",0x00020000,"+ole,+rpc"
+;HKLM,"SYSTEM\CurrentControlSet\Control\Session Manager\Environment","DEBUGCHANNEL",0x00020000,"+ole,+rpc"
 
 ; Winsrv configuration
 HKLM,"SYSTEM\CurrentControlSet\Control\PriorityControl",,0x00000012
@@ -2236,7 +2235,6 @@ HKLM,"SYSTEM\CurrentControlSet\Services\Disk","ImagePath",0x00020000,"boot\drive
 HKLM,"SYSTEM\CurrentControlSet\Services\Disk","Start",0x00010001,0x00000000
 HKLM,"SYSTEM\CurrentControlSet\Services\Disk","Type",0x00010001,0x00000001
 
-HKLM,"SYSTEM\CurrentControlSet\Services\fastfat","Start",0x00010001,0x00000003
 
 [Strings]
 

@@ -134,10 +134,14 @@ DWORD WINAPI SHGetValueGoodBootA(HKEY hkey, LPCSTR pSubKey, LPCSTR pValue,
                                  LPDWORD pwType, LPVOID pvData, LPDWORD pbData);
 DWORD WINAPI SHGetValueGoodBootW(HKEY hkey, LPCWSTR pSubKey, LPCWSTR pValue,
                                  LPDWORD pwType, LPVOID pvData, LPDWORD pbData);
+HRESULT WINAPI SHLoadRegUIStringA(HKEY hkey, LPCSTR value, LPSTR buf, DWORD size);
+HRESULT WINAPI SHLoadRegUIStringW(HKEY hkey, LPCWSTR value, LPWSTR buf, DWORD size);
 #ifdef UNICODE
 #define SHGetValueGoodBoot SHGetValueGoodBootW
+#define SHLoadRegUIString  SHLoadRegUIStringW
 #else
 #define SHGetValueGoodBoot SHGetValueGoodBootA
+#define SHLoadRegUIString  SHLoadRegUIStringA
 #endif
 
 int
@@ -164,6 +168,7 @@ ShellMessageBoxWrapW(
 BOOL WINAPI PathFileExistsDefExtW(LPWSTR lpszPath, DWORD dwWhich);
 BOOL WINAPI PathFindOnPathExW(LPWSTR lpszFile, LPCWSTR *lppszOtherDirs, DWORD dwWhich);
 VOID WINAPI FixSlashesAndColonW(LPWSTR);
+BOOL WINAPI PathIsValidCharW(WCHAR c, DWORD dwClass);
 
 #ifdef __cplusplus
 } /* extern "C" */

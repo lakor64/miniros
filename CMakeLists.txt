@@ -147,16 +147,15 @@ if(NOT CMAKE_CROSSCOMPILING)
     endif()
     add_subdirectory(sdk/include/host)
 
-    if(NOT MSVC)
-        add_subdirectory(dll/win32/dbghelp)
-    endif()
+    add_subdirectory(dll/win32/dbghelp)
     add_subdirectory(sdk/tools)
     add_subdirectory(sdk/lib)
 
-    set(NATIVE_TARGETS gendib cabman hpp geninc mkshelllink xml2sdb)
+    set(NATIVE_TARGETS asmpp bin2c widl gendib cabman fatten hpp isohybrid mkhive mkisofs obj2bin spec2def geninc mkshelllink utf16le xml2sdb)
     if(NOT MSVC)
         list(APPEND NATIVE_TARGETS rsym pefixup)
     endif()
+
     install(TARGETS ${NATIVE_TARGETS})
 else()
     # Add host tools target
@@ -214,14 +213,6 @@ Enable this if the module uses typeid or dynamic_cast. You will probably need to
         add_definitions(-DDBG=1 -D_SEH_ENABLE_TRACE)
     else()
         add_definitions(-DDBG=0)
-    endif()
-
-    if(KDBG)
-        add_definitions(-DKDBG)
-    endif()
-
-    if(_WINKD_)
-        add_definitions(-D_WINKD_)
     endif()
 
     if(ENABLE_CCACHE)
@@ -376,7 +367,7 @@ Enable this if the module uses typeid or dynamic_cast. You will probably need to
     #add_subdirectory(subsystems)
     #add_subdirectory(sdk/tools/wpp)
     #add_subdirectory(win32ss)
-    add_subdirectory(psxss)
+    #add_subdirectory(psxss)
 
     # Create the registry hives
     create_registry_hives()

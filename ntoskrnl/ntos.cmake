@@ -294,6 +294,10 @@ list(APPEND SOURCE
     ${REACTOS_SOURCE_DIR}/ntoskrnl/wmi/wmi.c
     ${REACTOS_SOURCE_DIR}/ntoskrnl/wmi/wmidrv.c)
 
+if(DBG)
+    list(APPEND SOURCE ${REACTOS_SOURCE_DIR}/ntoskrnl/se/debug.c)
+endif()
+
 list(APPEND ASM_SOURCE ${REACTOS_SOURCE_DIR}/ntoskrnl/ex/zw.S)
 
 if(ARCH STREQUAL "i386")
@@ -378,6 +382,10 @@ elseif(ARCH STREQUAL "arm")
 endif()
 
 if(NOT _WINKD_)
+    if(KDBG)
+        add_definitions(-DKDBG)
+    endif()
+
     if(ARCH STREQUAL "i386")
         list(APPEND SOURCE
             ${REACTOS_SOURCE_DIR}/ntoskrnl/kd/i386/kdbg.c)
@@ -407,8 +415,9 @@ if(NOT _WINKD_)
     endif()
 
     list(APPEND SOURCE
-        ${REACTOS_SOURCE_DIR}/ntoskrnl/kd/wrappers/kdbg.c
         ${REACTOS_SOURCE_DIR}/ntoskrnl/kd/kdio.c
         ${REACTOS_SOURCE_DIR}/ntoskrnl/kd/kdmain.c)
 
+else()
+    add_definitions(-D_WINKD_)
 endif()

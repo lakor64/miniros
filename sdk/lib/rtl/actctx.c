@@ -5072,6 +5072,7 @@ static NTSTATUS find_guid(ACTIVATION_CONTEXT* actctx, ULONG section_kind,
     return STATUS_SUCCESS;
 }
 
+/* miniros */
 static BOOL actctx_load_manifest(PWSTR szOutput, ULONG ulOutputMax)
 {
     UNICODE_STRING szDllRegPath;
@@ -5150,6 +5151,7 @@ void actctx_init(PVOID* pOldShimData)
     ctx.lpSource = buffer;
     RtlStringCchCopyW(buffer, RTL_NUMBER_OF(buffer), SharedUserData->NtSystemRoot);
 
+	/* miniros */
     if (!actctx_load_manifest(buffer, RTL_NUMBER_OF(buffer)))
     {
         return;

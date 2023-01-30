@@ -165,6 +165,7 @@ DbgkCreateThread(IN PETHREAD Thread,
         }
 
         /* Call the notify routines */
+        /* miniros */
         PspRunLoadImageNotifyRoutines(&PsNtDllPathName,
                                       Process->UniqueProcessId,
                                       &ImageInfo);

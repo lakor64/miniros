@@ -875,7 +875,7 @@ CmpInitializeSystemHive(IN PLOADER_PARAMETER_BLOCK LoaderBlock)
     PCMHIVE SystemHive = NULL;
     PSECURITY_DESCRIPTOR SecurityDescriptor;
     BOOLEAN Success;
-	WCHAR SystemHivePath[MAX_WIN32_PATH];
+	WCHAR SystemHivePath[MAX_WIN32_PATH]; /* miniros */
 
     PAGED_CODE();
 
@@ -923,21 +923,27 @@ CmpInitializeSystemHive(IN PLOADER_PARAMETER_BLOCK LoaderBlock)
     }
 
     /* Set the hive filename */
-
+    
+	/* miniros { */
 	RtlStringCbCopyW(SystemHivePath, sizeof(SystemHivePath), LoaderBlock->NtHivePathName);
 	/* should result in eg:\\disk(0)partition(0)\\reactos\\boot\\hive\\SYSTEM */
 	RtlStringCbCatW(SystemHivePath, sizeof(SystemHivePath), L"SYSTEM");
 
 	Success = RtlCreateUnicodeString(&SystemHive->FileFullPath, SystemHivePath);
+	/* } miniros */
+	
     if (!Success)
     {
         return FALSE;
     }
-
-	// apperently the LoaderBlock dies a while after, so we store the registry hive path in a local variable guaranteed to still be alive
+	
+	/* miniros {
+		apperently the LoaderBlock dies a while after, so we store the registry hive path in a local variable guaranteed to still be alive
+	*/
     RtlStringCbCopyW(CmRegistryHivePath, MAX_WIN32_PATH, L"\\ArcName\\");
     RtlStringCbCatW(CmRegistryHivePath + 9, MAX_WIN32_PATH - 9, LoaderBlock->NtHivePathName);
-
+	/* } miniros */
+	
     /* Manually set the hive as volatile, if in Live CD mode */
     if (HiveBase && CmpShareSystemHives)
     {
@@ -1179,6 +1185,7 @@ CmpCreateRegistryRoot(VOID)
 static PCWSTR
 CmpGetRegistryPath(VOID)
 {
+	/* miniros */
 	DPRINT1("CmpGetRegistryPath: ConfigPath = '%S'\n", CmRegistryHivePath);
     return CmRegistryHivePath;
 }
@@ -1952,11 +1959,6 @@ CmpUnlockRegistry(VOID)
         /* Flush the registry */
         CmpDoFlushAll(TRUE);
         CmpFlushOnLockRelease = FALSE;
-    }
-    else
-    {
-        /* Lazy flush the registry */
-        CmpLazyFlush();
     }
 
     /* Release the lock and leave the critical region */

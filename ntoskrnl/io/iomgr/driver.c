@@ -643,7 +643,7 @@ IopInitializeDriverModule(
         driverObject->Flags &= ~DRVO_LEGACY_DRIVER;
     }
 
-    // Windows does this fixup - keep it for compatibility
+    /* Windows does this fixup, keep it for compatibility */
     for (INT i = 0; i <= IRP_MJ_MAXIMUM_FUNCTION; i++)
     {
         /*
@@ -804,7 +804,7 @@ IopInitializeBuiltinDriver(IN PLDR_DATA_TABLE_ENTRY BootLdrEntry)
     /*
      * Display 'Loading XXX...' message
      */
-    IopDisplayLoadingMessage(&BootLdrEntry->FullDllName);
+    IopDisplayLoadingMessage(&BootLdrEntry->FullDllName); /* miniros */
     InbvIndicateProgress();
 
     Buffer = ExAllocatePoolWithTag(PagedPool,
@@ -967,9 +967,16 @@ IopInitializeBuiltinDriver(IN PLDR_DATA_TABLE_ENTRY BootLdrEntry)
                 instancePath.Buffer[instancePath.Length / sizeof(WCHAR)] = UNICODE_NULL;
 
                 PDEVICE_OBJECT pdo = IopGetDeviceObjectFromDeviceInstance(&instancePath);
-                PiQueueDeviceAction(pdo, PiActionAddBootDevices, NULL, NULL);
-                ObDereferenceObject(pdo);
-                deviceAdded = TRUE;
+                if (pdo != NULL)
+                {
+                    PiQueueDeviceAction(pdo, PiActionAddBootDevices, NULL, NULL);
+                    ObDereferenceObject(pdo);
+                    deviceAdded = TRUE;
+                }
+                else
+                {
+                    DPRINT1("No device node found matching instance path '%wZ'\n", &instancePath);
+                }
             }
 
             ExFreePool(kvInfo);
@@ -1022,13 +1029,19 @@ IopInitializeBootDrivers(VOID)
 
     /* Get highest group order index */
     IopGroupIndex = PpInitGetGroupOrderIndex(NULL);
-    if (IopGroupIndex == 0xFFFF) ASSERT(FALSE);
+    if (IopGroupIndex == 0xFFFF)
+    {
+        UNIMPLEMENTED_DBGBREAK();
+    }
 
     /* Allocate the group table */
     IopGroupTable = ExAllocatePoolWithTag(PagedPool,
                                           IopGroupIndex * sizeof(LIST_ENTRY),
                                           TAG_IO);
-    if (IopGroupTable == NULL) ASSERT(FALSE);
+    if (IopGroupTable == NULL)
+    {
+        UNIMPLEMENTED_DBGBREAK();
+    }
 
     /* Initialize the group table lists */
     for (i = 0; i < IopGroupIndex; i++) InitializeListHead(&IopGroupTable[i]);
@@ -1689,13 +1702,13 @@ try_again:
     if (!NT_SUCCESS(Status))
     {
         /* If it didn't work, then kill the object */
-        DPRINT1("'%wZ' initialization failed, status (0x%08lx)\n", DriverName, Status);
+        DPRINT1("'%wZ' initialization failed, status (0x%08lx)\n", &LocalDriverName, Status);
         ObMakeTemporaryObject(DriverObject);
         ObDereferenceObject(DriverObject);
         return Status;
     }
 
-    // Windows does this fixup - keep it for compatibility
+    /* Windows does this fixup, keep it for compatibility */
     for (i = 0; i <= IRP_MJ_MAXIMUM_FUNCTION; i++)
     {
         /*
@@ -1725,7 +1738,8 @@ try_again:
  */
 VOID
 NTAPI
-IoDeleteDriver(IN PDRIVER_OBJECT DriverObject)
+IoDeleteDriver(
+    _In_ PDRIVER_OBJECT DriverObject)
 {
     /* Simply dereference the Object */
     ObDereferenceObject(DriverObject);
@@ -1919,7 +1933,7 @@ IopLoadDriver(
     Status = IopGetRegistryValue(ServiceHandle, L"ImagePath", &kvInfo);
     if (NT_SUCCESS(Status))
     {
-        if (kvInfo->Type != REG_EXPAND_SZ || kvInfo->DataLength == 0)
+        if ((kvInfo->Type != REG_EXPAND_SZ && kvInfo->Type != REG_SZ) || kvInfo->DataLength == 0)
         {
             ExFreePool(kvInfo);
             return STATUS_ILL_FORMED_SERVICE_ENTRY;

@@ -42,7 +42,7 @@ PVOID PspSystemDllBase;
 PVOID PspSystemDllSection;
 PVOID PspSystemDllEntryPoint;
 
-UNICODE_STRING PsNtDllPathName;
+UNICODE_STRING PsNtDllPathName; /* miniros */
 
 PHANDLE_TABLE PspCidTable;
 
@@ -283,6 +283,8 @@ PsLocateSystemDll(VOID)
     NTSTATUS Status;
     ULONG_PTR HardErrorParameters;
     ULONG HardErrorResponse;
+    
+    /* miniros { */
     UNICODE_STRING szDllRegPath;
     HANDLE hHive;
     UNICODE_STRING szNtDllValue;
@@ -324,6 +326,7 @@ PsLocateSystemDll(VOID)
 
     /* close the hive */
     ZwClose(hHive);
+    /* } miniros */
 
     /* Locate and open NTDLL to determine ImageBase and LdrStartup */
     InitializeObjectAttributes(&ObjectAttributes,

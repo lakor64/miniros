@@ -129,9 +129,8 @@ IUnknown *CComCreatorCentralInstance<T>::s_pInstance = NULL;
 #define DECLARE_CENTRAL_INSTANCE_NOT_AGGREGATABLE(x)                            \
 public:                                                                         \
     typedef CComCreatorCentralInstance< ATL::CComObject<x> > _CreatorClass;
-#endif
 
-#ifdef __cplusplus
+
 template <class Base>
 class CComDebugObject : public Base
 {
@@ -226,7 +225,8 @@ void ReleaseCComPtrExpectZero(CComPtr<T>& cptr, BOOL forceRelease = FALSE)
 {
     if (cptr.p != NULL)
     {
-        int nrc = cptr->Release();
+        T *raw = cptr.Detach();
+        int nrc = raw->Release();
         if (nrc > 0)
         {
             DbgPrint("WARNING: Unexpected RefCount > 0 (%d)!\n", nrc);
@@ -234,11 +234,10 @@ void ReleaseCComPtrExpectZero(CComPtr<T>& cptr, BOOL forceRelease = FALSE)
             {
                 while (nrc > 0)
                 {
-                    nrc = cptr->Release();
+                    nrc = raw->Release();
                 }
             }
         }
-        cptr.Detach();
     }
 }
 
@@ -538,6 +537,22 @@ void DumpIdList(LPCITEMIDLIST pcidl)
     DbgPrint("End IDList Dump.\n");
 }
 
+struct CCoInit
+{
+    CCoInit()
+    {
+        hr = CoInitialize(NULL);
+    }
+    ~CCoInit()
+    {
+        if (SUCCEEDED(hr))
+        {
+            CoUninitialize();
+        }
+    }
+    HRESULT hr;
+};
+
 #endif /* __cplusplus */
 
 #define S_LESSTHAN 0xffff
@@ -560,6 +575,7 @@ static inline PCUIDLIST_RELATIVE HIDA_GetPIDLItem(CIDA const* pida, SIZE_T i)
 #ifdef __cplusplus
 
 DECLSPEC_SELECTANY CLIPFORMAT g_cfHIDA = NULL;
+DECLSPEC_SELECTANY CLIPFORMAT g_cfShellIdListOffsets = NULL;
 
 // Allow to use the HIDA from an IDataObject without copying it
 struct CDataObjectHIDA
@@ -682,6 +698,31 @@ HRESULT DataObject_SetData(IDataObject* pDataObject, CLIPFORMAT clipformat, PVOI
         GlobalFree(medium.hGlobal);
 
     return hr;
+}
+
+
+inline HRESULT
+DataObject_GetOffset(IDataObject *pDataObject, POINT *point)
+{
+    if (g_cfShellIdListOffsets == NULL)
+    {
+        g_cfShellIdListOffsets = (CLIPFORMAT)RegisterClipboardFormatW(CFSTR_SHELLIDLISTOFFSETW);
+    }
+
+    point->x = point->y = 0;
+
+    return DataObject_GetData(pDataObject, g_cfShellIdListOffsets, point, sizeof(point[0]));
+}
+
+inline HRESULT
+DataObject_SetOffset(IDataObject* pDataObject, POINT* point)
+{
+    if (g_cfShellIdListOffsets == NULL)
+    {
+        g_cfShellIdListOffsets = (CLIPFORMAT)RegisterClipboardFormatW(CFSTR_SHELLIDLISTOFFSETW);
+    }
+
+    return DataObject_SetData(pDataObject, g_cfShellIdListOffsets, point, sizeof(point[0]));
 }
 
 #endif

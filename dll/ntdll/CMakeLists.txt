@@ -18,9 +18,6 @@ include_directories(
     ${REACTOS_SOURCE_DIR}/sdk/include/reactos/subsys)
 
 list(APPEND SOURCE
-    #csr/api.c
-    #csr/capture.c
-    #csr/connect.c
     dbg/dbgui.c
     ldr/ldrapi.c
     ldr/ldrinit.c
