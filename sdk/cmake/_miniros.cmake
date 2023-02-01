@@ -2,6 +2,7 @@
 
 set(BOOT_TARGETS "hal;halacpi;halaacpi;halapic;halxbox;halpc98;bootvid;ntoskrnl;ntkrnlmp;kdcom;kdvbox")
 set(LIB_TARGETS "ntdll;ntdll_vista")
+set(BOOT_SUBSYSTEM_TARGETS "smss;csrss;csrsrv")
 #set(INF_TARGETS "unattend")
 
 macro(fix_cd_path)
@@ -37,6 +38,10 @@ macro(fix_cd_path)
         list(FIND LIB_TARGETS ${_TARGET} HAVE_LIB)
         if (NOT "${HAVE_LIB}" STREQUAL "-1")
             set(_CD_DESTINATION "reactos/lib")
+        endif()
+        list(FIND BOOT_SUBSYSTEM_TARGETS ${_TARGET} HAVE_SUBSYS)
+        if (NOT "${HAVE_SUBSYS}" STREQUAL "-1")
+            set(_CD_DESTINATION "reactos/boot/subsys")
         endif()
         #list(FIND INF_TARGETS ${_TARGET} HAVE_INF)
         #if (NOT "${HAVE_INF}" STREQUAL "-1")
