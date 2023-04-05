@@ -1,6 +1,0 @@
-add_executable(simple simple.c)
-rm_ros_inc(simple)
-add_importlibs(simple psxsc ntdll)
-add_cd_file(TARGET simple DESTINATION reactos/sbin FOR all)
-set_module_type(simple posix)
-target_include_directories(simple PRIVATE ${CMAKE_SOURCE_DIR}/subsystems/posix/include)
