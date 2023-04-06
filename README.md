@@ -1,14 +1,45 @@
-# miniros
+# Minimal ReactOS Test (miniros)
 
-This project was designed to test out the functionalities of a hypotetical POSIX subsystem for the NT kernel (powered by ReactOS), 
+This project was designed to test out the functionalities of a hypotetical POSIX/Linux subsystem for the NT kernel (powered by ReactOS), 
 as well as a bedtest for developing with the NT Native Development Kit (NDK)
 
 The scope of the subsystem is to bootup a POSIX-like environment without relying on the Windows userland subsystem (win32k.sys), by fact
-this system does not load Win32k.sys, cxsrss and any other Windows userland components.
+this system does not load Win32k.sys or any other Win32 user-land components.
 
 The directory "system32" has been removed (SYSTEMHIVE has been adjusted, hardcoded paths have been removed from the NT kernel) and moved to a more UNIX-like
 directory structure (altrough this changes were done as a pure test on the kernel and are not required for the POSIX translation layer)
 
-The userland POSIX translation layer (psxdll.dll) is implemented by converting POSIX calls into NT kernel relatives.
+The implementation of the UNIX layer can be seen as aa similar style to WSL1 mixed with functionalities from SFU 3.5.
+MiniROS does not target ELF/normal executables like WSL does, but it does contain a kernel-land driver translation like WSL.
+It does read NT Native executables with POSIX subsystem like SFU does, but it does not rely on user-land code to convert syscalls.
 
-- Currently there is much to do to even show a terminal running, the project is very experimental and not designed to be used.
+Altrough the code might be compatible with running both win32k and this subsystem (assuming you actually have Pico process or I find another way of storing the POSIX contexts without touching win32k), there is currently no will/support for integrating this layer into a normal Windows environment, considering syscall dispatcher would not even work due to hard-core limitations of Windows 7+.
+
+## Architecture of the POSIX subsystem
+
+### lxcore.sys
+This is the hearth of the POSIX/Linux translation layer from POSIX routines to NT Native routines.
+This component acts very similar to what lxcore.sys does, altrough lxcore.sys has some differences:
+- Lack of any VFS support: MiniROS will convert paths to normal NT directories like Win32 api does. This might change but there is not enough documentation for LxVfs routines
+- Lack of Pico process support: Altrough some preliminary code for Picoprocess exists, ReactOS lacks any support for this feature therefore no support will be provided for normal Linux ELF
+- Lack of LPC and communication with LxssManager: There is simply no need to implement support for LxssManager as we don't have either Win32k or Picoprocess
+- Support for Win32 contexts: This is required for supporting replacements of win32k.sys
+
+### lxss.sys
+Like WSL1, lxss.sys is a simple driver that registers the lxcore components, it's also responsable to be registred as the Kernel mode executor completely replacing win32k.sys. LXSS makes heavy use of LXCore for it's functionalities.
+
+LXSS operations can be summed up in two steps:
+1. Call LxInitialize to initialize lxcore.sys
+2. Register itself as the win32k callout handler, replacing/emulating win32k.sys functionality
+
+### psxsc.dll
+This is the POSIX relative to ntdll.dll, it's main purpose it so execute NT syscalls with service id 2 (0x2000 - 0x2FFF) that were previously registed by LXCore. It also exports all Linux/POSIX syscalls to the user-land. As no win32k syscalls will be called, POSIX process will never be converted to GUI processes.
+
+### psxcrt.dll
+This is a customized version of MUSL to provide a normal C runtime to the POSIX applications. This component makes use of psxsc.dll for replacing the syscall asm function call to redirect it to the proper handler.
+
+### csrss.exe/psxsrv.dll/psxss.exe
+I haven't finished checking if this can be correctly done, but the idea is to keep use csrss.exe to register a custom userland server for POSIX, like the original csrss.exe does with basesrv.dll or if we completely need a new psxss.
+
+### psxdll.dll
+If ever implemented and assumed it is correctly compatible, this will be a drop-in legacy replacement for SFU3.5 applications to ensure they still work under MiniROS. It will reference PSXCrt and PSXSc.
