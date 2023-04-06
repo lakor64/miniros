@@ -1,7 +1,7 @@
 /*
  * COPYRIGHT:       See COPYING in the top level directory
- * PROJECT:         Posix syscall compatibility layer
- * FILE:            posix/psxsc/file.c
+ * PROJECT:         Linux core compatibility layer
+ * FILE:            lxcore/syscalls/file.c
  * PURPOSE:         POSIX file syscalls implementations for NT
  * PROGRAMMERS:     Christian Rendina (christian.rendina@gmail.com)
  */
@@ -78,6 +78,15 @@ LxpSyscall_CLOSE(unsigned int fd)
 	{
 		return -1;
 	}*/
+
+	return 0;
+}
+
+ssize_t
+POSIXAPI
+LxpSyscall_READ(unsigned int fd, char* buf, size_t count)
+{
+	PAGED_CODE();
 
 	return 0;
 }

@@ -1,6 +1,6 @@
 /*
  * COPYRIGHT:       See COPYING in the top level directory
- * PROJECT:         Linux/POSIX core compatibility layer
+ * PROJECT:         Linux/POSIX compatibility layer
  * FILE:            psx/process.h
  * PURPOSE:         POSIX Context definition
  * PROGRAMMERS:     Christian Rendina (christian.rendina@gmail.com)

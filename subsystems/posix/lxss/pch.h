@@ -1,11 +1,14 @@
 /*
  * COPYRIGHT:       See COPYING in the top level directory
- * PROJECT:         Linux core compatibility layer
- * FILE:            lxcore/pch.h
+ * PROJECT:         Linux subsystem
+ * FILE:            lxss/pch.h
  * PURPOSE:         Standard precompilation header
  * PROGRAMMERS:     Christian Rendina (christian.rendina@gmail.com)
  */
 #pragma once
+
+// Enable/disable lxss.sys as the replacement Kmode executor (miniros set this to 1, 0 otherwise)
+#define __LNX32K__ 1
 
 #define STRICT 1
 
@@ -31,9 +34,3 @@
 #include <ntintsafe.h>
 #include <ntddkbd.h>
 #include <reactos/debug.h>
-
-/* POSIX headers */
-#include <psx/types.h>
-#include <psx/process.h>
-#include <psx/lxcore.h>
-

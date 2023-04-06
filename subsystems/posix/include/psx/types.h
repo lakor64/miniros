@@ -14,3 +14,4 @@
 #endif
 
 typedef unsigned short umode_t;
+typedef int pid_t;

@@ -1,1 +1,1 @@
-@ stdcall LxpSysDispatch(long long long long long long long)
+@ stdcall LxInitialize(ptr ptr)

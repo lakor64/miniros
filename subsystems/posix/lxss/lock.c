@@ -1,11 +1,11 @@
 /*
  *  COPYRIGHT:        See COPYING in the top level directory
- *  PROJECT:          Linux core compatibility layer
+ *  PROJECT:          Linux subsystem
  *  PURPOSE:          mutex functions
- *  FILE:             lxcore/lock.c
+ *  FILE:             lxss/lock.c
  */
 #include "pch.h"
-#include "lock.h"
+#include "lnx32k.h"
 
 ERESOURCE UserLock;
 
