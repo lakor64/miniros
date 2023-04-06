@@ -1,8 +1,8 @@
-###
+# MiniROS cmake dispatcher
 
 set(BOOT_TARGETS "hal;halacpi;halaacpi;halapic;halxbox;halpc98;bootvid;ntoskrnl;ntkrnlmp;kdcom;kdvbox")
 set(LIB_TARGETS "ntdll;ntdll_vista")
-set(BOOT_SUBSYSTEM_TARGETS "smss;csrss;csrsrv")
+set(BOOT_SUBSYSTEM_TARGETS "smss;csrss;csrsrv;psxsrv;psxss;os2ss")
 #set(INF_TARGETS "unattend")
 
 macro(fix_cd_path)
