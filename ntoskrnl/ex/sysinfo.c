@@ -1927,8 +1927,10 @@ SSI_DEF(SystemExtendServiceTableInformation)
     /* Check who is calling */
     if (PreviousMode != KernelMode)
     {
-        static const UNICODE_STRING Win32kName =
-            RTL_CONSTANT_STRING(L"\\SystemRoot\\System32\\win32k.sys");
+        /* miniros: allow all image names to be registred as subsystems */
+
+        /*static const UNICODE_STRING Win32kName =
+            RTL_CONSTANT_STRING(L"\\SystemRoot\\System32\\win32k.sys");*/
 
         /* Make sure we can load drivers */
         if (!SeSinglePrivilegeCheck(SeLoadDriverPrivilege, UserMode))
@@ -1947,10 +1949,10 @@ SSI_DEF(SystemExtendServiceTableInformation)
             ProbeForRead(ImageName.Buffer, ImageName.Length, sizeof(WCHAR));
 
             /* Check if we have the correct name (nothing else is allowed!) */
-            if (!RtlEqualUnicodeString(&ImageName, &Win32kName, FALSE))
+            /*if (!RtlEqualUnicodeString(&ImageName, &Win32kName, FALSE))
             {
                 _SEH2_YIELD(return STATUS_PRIVILEGE_NOT_HELD);
-            }
+            }*/
         }
         _SEH2_EXCEPT(EXCEPTION_EXECUTE_HANDLER)
         {
@@ -1959,9 +1961,12 @@ SSI_DEF(SystemExtendServiceTableInformation)
         _SEH2_END;
 
         /* Recursively call the function, so that we are from kernel mode */
-        return ZwSetSystemInformation(SystemExtendServiceTableInformation,
+        /*return ZwSetSystemInformation(SystemExtendServiceTableInformation,
                                       (PVOID)&Win32kName,
-                                      sizeof(Win32kName));
+                                      sizeof(Win32kName));*/
+        return ZwSetSystemInformation(SystemExtendServiceTableInformation,
+                                      (PVOID)&ImageName,
+                                      sizeof(ImageName));
     }
 
     /* Load the image */

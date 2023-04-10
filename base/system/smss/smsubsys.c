@@ -513,7 +513,7 @@ SmpLoadSubSystemsForMuSession(IN PULONG MuSessionId,
 {
     NTSTATUS Status = STATUS_SUCCESS, Status2;
     PSMP_REGISTRY_VALUE RegEntry;
-    UNICODE_STRING DestinationString, NtPath;
+    UNICODE_STRING NtPath; // miniros: do not use hardcoded value
     PLIST_ENTRY NextEntry;
     LARGE_INTEGER Timeout;
     PVOID State;
@@ -568,15 +568,11 @@ SmpLoadSubSystemsForMuSession(IN PULONG MuSessionId,
                     }
                     AttachedSessionId = *MuSessionId;
 
-                    /*
-                     * Start Win32k.sys on this session. Use a hardcoded value
-                     * instead of the Kmode one...
-                     */
-                    RtlInitUnicodeString(&DestinationString,
-                                         L"\\SystemRoot\\System32\\win32k.sys");
+                    // miniros: do not use hardcoded value
                     Status = NtSetSystemInformation(SystemExtendServiceTableInformation,
-                                                    &DestinationString,
-                                                    sizeof(DestinationString));
+                                                    &NtPath,
+                                                    sizeof(NtPath));
+
                     RtlFreeHeap(RtlGetProcessHeap(), 0, NtPath.Buffer);
                     SmpReleasePrivilege(State);
                     if (!NT_SUCCESS(Status))
