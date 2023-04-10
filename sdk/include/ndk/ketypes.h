@@ -97,7 +97,7 @@ Author:
 //
 // Maximum System Descriptor Table Entries
 //
-#define SSDT_MAX_ENTRIES                2
+#define SSDT_MAX_ENTRIES                3 // miniros: expand SDDT to 3
 
 //
 // Processor Architectures
