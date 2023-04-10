@@ -32,14 +32,11 @@ LXSS operations can be summed up in two steps:
 1. Call LxInitialize to initialize lxcore.sys
 2. Register itself as the win32k callout handler, replacing/emulating win32k.sys functionality
 
-### psxsc.dll
-This is the POSIX relative to ntdll.dll, it's main purpose it so execute NT syscalls with service id 2 (0x2000 - 0x2FFF) that were previously registed by LXCore. It also exports all Linux/POSIX syscalls to the user-land. As no win32k syscalls will be called, POSIX process will never be converted to GUI processes.
-
-### psxcrt.dll
-This is a customized version of MUSL to provide a normal C runtime to the POSIX applications. This component makes use of psxsc.dll for replacing the syscall asm function call to redirect it to the proper handler.
+### psxdll.dll
+This is a customized version of MUSL to provide a normal C runtime to the POSIX applications.
+This component makes use of ntdll.dll for calling service 2 syscalls (the one registred by lxss.sys), the original "syscall"
+in MUSL becomes the syscall handler in ntdll.dll (see ntdll.S on ntoskrnl for info)
+It also provides exports for legacy SFU 3.5, altrough it might not be 1:1 compatible?
 
 ### csrss.exe/psxsrv.dll/psxss.exe
 I haven't finished checking if this can be correctly done, but the idea is to keep use csrss.exe to register a custom userland server for POSIX, like the original csrss.exe does with basesrv.dll or if we completely need a new psxss.
-
-### psxdll.dll
-If ever implemented and assumed it is correctly compatible, this will be a drop-in legacy replacement for SFU3.5 applications to ensure they still work under MiniROS. It will reference PSXCrt and PSXSc.
