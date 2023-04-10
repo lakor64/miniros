@@ -101,6 +101,8 @@ CsrSbApiHandleConnectionRequest(IN PSB_API_MSG Message)
         DPRINT1("CSRSS: Sb Complete Connection failed %lx\n",Status);
     }
 
+    DPRINT1("PSXSS: Sb complete connection\n");
+
     /* Return status */
     return Status;
 }
@@ -129,6 +131,8 @@ CsrSbApiRequestThread(IN PVOID Parameter)
     PSB_API_MSG ReplyMsg = NULL;
     PVOID PortContext;
     ULONG MessageType;
+
+    DPRINT1("PSXSS: API req start\n");
 
     /* Start the loop */
     while (TRUE)
@@ -302,6 +306,14 @@ BOOLEAN
 NTAPI
 CsrSbCreateSession(IN PSB_API_MSG ApiMessage)
 {
-    ApiMessage->ReturnValue = STATUS_NOT_IMPLEMENTED;
+    PSB_CREATE_SESSION_MSG CreateSession = &ApiMessage->u.CreateSession;
+    HANDLE hThread;
+
+    hThread = CreateSession->ProcessInfo.ThreadHandle;
+
+    DPRINT1("Resuming psxss thread...\n");
+
+    /* Activate the Thread */
+    ApiMessage->ReturnValue = NtResumeThread(hThread, NULL);
     return TRUE;
 }
