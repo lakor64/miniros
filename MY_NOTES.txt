@@ -1,0 +1,151 @@
+Was it already done??
+https://sourceforge.net/projects/winntposix/files/winntposix/1.1.X/psx-src-1.1.4.zip/download
+
+# FileSystem
+- \\?? -> ROOT DEVICE
+
+# smss
+initialization:
+- mk \SmApiPort
+- Load win32k. Kmode
+- Csrss subsystem
+- Winlogon
+
+# psxss 
+Was csrss ment to have a posix dll server? __REACTOS__ diffs suggests me so
+
+# CreateProcess (w2k)
+NOTE: This is from CreateProcess win32 api?
+- Ldr EXE
+- Create EPROCESS
+- Create ETHREAD
+- Notify csrss.exe
+- Start initial thread by csrss.exe
+- Return to caller
+
+> In short, you can't directly create a process that is not a Win32 process
+This explains why it doesn't have EPROCESS->PsxContext
+
+# Original psxss idea
+/bin/simple.exe, subsystem type = POSIX application
+Pass on smss
+smss pass on psxss
+psxss calls SmpLoadDeferredSystem with "posix.exe /I /bin/simple.exe" (or whatever the cmd was)
+Application starts
+so POSIX.EXE is a Win32 app
+
+# lxcore.sys (pico kernel nt10)
+- Ldr EXE
+- Create EPROCESS
+- Create ETHREAD
+- Notify picoprovider lxcore.sys
+- Setup thread
+- Start minimal thread
+- Return to caller
+
+"Do we need csrss.exe? NO"
+"Do we need our own psxss.exe? YES"
+
+## How to write a ss for nt?
+1. Create open port to SmPortApi
+ * The CsrSbApiRequestThread routine handles incoming messages or connection
+ * requests on the SM API LPC Port.
+Dispatches:
+PSB_API_ROUTINE CsrServerSbApiDispatch[SbpMaxApiNumber - SbpCreateSession] =
+{
+    CsrSbCreateSession,
+    CsrSbTerminateSession,
+    CsrSbForeignSessionComplete,
+    CsrSbCreateProcess
+};
+1. Allocate a new process
+2. Destroy a new process
+3. Not used
+4. Not used
+
+# lnx32k.sys (internal name for the subsystem handling of the kernel driver of lxss.sys)
+- win32k callouts are not called unless Win32Context != NULL && Process == GUI_PROCESS
+This is an issue when we want a subsystem for linux because we don't have any Win32Context to hook.
+I falled back to making lxss.sys a win32k.sys wannabe
+
+## How to create new service for syscall handling of any subsystem:
+
+Refeer to https://stackoverflow.com/questions/61724100/reactos-where-are-the-ntdll-dll-stubs
+ for making stubs (sdk/include/asm/syscalls.inc & ntoskrnl/sysfuncs.h)
+
+https://codemachine.com/articles/system_call_instructions.html 
+This explains why the macro is like this. 
+
+# Questions
+Should we force map something like 0x7FFE0300 for our subsystem?
+Should we simply use "syscall" or "int 0x2e"?
+Should we not use sysenter? I think linux does not use it
+Is "SyscallId" mapped to syscall + serivce id?
+
+This context switch has to be done on psxsc.dll (POSIX ntdll.dll)
+
+We register syscalls on lxcore.sys with this: (KeAddSystemServiceTable)
+https://community.osr.com/discussion/271137/is-it-still-possible-to-add-a-3-or-4-sdt-entry-in-windows-7
+refeer to win32k.sys for information on how it register stuff.
+
+We register the same syscalls for the pico process dispatcher and syscall dispatcher for posix.
+Also refeer to this https://stackoverflow.com/questions/4380159/writing-a-windows-nt-subsystem
+https://news.ycombinator.com/item?id=20856780
+
+# Mysteries:
+- Kernel spawns process, win32k.sys is called where? csrss.exe is called where? smss is called where?
+- Does this mean that I can just use syscalls.inc with 0x2000-0x2FFF ? And rely the work on psxsc.dll to simple stubs that calls KiEnterSysCall from ntdll.dll?
+- psxsc.dll is meant to be loaded only by POSIX NT apps, no need to think about this with pico processes
+
+# Analysis on Pico Process
+
+PicoProcess is a MicroProcess with a Pico driver provider (lxss.sys) associated
+MicroProcess is a Windows process without PEB/TEB/NTDLL.dll and so on
+
+EPROCESS (PicoContext): https://www.vergiliusproject.com/kernels/x64/Windows%2010%20|%202016/2009%2020H2%20(October%202020%20Update)/_EPROCESS
+ETHREAD (PicoContext): https://www.vergiliusproject.com/kernels/x64/Windows%2010%20|%202016/2009%2020H2%20(October%202020%20Update)/_ETHREAD
+This explains some core concept and the VFS implementation: https://www.usenix.org/system/files/conference/atc13/atc13-howell.pdf
+
+https://www.slideshare.net/zeroSteiner/is-that-a-penguin-in-my-windows
+- What lxss and lxcore (lxss signed stub)
+- \Driver\lxss
+- Syscalls are LxpSyscall_*
+- Dispatcher is __cdecl linux syscall dispatcher for 64-bit (int or syscall)
+This documents only 64-bit dispatching but 32-bit would be the same as System V
+
+https://raw.githubusercontent.com/ionescu007/lxss/6a3040fadff5ce43d7bfd638a4e5d7dfe8780143/WSL-BlueHat-Final.pdf
+- More depth about process architecture
+- Expalins ioctl to \Device\lxss and what they do
+- Explains what lxssmanager is
+- API Names:
+-- PsRegisterPicoProvider
+-- PspPicoRegistrationDisabled
+-- PipInitializeCoreDriversByGroup (reactos has this?)
+-- PspPicoProviderRoutines (what is this?)
+-- LxpSysDispatch (implemented)
+-- LxpTraceSyscall (not implemented)
+-- LxpTraceLastSyscall (not implemented)
+-- LxpPrintSysLevel (not implemented)
+VFS -> //? OB
+
+https://fourcore.io/blogs/how-a-windows-process-is-created-part-1
+More in depth on how pico processes are created
+
+https://github.com/ionescu007/lxss/tree/6a3040fadff5ce43d7bfd638a4e5d7dfe8780143
+Contains material of the slideshow, this includes information and export calls from lxcore such as for vfs and so on
+
+https://www.cctry.com/thread-301774-1-1.html
+List  of all ntoskrnl exported functions, this is where PsPicoContext bla bla is
+- Where is the set of the PicoContext from the kernel? Is it private?
+
+https://github.com/kpocza/LoWe/blob/master/docs/howitworks.md
+lxcore extendor, this contains the documentation of LxInitialize api and other info on how the VFS works
+
+https://elixir.bootlin.com/linux/latest/source/include/linux/syscalls.h#L502
+List of linux syscalls
+
+https://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html
+Linux loader explanation
+
+https://github.com/thinkcz/pico-toolbox/blob/master/ToolBoxDriver/picostruct.h
+Pico process structure documentations
