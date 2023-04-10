@@ -1,6 +1,14 @@
 Was it already done??
 https://sourceforge.net/projects/winntposix/files/winntposix/1.1.X/psx-src-1.1.4.zip/download
 
+# Prefix for krnl calls and user calls
+## Win32 prefix:
+- Zw means NT syscalls that are called from kernelland (ntoskrnl)
+- Nt means NT syscalls that are called from userland (ntdll)
+## MiniROS prefix:
+- Zw -> sys_ (eg: ZwOpen -> sys_open)
+- Nt -> null (eg: NtOpen -> open)
+
 # FileSystem
 - \\?? -> ROOT DEVICE
 
@@ -92,9 +100,76 @@ We register the same syscalls for the pico process dispatcher and syscall dispat
 Also refeer to this https://stackoverflow.com/questions/4380159/writing-a-windows-nt-subsystem
 https://news.ycombinator.com/item?id=20856780
 
+
+# The real scope of ntdll.dll
+1. Nt kernel defines two entrypoint for a function:
+- User-land entrypoint where the previous called KeGetPreviousMode == UserLand, this starts with Nt#function
+Nt functions performs buffer and parameter validation from Userland
+- Kernel-land entrypoint that are called from kernel drivers and so on, this does not have validations and are
+specific in style of kernel api
+
+Both this two functions are exported to ntoskrnl.exe, the main kernel.
+How do we access this functions? Introduce NTDLL. The syscall converter and disaptcher.
+- NTDLL exports various stubs that will be called by the user application which will return to the usual
+syscall interrupt (int 0x2e)
+
+x86 dilemma: sysenter/sysexit or int?
+Windows may enter a syscall as a fast syscall (using sysenter) or with an interrupt (int syscall)
+NTDLL exports both this two functions (sysenter/sysexit and int) as three functions. This are references 
+in kernel PspLookupKernelUserEntryPoints, this is saved in SharedUserData->SystemCall.
+This should be 
+
+# How syscall stubs are generated in ntdll.dll
+Two main files are used for this purpose: 
+
+- include/asm/syscalls.inc which defines the stub functions
+- syscalls.h which defines the syscalls functions and arg count (arg count is required for stack save)
+- This two files are included in the linked ntdll.S (ntdllsys_asm from ntoskrnl)
+
+## syscalls.inc (x86/x64/mips/ppc)
+- STUB_U (Userland):
+    1. Create a fake label for Zw (Zw#Name) [ASM: MAKE_LABEL]
+    2. Make the label a jump to the userland Nt proc (Nt#Name) [ASM: START_PROC]
+    3. Create the userland Nt proc
+    proc for userland: (x86) [ASM: STUBCODE_U]
+     0. save frame/stack for argument count
+     1. mov eax, syscall
+     2. mov edx, ntdll shared syscall dispatcher
+     3. call edx
+     4. ret esp
+- STUB_K (Kernelland)
+    1. Create proc for Zw (Zw#Name) [ASM: START_PROC]
+    2. Create the kernelland Zw proc [ASM: STUBCODE_K]
+    proc for kernelland: (x86)
+     0. save frame/stack for argument count
+     1. mov eax, syscall
+     2. mov edx, pointer to arguments
+     3. call KiSystemService
+     4. ret esp
+
+## syscalls.inc (arm/arm64)
+- STUB_K (Kernelland)
+    1. Create a label for the function start and function end (presumably this are pointers)
+    2. Export the function name (ZwFuncName which is "Zw$Name")
+    3. Define the proc
+    proc for kernelland:
+     1. mov r12, syscall
+     2. call supervisor (svc)
+     3. ret lr
+    proc for kernelland end name:
+     0. null
+- STUB_U (Userland)
+    This is the same as the kernel land stub with the only difference that it also exports an NtFuncName
+
+## syscalls.inc (common)
+- Create and call STUB_U which increment syscall number by 1
+- Create and call STUB_K which increment syscall number by 1
+
 # Mysteries:
 - Kernel spawns process, win32k.sys is called where? csrss.exe is called where? smss is called where?
 - Does this mean that I can just use syscalls.inc with 0x2000-0x2FFF ? And rely the work on psxsc.dll to simple stubs that calls KiEnterSysCall from ntdll.dll?
+Yes, as we interrupt to KiSystemService it will redirect it to the proper service dispatcher
+
 - psxsc.dll is meant to be loaded only by POSIX NT apps, no need to think about this with pico processes
 
 # Analysis on Pico Process
@@ -149,3 +224,6 @@ Linux loader explanation
 
 https://github.com/thinkcz/pico-toolbox/blob/master/ToolBoxDriver/picostruct.h
 Pico process structure documentations
+
+https://pastebin.com/C1NLn3Jn
+Exported symbols of lxcore
