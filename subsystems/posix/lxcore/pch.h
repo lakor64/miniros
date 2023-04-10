@@ -37,3 +37,5 @@
 #include <psx/process.h>
 #include <psx/lxcore.h>
 
+/* Allocation tags */
+#define PSXFD_TAG 'dFxP'

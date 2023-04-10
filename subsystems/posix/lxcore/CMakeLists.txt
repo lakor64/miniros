@@ -1,4 +1,5 @@
 spec2def(lxcore.sys lxcore.spec ADD_IMPORTLIB)
+include_directories(.)
 
 set(SYSCALLS_SRC
     file.c
@@ -14,6 +15,8 @@ set(SOURCE
     syscall.h
     pico.c
     ss.c
+    utls.h
+    utls.c
     ${SYSCALLS_SRC}
 )
 

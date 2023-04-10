@@ -45,9 +45,9 @@ LxInitialize (
 #define LxpProcessGetProcessContext(proc, ret) \
     { \
         if (x->PicoCreated) \
-            ret = PspGetPicoProcessContext(proc); \
+            ret = (PPSXPROCESSINFO)PspGetPicoProcessContext(proc); \
         else \
-            ret = PsGetProcessWin32Process(proc); \
+            ret = (PPSXPROCESSINFO)PsGetProcessWin32Process(proc); \
     }
 
 #define LxpProcessGetProcessContext(proc, new, old) \
@@ -61,9 +61,9 @@ LxInitialize (
 #define LxpProcessGetThreadContext(thd, ret) \
     { \
         if (x->PicoCreated) \
-            ret = PspGetPicoThreadContext(thd); \
+            ret = (PPSXTHREADINFO)PspGetPicoThreadContext(thd); \
         else \
-            ret = PsGetThreadWin32Thread(thd); \
+            ret = (PPSXTHREADINFO)PPsGetThreadWin32Thread(thd); \
     }
 
 #define LxpProcessSetThreadContext(thd, new, old) \

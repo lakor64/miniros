@@ -15,3 +15,9 @@
 
 typedef unsigned short umode_t;
 typedef int pid_t;
+
+/* fcntl.h */
+
+#define O_RDONLY        00000000
+#define O_WRONLY        00000001
+#define O_RDWR          00000002

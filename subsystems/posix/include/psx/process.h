@@ -11,10 +11,9 @@
 
 typedef struct _PSXFD
 {
-	PHANDLE NtHandle;
-
-	// linux kernel should be UTF-8, we mark PSXSS as UTF-8 aware kernel side
-	PCHAR FileName;
+	HANDLE NtHandle;
+	//UNICODE_STRING NtFileName;
+	//UTF8_STRING PsxFileNane;
 } PSXFD, *PPSXFD;
 
 /*
@@ -29,6 +28,7 @@ typedef struct _PSXTHREADINFO
 	LONG RefCount;
 	/*--------------------------------------------------------*/
 	struct _PSXPROCESSINFO* ppi;
+	errno_t ThreadError;
 
 } PSXTHREADINFO, *PPSXTHREADINFO;
 
@@ -45,5 +45,6 @@ typedef struct _PSXPROCESSINFO
 	PEPROCESS peProcess; /* should not exist on a PicoThread */
 	LONG RefCount;
 	/*--------------------------------------------------------*/
+	long OpenedFD;
 	PPSXFD Files[MAX_PROCESS_FD];
 } PSXPROCESSINFO, *PPSXPROCESSINFO;
