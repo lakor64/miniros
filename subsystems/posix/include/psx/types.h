@@ -7,7 +7,7 @@
  */
 #pragma once
 
-#if __X64__
+#if _M_AMD64
     typedef signed long long ssize_t;
 #else
     typedef signed long ssize_t;

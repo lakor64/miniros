@@ -165,6 +165,8 @@ LxpSyscall_WRITE(unsigned int fd, const char *buf, size_t count)
 
 	PAGED_CODE();
 
+	DPRINT1("LxpSyscall_WRITE: FD %u BUF %s COUNT %u\n", fd, buf, count);
+
 	// TODO! Broken code on x64, we should store linux fd somewhere else (eg: TEB)
 
 	/*status = NtWriteFile((HANDLE)fd, NULL, NULL, NULL, &iob, (PVOID)buf, count, NULL, NULL);

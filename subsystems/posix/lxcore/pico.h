@@ -40,7 +40,7 @@ typedef struct _PS_PICO_THREAD_ATTRIBUTES {
 	ULONG_PTR StartParameter1;
 	ULONG_PTR StartParameter2;
 
-#if defined(_AMD64_)
+#if defined(_M_AMD64)
 
 	ULONG UserFsBase;
 	ULONG64 UserGsBase;
@@ -61,7 +61,7 @@ typedef struct _PS_PICO_THREAD_ATTRIBUTES {
 	ULONG_PTR R14;
 	ULONG_PTR R15;
 
-#elif defined(_X86_)
+#elif defined(_M_IX86)
 
 	ULONG UserFsBase;
 	ULONG UserGsBase;
@@ -77,7 +77,7 @@ typedef struct _PS_PICO_THREAD_ATTRIBUTES {
 	ULONG_PTR Esi;
 	ULONG_PTR Ebp;
 
-#elif defined(_ARM_)
+#elif defined(_M_ARM)
 
 	ULONG UserRoBase;
 	ULONG UserRwBase;
@@ -130,12 +130,12 @@ typedef PS_PICO_GET_THREAD_CONTEXT *PPS_PICO_GET_THREAD_CONTEXT;
 
 typedef enum _PS_PICO_THREAD_DESCRIPTOR_TYPE {
 
-#if defined(_X86_) || defined(_AMD64_)
+#if defined(_M_IX86) || defined(_M_AMD64)
 
 		PicoThreadDescriptorTypeFs,
 		PicoThreadDescriptorTypeGs,
 
-#elif defined(_ARM_)
+#elif defined(_M_ARM)
 
 		PicoThreadDescriptorTypeUserRo,
 		PicoThreadDescriptorTypeUserRw,
@@ -219,7 +219,7 @@ typedef struct _PS_PICO_ROUTINES {
 typedef struct _PS_PICO_SYSTEM_CALL_INFORMATION {
 		PKTRAP_FRAME TrapFrame;
 
-#if defined(_ARM_)
+#if defined(_M_ARM)
 
 		ULONG R4;
 		ULONG R5;
@@ -229,7 +229,7 @@ typedef struct _PS_PICO_SYSTEM_CALL_INFORMATION {
 
 	} PS_PICO_SYSTEM_CALL_INFORMATION, *PPS_PICO_SYSTEM_CALL_INFORMATION;
 
-#if defined(_ARM_)
+#if defined(_M_ARM)
 
 	//
 	// Structure offsets known to assembler code that does not use genxx, verify

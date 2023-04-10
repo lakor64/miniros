@@ -8,13 +8,13 @@
 #include "pch.h"
 #include "syscall.h"
 
-#define SC_(x, ac) (ULONG_PTR)(LxpSyscall_##x),
+#define SC_(uppername, lowername, argcount) (ULONG_PTR)(LxpSyscall_##uppername),
 ULONG_PTR Lnx32kSDDT[] = {
 #include <psx/sclist.h>
 };
 #undef SC_
 
-#define SC_(x, ac) ac * sizeof(void*),
+#define SC_(uppername, lowername, argcount) argcount * sizeof(void*),
 UCHAR Lnx32kSPPT[] = {
 #include <psx/sclist.h>
 };

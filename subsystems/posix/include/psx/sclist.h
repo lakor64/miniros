@@ -10,13 +10,14 @@
 // ex.: LxpSyscall_WRITE
 
 // KEEP IN SYNC WITH lxcore/syscall.h
+// #define SC_(uppername, lowername, argcount)
 
-#ifdef _X86_
-SC_ (RESTART_SYSCALL, 0)
-SC_ (EXIT, 1)
-SC_ (FORK, 0)
+#ifdef _M_IX86
+SC_ (RESTART_SYSCALL, restart_syscall, 0)
+SC_ (EXIT, exit, 1)
+SC_ (FORK, fork, 0)
 #endif
-SC_ (READ, 3)
-SC_ (WRITE, 3)
-SC_ (OPEN, 3)
-SC_ (CLOSE, 1)
+SC_ (READ, read, 3)
+SC_ (WRITE, write, 3)
+SC_ (OPEN, open, 3)
+SC_ (CLOSE, close, 1)
