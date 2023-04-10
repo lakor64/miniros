@@ -23,6 +23,13 @@ initialization:
 # psxss 
 Was csrss ment to have a posix dll server? __REACTOS__ diffs suggests me so
 
+1. Create PSX object directory (\POSIX\)
+1. Connect to smss.exe (SmConnectToSm)
+
+
+
+
+
 # CreateProcess (w2k)
 NOTE: This is from CreateProcess win32 api?
 - Ldr EXE
