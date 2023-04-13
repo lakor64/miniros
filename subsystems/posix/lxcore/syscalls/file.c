@@ -161,11 +161,11 @@ LxpSyscall_WRITE(unsigned int fd, const char *buf, size_t count)
 	/*NTSTATUS status;
 	IO_STATUS_BLOCK iob;*/
 
-	PPSXTHREADINFO thd = LxpGetCurrentPsxThreadContext();
-
-	PAGED_CODE();
+	//PPSXTHREADINFO thd = LxpGetCurrentPsxThreadContext();
 
 	DPRINT1("LxpSyscall_WRITE: FD %u BUF %s COUNT %u\n", fd, buf, count);
+
+	//PAGED_CODE();
 
 	// TODO! Broken code on x64, we should store linux fd somewhere else (eg: TEB)
 
@@ -176,6 +176,6 @@ LxpSyscall_WRITE(unsigned int fd, const char *buf, size_t count)
 
 	return (long)iob.Information;*/
 
-	thd->ThreadError = ENOSYS;
+	//thd->ThreadError = ENOSYS;
 	return -1;
 }

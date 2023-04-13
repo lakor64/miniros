@@ -1,16 +1,3 @@
-/*
- * COPYRIGHT:       See COPYING in the top level directory
- * PROJECT:         Linux/POSIX core compatibility layer
- * FILE:            psx/sclist.h
- * PURPOSE:         LXCore syscall list
- * REFERENCE:       https://syscalls32.paolostivanin.com/
- *                  https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
- */
-
-// ex.: LxpSyscall_WRITE
-
-// KEEP IN SYNC WITH lxcore/syscall.h
-// #define SC_(uppername, lowername, argcount)
 
 #ifdef _M_IX86
 SC_ (RESTART_SYSCALL, restart_syscall, 0)

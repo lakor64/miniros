@@ -1,4 +1,3 @@
-# Copied from ntdll.S (ntoskrnl)
 
 #include <syscalls_psx.inc>
 

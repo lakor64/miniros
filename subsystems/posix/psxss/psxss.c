@@ -25,6 +25,7 @@ UNICODE_STRING PsxDirectoryName = RTL_CONSTANT_STRING(L"\\POSIX");
 HANDLE PsxObjectDirectory = NULL;
 HANDLE PsxSbApiPort = NULL;
 HANDLE CsrHeap = NULL;
+HANDLE PsxSmApiPort = NULL;
 //PCSR_THREAD CsrSbApiRequestThreadPtr;
 
 VOID
@@ -232,6 +233,18 @@ _main(int argc,
         return -1;
     }
     
+    /* We're all set! Connect to SM! */
+    Status = SmConnectToSm(&PsxSbApiPortName,
+                           PsxSbApiPort,
+                           IMAGE_SUBSYSTEM_POSIX_CUI,
+                           &PsxSmApiPort);
+    if (!NT_SUCCESS(Status))
+    {
+        DPRINT1("PSXSS:%s: SmConnectToSm failed (Status=0x%08lx)\n",
+                __FUNCTION__, Status);
+        return Status;
+    }
+
     /* Disable errors */
     PsxpSetDefaultProcessHardErrorMode();
 

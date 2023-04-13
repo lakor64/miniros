@@ -23,8 +23,9 @@ UCHAR Lnx32kSPPT[] = {
 #define NUMBER_OF_SYSCALLS    (sizeof(Lnx32kSPPT) / sizeof(Lnx32kSPPT[0]))
 #define MAX_SYSCALL_NUMBER    0x1000 + (NUMBER_OF_SYSCALLS - 1)
 ULONG Lnx32kNumberOfSysCalls = NUMBER_OF_SYSCALLS;
-
-NTAPI NTSTATUS LxpSsInitialize(VOID)
+ 
+NTSTATUS
+NTAPI LxpSsInitialize(VOID)
 {
     BOOLEAN Result;
 

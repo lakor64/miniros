@@ -12,11 +12,11 @@
 
 #include <psx/types.h>
 
-extern long write(unsigned int fd, const char* buf, ssize_t count);
+extern long __stdcall write(unsigned int fd, const char* buf, ssize_t count);
 
 void __PosixProcessStartup()
 {
-    DPRINT1("simple.exe startup!");
+    DPRINT1("simple.exe startup!\n");
 
     write(0, "Hello posix universe", 20);
     while(1); // die...

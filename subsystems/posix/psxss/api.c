@@ -132,8 +132,6 @@ CsrSbApiRequestThread(IN PVOID Parameter)
     PVOID PortContext;
     ULONG MessageType;
 
-    DPRINT1("PSXSS: API req start\n");
-
     /* Start the loop */
     while (TRUE)
     {
@@ -151,7 +149,7 @@ CsrSbApiRequestThread(IN PVOID Parameter)
 
             /* We failed big time, so start out fresh */
             ReplyMsg = NULL;
-            DPRINT1("CSRSS: ReceivePort failed - Status == %X\n", Status);
+            DPRINT1("PSXSS: ReceivePort failed - Status == %X\n", Status);
             continue;
         }
 
@@ -193,7 +191,7 @@ CsrSbApiRequestThread(IN PVOID Parameter)
         if (ReceiveMsg.ApiNumber > SbpMaxApiNumber)
         {
             ReceiveMsg.ApiNumber = SbpMaxApiNumber;
-            DPRINT1("CSRSS: %lx is invalid Sb ApiNumber\n", ReceiveMsg.ApiNumber);
+            DPRINT1("PSXSS: %lx is invalid Sb ApiNumber\n", ReceiveMsg.ApiNumber);
         }
 
         /* Reuse the message */
@@ -205,7 +203,7 @@ CsrSbApiRequestThread(IN PVOID Parameter)
             /* Call the API */
             if (!CsrServerSbApiDispatch[ReceiveMsg.ApiNumber](&ReceiveMsg))
             {
-                DPRINT1("CSRSS: %s Session Api called and failed\n",
+                DPRINT1("PSXSS: %s Session Api called and failed\n",
                         CsrServerSbApiName[ReceiveMsg.ApiNumber]);
 
                 /* It failed, so return nothing */
@@ -310,8 +308,6 @@ CsrSbCreateSession(IN PSB_API_MSG ApiMessage)
     HANDLE hThread;
 
     hThread = CreateSession->ProcessInfo.ThreadHandle;
-
-    DPRINT1("Resuming psxss thread...\n");
 
     /* Activate the Thread */
     ApiMessage->ReturnValue = NtResumeThread(hThread, NULL);
