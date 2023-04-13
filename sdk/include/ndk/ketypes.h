@@ -38,13 +38,14 @@ Author:
 // \----------------------------------------------------------------/
 //
 // The table number is then used as an index into the service descriptor table.
-#define TABLE_NUMBER_BITS 1
+#define TABLE_NUMBER_BITS 2 // miniros: increment number bits to 2 (1,2,3)
 #define TABLE_OFFSET_BITS 12
 
 //
 // There are 2 tables (kernel and shadow, used by Win32K)
 //
-#define NUMBER_SERVICE_TABLES 2
+#define NUMBER_SERVICE_TABLES 3 // miniros: add third service table
+#define POSIX_SERVICE_INDEX 2
 #define NTOS_SERVICE_INDEX   0
 #define WIN32K_SERVICE_INDEX 1
 

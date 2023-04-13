@@ -1773,32 +1773,44 @@ KiSystemServiceHandler(IN PKTRAP_FRAME TrapFrame,
     Offset = (SystemCallNumber >> SERVICE_TABLE_SHIFT) & SERVICE_TABLE_MASK;
     Id = SystemCallNumber & SERVICE_NUMBER_MASK;
 
+    if (KiUserTrap(TrapFrame))
+        DPRINT1("--------------- User-mode syscall trap %d %d (%d)\n", Id, Offset, SystemCallNumber);
+
+    if (__builtin_expect((Offset >> BITS_PER_ENTRY) >= NUMBER_SERVICE_TABLES, 1))
+    {
+        Status = STATUS_INVALID_SYSTEM_SERVICE;
+        goto ExitCall;
+    }
+
     /* Get descriptor table */
     DescriptorTable = (PVOID)((ULONG_PTR)Thread->ServiceTable + Offset);
 
     /* Validate the system call number */
     if (__builtin_expect(Id >= DescriptorTable->Limit, 0))
     {
-        /* Check if this is a GUI call */
-        if (!(Offset & SERVICE_TABLE_TEST))
+        /*
+            miniros: only win32k needs to convert it's own thread to GUI Thread
+        */
+        if (Offset & SERVICE_TABLE_TEST)
         {
-            /* Fail the call */
-            Status = STATUS_INVALID_SYSTEM_SERVICE;
-            goto ExitCall;
+            /* Convert us to a GUI thread -- must wrap in ASM to get new EBP */
+            Status = KiConvertToGuiThread();
+
+            /* Reload trap frame and descriptor table pointer from new stack */
+            TrapFrame = *(volatile PVOID*)&Thread->TrapFrame;
+
+            if (!NT_SUCCESS(Status))
+            {
+                /* Set the last error and fail */
+                goto ExitCall;
+            }
+        }
+        else
+        {
+            Thread->ServiceTable = KeServiceDescriptorTableShadow;
         }
 
-        /* Convert us to a GUI thread -- must wrap in ASM to get new EBP */
-        Status = KiConvertToGuiThread();
-
-        /* Reload trap frame and descriptor table pointer from new stack */
-        TrapFrame = *(volatile PVOID*)&Thread->TrapFrame;
         DescriptorTable = (PVOID)(*(volatile ULONG_PTR*)&Thread->ServiceTable + Offset);
-
-        if (!NT_SUCCESS(Status))
-        {
-            /* Set the last error and fail */
-            goto ExitCall;
-        }
 
         /* Validate the system call number again */
         if (Id >= DescriptorTable->Limit)

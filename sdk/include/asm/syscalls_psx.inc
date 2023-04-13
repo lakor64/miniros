@@ -5,8 +5,7 @@
 
     GBLA SyscallId
 
-# Subsystem id is 2 (lxcore)
-SyscallId SETA 0x2000
+SyscallId SETA 8192
 
 	MACRO
 	STUB_K $Name
@@ -51,8 +50,7 @@ $ZwFuncEndName
 
 #include <asm.inc>
 
-# Subsystem id is 2 (lxcore)
-SyscallId = 0x2000
+SyscallId = 8192
 
 #ifdef _M_IX86
 #define KUSER_SHARED_SYSCALL HEX(7ffe0300)
