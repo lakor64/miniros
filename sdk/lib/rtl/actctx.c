@@ -17,7 +17,6 @@
 #include <rtl.h>
 #include <ntstrsafe.h>
 #include <compat_undoc.h>
-#include <cmfuncs.h>
 
 #define NDEBUG
 #include <debug.h>
@@ -5072,55 +5071,6 @@ static NTSTATUS find_guid(ACTIVATION_CONTEXT* actctx, ULONG section_kind,
     return STATUS_SUCCESS;
 }
 
-/* miniros */
-static BOOL actctx_load_manifest(PWSTR szOutput, ULONG ulOutputMax)
-{
-    UNICODE_STRING szDllRegPath;
-    HANDLE hHive;
-    UNICODE_STRING szValue;
-    CHAR ValueBuffer[256];
-    ULONG ulKeyInfoSz = 0;
-    OBJECT_ATTRIBUTES ObjectAttributes;
-    NTSTATUS Status;
-
-    /* Load kernel hive */
-    RtlInitUnicodeString(&szDllRegPath, L"\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel");
-    InitializeObjectAttributes(&ObjectAttributes, &szDllRegPath, OBJ_KERNEL_HANDLE | OBJ_CASE_INSENSITIVE, NULL, NULL);
-    Status = ZwOpenKey(&hHive, KEY_READ, &ObjectAttributes);
-
-    if (!NT_SUCCESS(Status))
-    {
-        DPRINT1("Unable to open manifest kernel hive!!!!\n");
-        return FALSE;
-    }
-
-    if (RosGetProcessCompatVersion())
-		RtlInitUnicodeString(&szValue, L"ForwardManifest");
-    else
-		RtlInitUnicodeString(&szValue, L"SystemManifest");
-
-    Status = ZwQueryValueKey(hHive, &szValue, KeyValueFullInformation, ValueBuffer, sizeof(ValueBuffer), &ulKeyInfoSz);
-    if (!NT_SUCCESS(Status))
-    {
-        /* Cannot get the value */
-        DPRINT1("Unable to open manifest kernel value!!!!\n");
-        ZwClose(hHive);
-        return FALSE;
-    }
-
-    if (((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->Type != REG_EXPAND_SZ)
-    {
-        DPRINT1("Invalid manifest kernel hive!!!!\n");
-        /* Invalid type */
-        ZwClose(hHive);
-        return FALSE;
-    }
-
-    RtlStringCchCatW(szOutput, ulOutputMax, (PWSTR)(ValueBuffer + ((PKEY_VALUE_FULL_INFORMATION)ValueBuffer)->DataOffset));
-    ZwClose(hHive);
-    return TRUE;
-}
-
 /* initialize the activation context for the current process */
 void actctx_init(PVOID* pOldShimData)
 {
@@ -5151,10 +5101,13 @@ void actctx_init(PVOID* pOldShimData)
     ctx.lpSource = buffer;
     RtlStringCchCopyW(buffer, RTL_NUMBER_OF(buffer), SharedUserData->NtSystemRoot);
 
-	/* miniros */
-    if (!actctx_load_manifest(buffer, RTL_NUMBER_OF(buffer)))
+    if (RosGetProcessCompatVersion())
     {
-        return;
+        RtlStringCchCatW(buffer, RTL_NUMBER_OF(buffer), L"\\winsxs\\manifests\\forwardcompatible.manifest");
+    }
+    else
+    {
+        RtlStringCchCatW(buffer, RTL_NUMBER_OF(buffer), L"\\winsxs\\manifests\\systemcompatible.manifest");
     }
 
     Status = RtlCreateActivationContext(0, (PVOID)&ctx, 0, NULL, NULL, &handle);

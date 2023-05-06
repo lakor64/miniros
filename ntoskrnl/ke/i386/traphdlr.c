@@ -1773,9 +1773,6 @@ KiSystemServiceHandler(IN PKTRAP_FRAME TrapFrame,
     Offset = (SystemCallNumber >> SERVICE_TABLE_SHIFT) & SERVICE_TABLE_MASK;
     Id = SystemCallNumber & SERVICE_NUMBER_MASK;
 
-    if (KiUserTrap(TrapFrame))
-        DPRINT1("--------------- User-mode syscall trap %d %d (%d)\n", Id, Offset, SystemCallNumber);
-
     if (__builtin_expect((Offset >> BITS_PER_ENTRY) >= NUMBER_SERVICE_TABLES, 1))
     {
         Status = STATUS_INVALID_SYSTEM_SERVICE;
@@ -1784,6 +1781,10 @@ KiSystemServiceHandler(IN PKTRAP_FRAME TrapFrame,
 
     /* Get descriptor table */
     DescriptorTable = (PVOID)((ULONG_PTR)Thread->ServiceTable + Offset);
+
+    if (KiUserTrap(TrapFrame))
+        DPRINT1("--------------- User-mode syscall trap %d %d (%d)\n", Id, Offset, SystemCallNumber);
+
 
     /* Validate the system call number */
     if (__builtin_expect(Id >= DescriptorTable->Limit, 0))

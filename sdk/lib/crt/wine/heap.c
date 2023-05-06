@@ -149,7 +149,7 @@ static MSVCRT_size_t msvcrt_heap_size(void *ptr)
 /*********************************************************************
  *		??2@YAPAXI@Z (MSVCRT.@)
  */
-void* CDECL MSVCRT_operator_new(MSVCRT_size_t size)
+void* CDECL DECLSPEC_HOTPATCH MSVCRT_operator_new(MSVCRT_size_t size)
 {
   void *retval;
   int freed;
@@ -175,7 +175,7 @@ void* CDECL MSVCRT_operator_new(MSVCRT_size_t size)
 
   TRACE("(%ld) out of memory\n", size);
 #if _MSVCR_VER >= 80
-  throw_bad_alloc("bad allocation");
+  throw_exception(EXCEPTION_BAD_ALLOC, 0, "bad allocation");
 #endif
   return NULL;
 }
@@ -193,7 +193,7 @@ void* CDECL MSVCRT_operator_new_dbg(MSVCRT_size_t size, int type, const char *fi
 /*********************************************************************
  *		??3@YAXPAX@Z (MSVCRT.@)
  */
-void CDECL MSVCRT_operator_delete(void *mem)
+void CDECL DECLSPEC_HOTPATCH MSVCRT_operator_delete(void *mem)
 {
   TRACE("(%p)\n", mem);
   msvcrt_heap_free(mem);
@@ -397,8 +397,9 @@ MSVCRT_size_t CDECL _msize(void* mem)
   return size;
 }
 
+#if _MSVCR_VER>=80
 /*********************************************************************
- * _aligned_msize (MSVCR100.@)
+ * _aligned_msize (MSVCR80.@)
  */
 size_t CDECL _aligned_msize(void *p, MSVCRT_size_t alignment, MSVCRT_size_t offset)
 {
@@ -412,22 +413,51 @@ size_t CDECL _aligned_msize(void *p, MSVCRT_size_t alignment, MSVCRT_size_t offs
     alloc_ptr = SAVED_PTR(p);
     return _msize(*alloc_ptr)-alignment-sizeof(void*);
 }
+#endif
 
 /*********************************************************************
  *		calloc (MSVCRT.@)
  */
-void* CDECL MSVCRT_calloc(MSVCRT_size_t count, MSVCRT_size_t size)
+void* CDECL DECLSPEC_HOTPATCH MSVCRT_calloc(MSVCRT_size_t count, MSVCRT_size_t size)
 {
-  return msvcrt_heap_alloc(HEAP_ZERO_MEMORY, count*size);
+  MSVCRT_size_t bytes = count*size;
+
+  if (size && bytes / size != count)
+  {
+    *MSVCRT__errno() = MSVCRT_ENOMEM;
+    return NULL;
+  }
+
+  return msvcrt_heap_alloc(HEAP_ZERO_MEMORY, bytes);
 }
+
+#if _MSVCR_VER>=140
+/*********************************************************************
+ *		_calloc_base (UCRTBASE.@)
+ */
+void* CDECL _calloc_base(MSVCRT_size_t count, MSVCRT_size_t size)
+{
+  return MSVCRT_calloc(count, size);
+}
+#endif
 
 /*********************************************************************
  *		free (MSVCRT.@)
  */
-void CDECL MSVCRT_free(void* ptr)
+void CDECL DECLSPEC_HOTPATCH MSVCRT_free(void* ptr)
 {
   msvcrt_heap_free(ptr);
 }
+
+#if _MSVCR_VER>=140
+/*********************************************************************
+ *		_free_base (UCRTBASE.@)
+ */
+void CDECL _free_base(void* ptr)
+{
+  msvcrt_heap_free(ptr);
+}
+#endif
 
 /*********************************************************************
  *                  malloc (MSVCRT.@)
@@ -440,10 +470,20 @@ void* CDECL MSVCRT_malloc(MSVCRT_size_t size)
   return ret;
 }
 
+#if _MSVCR_VER>=140
+/*********************************************************************
+ *                  _malloc_base (UCRTBASE.@)
+ */
+void* CDECL _malloc_base(MSVCRT_size_t size)
+{
+  return MSVCRT_malloc(size);
+}
+#endif
+
 /*********************************************************************
  *		realloc (MSVCRT.@)
  */
-void* CDECL MSVCRT_realloc(void* ptr, MSVCRT_size_t size)
+void* CDECL DECLSPEC_HOTPATCH MSVCRT_realloc(void* ptr, MSVCRT_size_t size)
 {
   if (!ptr) return MSVCRT_malloc(size);
   if (size) return msvcrt_heap_realloc(0, ptr, size);
@@ -451,8 +491,19 @@ void* CDECL MSVCRT_realloc(void* ptr, MSVCRT_size_t size)
   return NULL;
 }
 
+#if _MSVCR_VER>=140
 /*********************************************************************
- * _recalloc (MSVCR100.@)
+ *		_realloc_base (UCRTBASE.@)
+ */
+void* CDECL _realloc_base(void* ptr, MSVCRT_size_t size)
+{
+  return MSVCRT_realloc(ptr, size);
+}
+#endif
+
+#if _MSVCR_VER>=80
+/*********************************************************************
+ * _recalloc (MSVCR80.@)
  */
 void* CDECL _recalloc(void *mem, MSVCRT_size_t num, MSVCRT_size_t size)
 {
@@ -475,6 +526,7 @@ void* CDECL _recalloc(void *mem, MSVCRT_size_t num, MSVCRT_size_t size)
         memset((BYTE*)ret+old_size, 0, size-old_size);
     return ret;
 }
+#endif
 
 /*********************************************************************
  *		__p__amblksiz (MSVCRT.@)
@@ -715,25 +767,15 @@ int CDECL MSVCRT_memmove_s(void *dest, MSVCRT_size_t numberOfElements, const voi
     if(!count)
         return 0;
 
-    if(!dest || !src) {
-        if(dest)
-            memset(dest, 0, numberOfElements);
-
-        *_errno() = EINVAL;
-        return EINVAL;
-    }
-
-    if(count > numberOfElements) {
-        memset(dest, 0, numberOfElements);
-
-        *_errno() = ERANGE;
-        return ERANGE;
-    }
+    if (!MSVCRT_CHECK_PMT(dest != NULL)) return MSVCRT_EINVAL;
+    if (!MSVCRT_CHECK_PMT(src != NULL)) return MSVCRT_EINVAL;
+    if (!MSVCRT_CHECK_PMT_ERR( count <= numberOfElements, MSVCRT_ERANGE )) return MSVCRT_ERANGE;
 
     memmove(dest, src, count);
     return 0;
 }
 
+#if _MSVCR_VER>=100
 /*********************************************************************
  *              wmemmove_s (MSVCR100.@)
  */
@@ -756,6 +798,7 @@ int CDECL wmemmove_s(MSVCRT_wchar_t *dest, MSVCRT_size_t numberOfElements,
     memmove(dest, src, sizeof(MSVCRT_wchar_t)*count);
     return 0;
 }
+#endif
 
 /*********************************************************************
  *		memcpy_s (MSVCRT.@)
@@ -779,10 +822,11 @@ int CDECL MSVCRT_memcpy_s(void *dest, MSVCRT_size_t numberOfElements, const void
         return MSVCRT_ERANGE;
     }
 
-    memcpy(dest, src, count);
+    memmove(dest, src, count);
     return 0;
 }
 
+#if _MSVCR_VER>=100
 /*********************************************************************
  *              wmemcpy_s (MSVCR100.@)
  */
@@ -805,9 +849,10 @@ int CDECL wmemcpy_s(MSVCRT_wchar_t *dest, MSVCRT_size_t numberOfElements,
         return MSVCRT_ERANGE;
     }
 
-    memcpy(dest, src, sizeof(MSVCRT_wchar_t)*count);
+    memmove(dest, src, sizeof(MSVCRT_wchar_t)*count);
     return 0;
 }
+#endif
 
 /*********************************************************************
  *		strncpy_s (MSVCRT.@)

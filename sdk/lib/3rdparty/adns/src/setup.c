@@ -569,10 +569,10 @@ int adns_init(adns_state *ads_r, adns_initflags flags, FILE *diagfile) {
   adns_state ads;
   const char *res_options, *adns_res_options;
   int r;
-/*#ifdef ADNS_JGAA_WIN32
+#ifdef ADNS_JGAA_WIN32
   #define SECURE_PATH_LEN (MAX_PATH - 64)
   char PathBuf[MAX_PATH];
-#endif*/
+#endif
 
   r= init_begin(&ads, flags, diagfile ? diagfile : stderr);
   if (r) return r;
@@ -582,7 +582,7 @@ int adns_init(adns_state *ads_r, adns_initflags flags, FILE *diagfile) {
   ccf_options(ads,"RES_OPTIONS",-1,res_options);
   ccf_options(ads,"ADNS_RES_OPTIONS",-1,adns_res_options);
 
-/*#ifdef ADNS_JGAA_WIN32
+#ifdef ADNS_JGAA_WIN32
   GetWindowsDirectory(PathBuf, SECURE_PATH_LEN);
   strcat(PathBuf,"\\resolv.conf");
   readconfig(ads,PathBuf,1);
@@ -598,9 +598,7 @@ int adns_init(adns_state *ads_r, adns_initflags flags, FILE *diagfile) {
 #else
   readconfig(ads,"/etc/resolv.conf",1);
   readconfig(ads,"/etc/resolv-adns.conf",0);
-#endif*/
-  readconfig(ads,"\\etc\\resolv.conf",1);
-  readconfig(ads,"\\etc\\resolv-adns.conf",0);
+#endif
 
   readconfigenv(ads,"RES_CONF");
   readconfigenv(ads,"ADNS_RES_CONF");
