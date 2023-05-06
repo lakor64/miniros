@@ -19,8 +19,8 @@
 #define dstend  x4
 #define zva_val x5
 
-.global memset
-.type memset,%function
+.set _memset, memset
+.global _memset
 memset:
 
 	dup     v0.16B, valw

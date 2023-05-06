@@ -1,5 +1,5 @@
-.global log10f
-.type log10f,@function
+.set _log10f, log10f
+.global _log10f
 log10f:
 	fldlg2
 	flds 4(%esp)

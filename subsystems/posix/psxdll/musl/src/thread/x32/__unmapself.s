@@ -1,7 +1,7 @@
 /* Copyright 2011-2012 Nicholas J. Kain, licensed under standard MIT license */
 .text
-.global __unmapself
-.type   __unmapself,@function
+.set ___unmapself, __unmapself
+.global ___unmapself
 __unmapself:
 	movl $0x4000000b,%eax   /* SYS_munmap */
 	syscall         /* munmap(arg2,arg3) */

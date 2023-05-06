@@ -50,8 +50,8 @@
    The loop tail is handled by always copying 64 bytes from the end.
 */
 
-.global memcpy
-.type memcpy,%function
+.set _memcpy, memcpy
+.global _memcpy
 memcpy:
 	add     srcend, src, count
 	add     dstend, dstin, count

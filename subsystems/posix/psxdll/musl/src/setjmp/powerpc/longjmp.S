@@ -1,8 +1,8 @@
-	.global _longjmp
-	.global longjmp
-	.type   _longjmp,@function
-	.type   longjmp,@function
-_longjmp:
+	.set __longjmp, _longjmp
+.global __longjmp
+	.set _longjmp, longjmp
+.global _longjmp
+		_longjmp:
 longjmp:
 	/*
 	 * void longjmp(jmp_buf env, int val);
@@ -40,8 +40,7 @@ longjmp:
 #if defined(_SOFT_FLOAT) || defined(__NO_FPRS__)
 	mflr 0
 	bl 1f
-	.hidden __hwcap
-	.long __hwcap-.
+		.long __hwcap-.
 1:	mflr 4
 	lwz 5, 0(4)
 	lwzx 4, 4, 5

@@ -1,5 +1,5 @@
-.global __unmapself
-.type   __unmapself,@function
+.set ___unmapself, __unmapself
+.global ___unmapself
 __unmapself:
 	l.ori	r11, r0, 215 /* __NR_munmap */
 	l.sys	1

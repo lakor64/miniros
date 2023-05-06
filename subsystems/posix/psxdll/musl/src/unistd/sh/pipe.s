@@ -1,5 +1,5 @@
-.global pipe
-.type   pipe, @function
+.set _pipe, pipe
+.global _pipe
 pipe:
 	mov    #42, r3
 	trapa  #31

@@ -1,5 +1,5 @@
-.global expm1l
-.type expm1l,@function
+.set _expm1l, expm1l
+.global _expm1l
 expm1l:
 	fldt 4(%esp)
 	fldl2e
@@ -32,10 +32,10 @@ expm1l:
 	fsubrp
 	ret
 
-.global exp2l
-.global __exp2l
-.hidden __exp2l
-.type exp2l,@function
+.set _exp2l, exp2l
+.global _exp2l
+.set ___exp2l, __exp2l
+.global ___exp2l
 exp2l:
 __exp2l:
 	fldt 4(%esp)

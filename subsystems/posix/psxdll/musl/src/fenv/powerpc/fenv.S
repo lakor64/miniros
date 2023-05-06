@@ -1,6 +1,6 @@
 #if !defined(_SOFT_FLOAT) && !defined(__NO_FPRS__)
-.global feclearexcept
-.type feclearexcept,@function
+.set _feclearexcept, feclearexcept
+.global _feclearexcept
 feclearexcept:
 	andis. 3,3,0x3e00
 	/* if (r3 & FE_INVALID) r3 |= all_invalid_flags */
@@ -29,8 +29,8 @@ feclearexcept:
 	addi 1,1,16
 	blr
 
-.global feraiseexcept
-.type feraiseexcept,@function
+.set _feraiseexcept, feraiseexcept
+.global _feraiseexcept
 feraiseexcept:
 	andis. 3,3,0x3e00
 	/* if (r3 & FE_INVALID) r3 |= software_invalid_flag */
@@ -53,8 +53,8 @@ feraiseexcept:
 	addi 1,1,16
 	blr
 
-.global fetestexcept
-.type fetestexcept,@function
+.set _fetestexcept, fetestexcept
+.global _fetestexcept
 fetestexcept:
 	andis. 3,3,0x3e00
 	/* return r3 & fpscr */
@@ -66,8 +66,8 @@ fetestexcept:
 	and 3,3,9
 	blr
 
-.global fegetround
-.type fegetround,@function
+.set _fegetround, fegetround
+.global _fegetround
 fegetround:
 	/* return fpscr & 3 */
 	stwu 1,-16(1)
@@ -78,9 +78,8 @@ fegetround:
 	clrlwi 3,3,30
 	blr
 
-.global __fesetround
-.hidden __fesetround
-.type __fesetround,@function
+.set ___fesetround, __fesetround
+.global ___fesetround
 __fesetround:
 	/*
 	 * note: invalid input is not checked, r3 < 4 must hold
@@ -101,8 +100,8 @@ __fesetround:
 	addi 1,1,16
 	blr
 
-.global fegetenv
-.type fegetenv,@function
+.set _fegetenv, fegetenv
+.global _fegetenv
 fegetenv:
 	/* *r3 = fpscr */
 	mffs 0
@@ -111,8 +110,8 @@ fegetenv:
 	li 3,0
 	blr
 
-.global fesetenv
-.type fesetenv,@function
+.set _fesetenv, fesetenv
+.global _fesetenv
 fesetenv:
 	cmpwi 3, -1
 	bne 1f

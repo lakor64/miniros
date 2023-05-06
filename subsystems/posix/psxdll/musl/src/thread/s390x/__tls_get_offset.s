@@ -1,6 +1,6 @@
-	.global __tls_get_offset
-	.type __tls_get_offset,%function
-__tls_get_offset:
+	.set ___tls_get_offset, __tls_get_offset
+.global ___tls_get_offset
+	__tls_get_offset:
 	stmg  %r14, %r15, 112(%r15)
 	aghi  %r15, -160
 

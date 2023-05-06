@@ -1,7 +1,7 @@
 .set noreorder
 
-.global pipe
-.type   pipe,@function
+.set _pipe, pipe
+.global _pipe
 pipe:
 	lui $gp, %hi(_gp_disp)
 	addiu $gp, %lo(_gp_disp)

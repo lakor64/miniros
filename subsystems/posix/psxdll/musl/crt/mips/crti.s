@@ -1,8 +1,8 @@
 .set noreorder
 
 .section .init
-.global _init
-.type _init,@function
+.set __init, _init
+.global __init
 .align 2
 _init:
 	subu $sp,$sp,32
@@ -10,8 +10,8 @@ _init:
 	sw $ra,28($sp)
 
 .section .fini
-.global _fini
-.type _fini,@function
+.set __fini, _fini
+.global __fini
 .align 2
 _fini:
 	subu $sp,$sp,32

@@ -1,9 +1,9 @@
 .set noreorder
 
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp,@function
-.type __sigsetjmp,@function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
 	lui $gp, %hi(_gp_disp)
@@ -23,7 +23,6 @@ __sigsetjmp:
 	lw $ra, 104($4)
 	lw $16, 104+4+16($4)
 
-.hidden __sigsetjmp_tail
 	lw $25, %call16(__sigsetjmp_tail)($gp)
 	jr $25
 	 nop

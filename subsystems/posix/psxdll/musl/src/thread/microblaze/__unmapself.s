@@ -1,5 +1,5 @@
-.global __unmapself
-.type   __unmapself,@function
+.set ___unmapself, __unmapself
+.global ___unmapself
 __unmapself:
 	ori     r12, r0, 91
 	brki    r14, 0x8

@@ -1,15 +1,15 @@
-.global ldexp
-.type ldexp,@function
+.set _ldexp, ldexp
+.global _ldexp
 ldexp:
 	nop
 
-.global scalbln
-.type scalbln,@function
+.set _scalbln, scalbln
+.global _scalbln
 scalbln:
 	nop
 
-.global scalbn
-.type scalbn,@function
+.set _scalbn, scalbn
+.global _scalbn
 scalbn:
 	mov 12(%esp),%eax
 	add $0x3ffe,%eax

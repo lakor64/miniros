@@ -1,7 +1,6 @@
 .text
-.global __clone
-.hidden __clone
-.type   __clone,@function
+.set ___clone, __clone
+.global ___clone
 __clone:
 	xor %eax,%eax
 	mov $56,%al

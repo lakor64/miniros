@@ -1,11 +1,10 @@
 .text
-.global dlsym
-.hidden __dlsym
-.type dlsym,@function
+.set _dlsym, dlsym
+.global _dlsym
 dlsym:
 	push (%esp)
 	push 12(%esp)
 	push 12(%esp)
-	call __dlsym
+	call ___dlsym
 	add $12,%esp
 	ret

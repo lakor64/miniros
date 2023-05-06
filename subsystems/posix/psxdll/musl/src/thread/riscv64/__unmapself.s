@@ -1,5 +1,5 @@
-.global __unmapself
-.type __unmapself, %function
+.set ___unmapself, __unmapself
+.global ___unmapself
 __unmapself:
 	li a7, 215 # SYS_munmap
 	ecall

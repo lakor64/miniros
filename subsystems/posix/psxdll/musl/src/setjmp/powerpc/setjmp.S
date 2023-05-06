@@ -1,12 +1,12 @@
-	.global ___setjmp
-	.hidden ___setjmp
-	.global __setjmp
-	.global _setjmp
-	.global setjmp
-	.type   __setjmp,@function
-	.type   _setjmp,@function
-	.type   setjmp,@function
-___setjmp:
+	.set ____setjmp, ___setjmp
+.global ____setjmp
+		.set ___setjmp, __setjmp
+.global ___setjmp
+	.set __setjmp, _setjmp
+.global __setjmp
+	.set _setjmp, setjmp
+.global _setjmp
+			___setjmp:
 __setjmp:
 _setjmp:
 setjmp:
@@ -40,8 +40,7 @@ setjmp:
 #if defined(_SOFT_FLOAT) || defined(__NO_FPRS__)
 	mflr 0
 	bl 1f
-	.hidden __hwcap
-	.long __hwcap-.
+		.long __hwcap-.
 1:	mflr 4
 	lwz 5, 0(4)
 	lwzx 4, 4, 5

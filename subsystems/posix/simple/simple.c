@@ -10,14 +10,17 @@
 #include <ndk/cmfuncs.h>
 #include <reactos/debug.h>
 
-#include <psx/types.h>
-
-extern long __stdcall write(unsigned int fd, const char* buf, ssize_t count);
+#include <unistd.h>
 
 void __PosixProcessStartup()
 {
+    size_t m = 0;
+
     DPRINT1("simple.exe startup!\n");
 
-    write(0, "Hello posix universe", 20);
+    m = write(0, "Hello posix universe", 20);
+
+    DPRINT1("write result is %d\n", m);
+
     while(1); // die...
 }

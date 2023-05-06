@@ -1,7 +1,6 @@
 __asm__(
 ".text\n"
 ".weak _DYNAMIC \n"
-".hidden _DYNAMIC \n"
 ".global " START "\n"
 START ":\n"
 "	xor %ebp,%ebp \n"

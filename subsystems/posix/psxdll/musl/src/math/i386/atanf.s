@@ -1,5 +1,5 @@
-.global atanf
-.type atanf,@function
+.set _atanf, atanf
+.global _atanf
 atanf:
 	flds 4(%esp)
 	mov 4(%esp),%eax

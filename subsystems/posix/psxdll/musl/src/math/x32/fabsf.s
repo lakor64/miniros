@@ -1,5 +1,5 @@
-.global fabsf
-.type fabsf,@function
+.set _fabsf, fabsf
+.global _fabsf
 fabsf:
 	mov $0x7fffffff,%eax
 	movq %rax,%xmm1

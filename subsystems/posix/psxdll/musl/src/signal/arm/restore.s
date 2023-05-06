@@ -1,15 +1,13 @@
 .syntax unified
 
-.global __restore
-.hidden __restore
-.type __restore,%function
+.set ___restore, __restore
+.global ___restore
 __restore:
 	mov r7,#119
 	swi 0x0
 
-.global __restore_rt
-.hidden __restore_rt
-.type __restore_rt,%function
+.set ___restore_rt, __restore_rt
+.global ___restore_rt
 __restore_rt:
 	mov r7,#173
 	swi 0x0

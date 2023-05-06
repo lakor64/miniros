@@ -1,18 +1,18 @@
 .syntax unified
 
-.global __aeabi_memcpy8
-.global __aeabi_memcpy4
-.global __aeabi_memcpy
-.global __aeabi_memmove8
-.global __aeabi_memmove4
-.global __aeabi_memmove
+.set ___aeabi_memcpy8, __aeabi_memcpy8
+.global ___aeabi_memcpy8
+.set ___aeabi_memcpy4, __aeabi_memcpy4
+.global ___aeabi_memcpy4
+.set ___aeabi_memcpy, __aeabi_memcpy
+.global ___aeabi_memcpy
+.set ___aeabi_memmove8, __aeabi_memmove8
+.global ___aeabi_memmove8
+.set ___aeabi_memmove4, __aeabi_memmove4
+.global ___aeabi_memmove4
+.set ___aeabi_memmove, __aeabi_memmove
+.global ___aeabi_memmove
 
-.type __aeabi_memcpy8,%function
-.type __aeabi_memcpy4,%function
-.type __aeabi_memcpy,%function
-.type __aeabi_memmove8,%function
-.type __aeabi_memmove4,%function
-.type __aeabi_memmove,%function
 
 __aeabi_memmove8:
 __aeabi_memmove4:

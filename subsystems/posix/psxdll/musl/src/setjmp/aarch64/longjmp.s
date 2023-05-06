@@ -1,7 +1,7 @@
+.set __longjmp, _longjmp
+.global __longjmp
+.set _longjmp, longjmp
 .global _longjmp
-.global longjmp
-.type _longjmp,%function
-.type longjmp,%function
 _longjmp:
 longjmp:
 	// IHI0055B_aapcs64.pdf 5.1.1, 5.1.2 callee saved registers

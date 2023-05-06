@@ -1,13 +1,12 @@
-.global fegetround
-.type fegetround,%function
+.set _fegetround, fegetround
+.global _fegetround
 fegetround:
 	mrs x0, fpcr
 	and w0, w0, #0xc00000
 	ret
 
-.global __fesetround
-.hidden __fesetround
-.type __fesetround,%function
+.set ___fesetround, __fesetround
+.global ___fesetround
 __fesetround:
 	mrs x1, fpcr
 	bic w1, w1, #0xc00000
@@ -16,16 +15,16 @@ __fesetround:
 	mov w0, #0
 	ret
 
-.global fetestexcept
-.type fetestexcept,%function
+.set _fetestexcept, fetestexcept
+.global _fetestexcept
 fetestexcept:
 	and w0, w0, #0x1f
 	mrs x1, fpsr
 	and w0, w0, w1
 	ret
 
-.global feclearexcept
-.type feclearexcept,%function
+.set _feclearexcept, feclearexcept
+.global _feclearexcept
 feclearexcept:
 	and w0, w0, #0x1f
 	mrs x1, fpsr
@@ -34,8 +33,8 @@ feclearexcept:
 	mov w0, #0
 	ret
 
-.global feraiseexcept
-.type feraiseexcept,%function
+.set _feraiseexcept, feraiseexcept
+.global _feraiseexcept
 feraiseexcept:
 	and w0, w0, #0x1f
 	mrs x1, fpsr
@@ -44,8 +43,8 @@ feraiseexcept:
 	mov w0, #0
 	ret
 
-.global fegetenv
-.type fegetenv,%function
+.set _fegetenv, fegetenv
+.global _fegetenv
 fegetenv:
 	mrs x1, fpcr
 	mrs x2, fpsr
@@ -54,8 +53,8 @@ fegetenv:
 	ret
 
 // TODO preserve some bits
-.global fesetenv
-.type fesetenv,%function
+.set _fesetenv, fesetenv
+.global _fesetenv
 fesetenv:
 	mov x1, #0
 	mov x2, #0

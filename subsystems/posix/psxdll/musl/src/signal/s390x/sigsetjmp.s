@@ -1,9 +1,8 @@
-	.global sigsetjmp
-	.global __sigsetjmp
-	.type sigsetjmp,%function
-	.type __sigsetjmp,%function
-	.hidden ___setjmp
-sigsetjmp:
+	.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+	.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
+			sigsetjmp:
 __sigsetjmp:
 	ltgr  %r3, %r3
 	jz    ___setjmp
@@ -19,5 +18,4 @@ __sigsetjmp:
 	lg    %r14, 18*8(%r2)
 	lg    %r6,  20*8(%r2)
 
-.hidden __sigsetjmp_tail
 	jg __sigsetjmp_tail

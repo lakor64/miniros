@@ -1,5 +1,5 @@
-.global atan2
-.type atan2,@function
+.set _atan2, atan2
+.global _atan2
 atan2:
 	fldl 4(%esp)
 	fldl 12(%esp)

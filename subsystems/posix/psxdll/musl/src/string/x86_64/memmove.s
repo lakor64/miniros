@@ -1,10 +1,9 @@
-.global memmove
-.type memmove,@function
+.set _memmove, memmove
+.global _memmove
 memmove:
 	mov %rdi,%rax
 	sub %rsi,%rax
 	cmp %rdx,%rax
-.hidden __memcpy_fwd
 	jae __memcpy_fwd
 	mov %rdx,%rcx
 	lea -1(%rdi,%rdx),%rdi

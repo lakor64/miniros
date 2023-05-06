@@ -1,7 +1,7 @@
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp, %function
-.type __sigsetjmp, %function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
 	bnez a1, 1f
@@ -19,5 +19,4 @@ __sigsetjmp:
 	ld s0, 224(a0)
 	ld ra, 208(a0)
 
-.hidden __sigsetjmp_tail
 	tail __sigsetjmp_tail

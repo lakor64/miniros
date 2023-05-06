@@ -1,6 +1,5 @@
-.global __clone
-.hidden __clone
-.type   __clone,@function
+.set ___clone, __clone
+.global ___clone
 
 # r5, r6, r7, r8, r9, r10, stack
 # fn, st, fl, ar, pt, tl, ct

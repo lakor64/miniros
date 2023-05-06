@@ -1,7 +1,6 @@
 .text
-.global __set_thread_area
-.hidden __set_thread_area
-.type   __set_thread_area, %function
+.set ___set_thread_area, __set_thread_area
+.global ___set_thread_area
 __set_thread_area:
 	sar  %a1, %r2
 	srlg %r2, %r2, 32

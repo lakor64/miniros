@@ -1,6 +1,7 @@
 .section .init
 .align 2
-.global _init
+.set __init, _init
+.global __init
 _init:
 	stwu 1,-32(1)
 	mflr 0
@@ -8,7 +9,8 @@ _init:
 
 .section .fini
 .align 2
-.global _fini
+.set __fini, _fini
+.global __fini
 _fini:
 	stwu 1,-32(1)
 	mflr 0

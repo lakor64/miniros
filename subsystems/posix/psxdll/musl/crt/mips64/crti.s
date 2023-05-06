@@ -1,7 +1,8 @@
 .set noreorder
 
 .section .init
-.global _init
+.set __init, _init
+.global __init
 .align 3
 _init:
 	dsubu	$sp, $sp, 32
@@ -9,7 +10,8 @@ _init:
 	sd	$ra, 24($sp)
 
 .section .fini
-.global _fini
+.set __fini, _fini
+.global __fini
 .align 3
 _fini:
 	dsubu	$sp, $sp, 32

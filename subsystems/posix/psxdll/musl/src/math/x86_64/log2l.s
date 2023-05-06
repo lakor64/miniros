@@ -1,5 +1,5 @@
-.global log2l
-.type log2l,@function
+.set _log2l, log2l
+.global _log2l
 log2l:
 	fld1
 	fldt 8(%rsp)

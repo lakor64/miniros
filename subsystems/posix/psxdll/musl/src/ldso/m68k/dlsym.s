@@ -1,7 +1,6 @@
 .text
-.global dlsym
-.hidden __dlsym
-.type dlsym,@function
+.set _dlsym, dlsym
+.global _dlsym
 dlsym:
 	move.l (%sp),-(%sp)
 	move.l 12(%sp),-(%sp)

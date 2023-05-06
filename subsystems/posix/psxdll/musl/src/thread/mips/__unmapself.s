@@ -1,6 +1,6 @@
 .set noreorder
-.global __unmapself
-.type   __unmapself,@function
+.set ___unmapself, __unmapself
+.global ___unmapself
 __unmapself:
 	move $sp, $25
 	li $2, 4091

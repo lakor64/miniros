@@ -1,6 +1,7 @@
 .section .init
 .align 2
-.global _init
+.set __init, _init
+.global __init
 _init:
 	stmg %r14, %r15, 112(%r15)
 	lgr  %r0,  %r15
@@ -9,7 +10,8 @@ _init:
 
 .section .fini
 .align 2
-.global _fini
+.set __fini, _fini
+.global __fini
 _fini:
 	stmg %r14, %r15, 112(%r15)
 	lgr  %r0,  %r15

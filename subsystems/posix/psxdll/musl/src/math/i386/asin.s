@@ -1,5 +1,5 @@
-.global asin
-.type asin,@function
+.set _asin, asin
+.global _asin
 asin:
 	fldl 4(%esp)
 	mov 8(%esp),%eax

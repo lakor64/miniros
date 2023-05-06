@@ -1,5 +1,5 @@
-.global floorl
-.type floorl,@function
+.set _floorl, floorl
+.global _floorl
 floorl:
 	fldt 8(%esp)
 1:	mov $0x7,%al
@@ -12,15 +12,15 @@ floorl:
 	fldcw 8(%esp)
 	ret
 
-.global ceill
-.type ceill,@function
+.set _ceill, ceill
+.global _ceill
 ceill:
 	fldt 8(%esp)
 	mov $0xb,%al
 	jmp 1b
 
-.global truncl
-.type truncl,@function
+.set _truncl, truncl
+.global _truncl
 truncl:
 	fldt 8(%esp)
 	mov $0xf,%al

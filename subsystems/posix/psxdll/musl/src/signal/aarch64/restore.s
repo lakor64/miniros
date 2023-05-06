@@ -1,10 +1,8 @@
-.global __restore
-.hidden __restore
-.type __restore,%function
+.set ___restore, __restore
+.global ___restore
 __restore:
-.global __restore_rt
-.hidden __restore_rt
-.type __restore_rt,%function
+.set ___restore_rt, __restore_rt
+.global ___restore_rt
 __restore_rt:
 	mov x8,#139 // SYS_rt_sigreturn
 	svc 0

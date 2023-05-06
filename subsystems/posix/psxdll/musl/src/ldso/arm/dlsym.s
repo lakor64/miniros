@@ -1,8 +1,7 @@
 .syntax unified
 .text
-.global dlsym
-.hidden __dlsym
-.type dlsym,%function
+.set _dlsym, dlsym
+.global _dlsym
 dlsym:
 	mov r2,lr
 	b __dlsym

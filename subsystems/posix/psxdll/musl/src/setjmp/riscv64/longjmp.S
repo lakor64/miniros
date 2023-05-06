@@ -1,9 +1,9 @@
+.set ___longjmp, __longjmp
+.global ___longjmp
+.set __longjmp, _longjmp
 .global __longjmp
+.set _longjmp, longjmp
 .global _longjmp
-.global longjmp
-.type __longjmp, %function
-.type _longjmp,  %function
-.type longjmp,   %function
 __longjmp:
 _longjmp:
 longjmp:

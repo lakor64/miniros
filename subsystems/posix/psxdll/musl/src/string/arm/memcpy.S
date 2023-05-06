@@ -36,8 +36,7 @@
 
 /*
  * This file has been modified from the original for use in musl libc.
- * The main changes are: addition of .type memcpy,%function to make the
- * code safely callable from thumb mode, adjusting the return
+ * The main changes are: addition of  * code safely callable from thumb mode, adjusting the return
  * instructions to be compatible with pre-thumb ARM cpus, removal of
  * prefetch code that is not compatible with older cpus and support for
  * building as thumb 2 and big-endian.
@@ -45,8 +44,8 @@
 
 .syntax unified
 
-.global memcpy
-.type memcpy,%function
+.set _memcpy, memcpy
+.global _memcpy
 memcpy:
 	/* The stack must always be 64-bits aligned to be compliant with the
 	 * ARM ABI. Since we have to save R0, we might as well save R4

@@ -1,10 +1,10 @@
 /* Copyright 2011-2012 Nicholas J. Kain, licensed under standard MIT license */
+.set ___setjmp, __setjmp
+.global ___setjmp
+.set __setjmp, _setjmp
 .global __setjmp
+.set _setjmp, setjmp
 .global _setjmp
-.global setjmp
-.type __setjmp,@function
-.type _setjmp,@function
-.type setjmp,@function
 __setjmp:
 _setjmp:
 setjmp:

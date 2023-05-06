@@ -1,7 +1,6 @@
 .text
-.global dlsym
-.hidden __dlsym
-.type   dlsym, @function
+.set _dlsym, dlsym
+.global _dlsym
 dlsym:
 	mov.l L1, r0
 1:	braf  r0

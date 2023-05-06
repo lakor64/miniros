@@ -1,5 +1,5 @@
-.global asinf
-.type asinf,@function
+.set _asinf, asinf
+.global _asinf
 asinf:
 	flds 4(%esp)
 	mov 4(%esp),%eax

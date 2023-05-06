@@ -1,6 +1,7 @@
 .section .init
 .align 2
-.global _init
+.set __init, _init
+.global __init
 _init:
 	addis 2, 12, .TOC.-_init@ha
 	addi  2,  2, .TOC.-_init@l
@@ -11,7 +12,8 @@ _init:
 
 .section .fini
 .align 2
-.global _fini
+.set __fini, _fini
+.global __fini
 _fini:
 	addis 2, 12, .TOC.-_fini@ha
 	addi  2,  2, .TOC.-_fini@l

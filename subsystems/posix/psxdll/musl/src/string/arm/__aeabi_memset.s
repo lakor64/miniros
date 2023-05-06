@@ -1,18 +1,18 @@
 .syntax unified
 
-.global __aeabi_memclr8
-.global __aeabi_memclr4
-.global __aeabi_memclr
-.global __aeabi_memset8
-.global __aeabi_memset4
-.global __aeabi_memset
+.set ___aeabi_memclr8, __aeabi_memclr8
+.global ___aeabi_memclr8
+.set ___aeabi_memclr4, __aeabi_memclr4
+.global ___aeabi_memclr4
+.set ___aeabi_memclr, __aeabi_memclr
+.global ___aeabi_memclr
+.set ___aeabi_memset8, __aeabi_memset8
+.global ___aeabi_memset8
+.set ___aeabi_memset4, __aeabi_memset4
+.global ___aeabi_memset4
+.set ___aeabi_memset, __aeabi_memset
+.global ___aeabi_memset
 
-.type __aeabi_memclr8,%function
-.type __aeabi_memclr4,%function
-.type __aeabi_memclr,%function
-.type __aeabi_memset8,%function
-.type __aeabi_memset4,%function
-.type __aeabi_memset,%function
 
 __aeabi_memclr8:
 __aeabi_memclr4:

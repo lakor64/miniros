@@ -4,8 +4,8 @@
  * r3 contains result (==r2 iff cas succeeded). */
 
 	.align 2
-.global __sh_cas_gusa
-.hidden __sh_cas_gusa
+.set ___sh_cas_gusa, __sh_cas_gusa
+.global ___sh_cas_gusa
 __sh_cas_gusa:
 	mov.l r5,@-r15
 	mov.l r4,@-r15
@@ -24,8 +24,8 @@ __sh_cas_gusa:
 	rts
 	 mov.l @r15+,r5
 
-.global __sh_cas_llsc
-.hidden __sh_cas_llsc
+.set ___sh_cas_llsc, __sh_cas_llsc
+.global ___sh_cas_llsc
 __sh_cas_llsc:
 	mov r0,r1
 	.word 0x00ab /* synco */
@@ -41,8 +41,8 @@ __sh_cas_llsc:
 	rts
 	 mov r1,r0
 
-.global __sh_cas_imask
-.hidden __sh_cas_imask
+.set ___sh_cas_imask, __sh_cas_imask
+.global ___sh_cas_imask
 __sh_cas_imask:
 	mov r0,r1
 	stc sr,r0
@@ -58,8 +58,8 @@ __sh_cas_imask:
 	rts
 	 mov r1,r0
 
-.global __sh_cas_cas_l
-.hidden __sh_cas_cas_l
+.set ___sh_cas_cas_l, __sh_cas_cas_l
+.global ___sh_cas_cas_l
 __sh_cas_cas_l:
 	rts
 	 .word 0x2323 /* cas.l r2,r3,@r0 */

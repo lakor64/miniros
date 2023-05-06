@@ -1,15 +1,14 @@
 #if __SH_FPU_ANY__ || __SH4__
 
-.global fegetround
-.type   fegetround, @function
+.set _fegetround, fegetround
+.global _fegetround
 fegetround:
 	sts fpscr, r0
 	rts
 	 and #3, r0
 
-.global __fesetround
-.hidden __fesetround
-.type   __fesetround, @function
+.set ___fesetround, __fesetround
+.global ___fesetround
 __fesetround:
 	sts fpscr, r0
 	mov #-4, r1
@@ -19,16 +18,16 @@ __fesetround:
 	rts
 	 mov #0, r0
 
-.global fetestexcept
-.type   fetestexcept, @function
+.set _fetestexcept, fetestexcept
+.global _fetestexcept
 fetestexcept:
 	sts fpscr, r0
 	and r4, r0
 	rts
 	 and #0x7c, r0
 
-.global feclearexcept
-.type   feclearexcept, @function
+.set _feclearexcept, feclearexcept
+.global _feclearexcept
 feclearexcept:
 	mov r4, r0
 	and #0x7c, r0
@@ -39,8 +38,8 @@ feclearexcept:
 	rts
 	 mov #0, r0
 
-.global feraiseexcept
-.type   feraiseexcept, @function
+.set _feraiseexcept, feraiseexcept
+.global _feraiseexcept
 feraiseexcept:
 	mov r4, r0
 	and #0x7c, r0
@@ -50,16 +49,16 @@ feraiseexcept:
 	rts
 	 mov #0, r0
 
-.global fegetenv
-.type   fegetenv, @function
+.set _fegetenv, fegetenv
+.global _fegetenv
 fegetenv:
 	sts fpscr, r0
 	mov.l r0, @r4
 	rts
 	 mov #0, r0
 
-.global fesetenv
-.type   fesetenv, @function
+.set _fesetenv, fesetenv
+.global _fesetenv
 fesetenv:
 	mov r4, r0
 	cmp/eq #-1, r0

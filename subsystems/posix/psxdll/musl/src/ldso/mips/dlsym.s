@@ -1,7 +1,6 @@
 .set noreorder
-.global dlsym
-.hidden __dlsym
-.type dlsym,@function
+.set _dlsym, dlsym
+.global _dlsym
 dlsym:
 	lui $gp, %hi(_gp_disp)
 	addiu $gp, %lo(_gp_disp)

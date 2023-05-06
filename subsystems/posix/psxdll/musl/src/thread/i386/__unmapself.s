@@ -1,6 +1,6 @@
 .text
-.global __unmapself
-.type   __unmapself,@function
+.set ___unmapself, __unmapself
+.global ___unmapself
 __unmapself:
 	movl $91,%eax
 	movl 4(%esp),%ebx

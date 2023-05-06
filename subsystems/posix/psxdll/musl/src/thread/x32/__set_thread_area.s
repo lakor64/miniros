@@ -1,8 +1,7 @@
 /* Copyright 2011-2012 Nicholas J. Kain, licensed under standard MIT license */
 .text
-.global __set_thread_area
-.hidden __set_thread_area
-.type __set_thread_area,@function
+.set ___set_thread_area, __set_thread_area
+.global ___set_thread_area
 __set_thread_area:
 	mov %edi,%esi           /* shift for syscall */
 	movl $0x1002,%edi       /* SET_FS register */

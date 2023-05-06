@@ -2,8 +2,8 @@
 
 .set noreorder
 
-.global feclearexcept
-.type  feclearexcept,@function
+.set _feclearexcept, feclearexcept
+.global _feclearexcept
 feclearexcept:
 	and     $4, $4, 0x7c
 	cfc1    $5, $31
@@ -13,8 +13,8 @@ feclearexcept:
 	jr      $ra
 	li      $2, 0
 
-.global feraiseexcept
-.type  feraiseexcept,@function
+.set _feraiseexcept, feraiseexcept
+.global _feraiseexcept
 feraiseexcept:
 	and     $4, $4, 0x7c
 	cfc1    $5, $31
@@ -23,24 +23,23 @@ feraiseexcept:
 	jr      $ra
 	li      $2, 0
 
-.global fetestexcept
-.type  fetestexcept,@function
+.set _fetestexcept, fetestexcept
+.global _fetestexcept
 fetestexcept:
 	and     $4, $4, 0x7c
 	cfc1    $2, $31
 	jr      $ra
 	and     $2, $2, $4
 
-.global fegetround
-.type  fegetround,@function
+.set _fegetround, fegetround
+.global _fegetround
 fegetround:
 	cfc1    $2, $31
 	jr      $ra
 	andi    $2, $2, 3
 
-.global __fesetround
-.hidden __fesetround
-.type __fesetround,@function
+.set ___fesetround, __fesetround
+.global ___fesetround
 __fesetround:
 	cfc1    $5, $31
 	li      $6, -4
@@ -50,16 +49,16 @@ __fesetround:
 	jr      $ra
 	li      $2, 0
 
-.global fegetenv
-.type  fegetenv,@function
+.set _fegetenv, fegetenv
+.global _fegetenv
 fegetenv:
 	cfc1    $5, $31
 	sw      $5, 0($4)
 	jr      $ra
 	li      $2, 0
 
-.global fesetenv
-.type  fesetenv,@function
+.set _fesetenv, fesetenv
+.global _fesetenv
 fesetenv:
 	addiu   $5, $4, 1
 	beq     $5, $0, 1f

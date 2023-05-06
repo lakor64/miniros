@@ -1,5 +1,5 @@
-.global expm1l
-.type expm1l,@function
+.set _expm1l, expm1l
+.global _expm1l
 expm1l:
 	fldt 8(%rsp)
 	fldl2e
@@ -27,8 +27,8 @@ expm1l:
 	fsubrp
 	ret
 
-.global exp2l
-.type exp2l,@function
+.set _exp2l, exp2l
+.global _exp2l
 exp2l:
 	fldt 8(%rsp)
 1:	fld %st(0)

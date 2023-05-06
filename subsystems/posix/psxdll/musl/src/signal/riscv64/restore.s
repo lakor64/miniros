@@ -1,8 +1,8 @@
-.global __restore
-.type __restore, %function
+.set ___restore, __restore
+.global ___restore
 __restore:
-.global __restore_rt
-.type __restore_rt, %function
+.set ___restore_rt, __restore_rt
+.global ___restore_rt
 __restore_rt:
 	li a7, 139 # SYS_rt_sigreturn
 	ecall

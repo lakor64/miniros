@@ -1,5 +1,5 @@
-.global atanl
-.type atanl,@function
+.set _atanl, atanl
+.global _atanl
 atanl:
 	fldt 8(%esp)
 	fld1

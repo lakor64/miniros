@@ -1,14 +1,12 @@
 .text
-.global __tlsdesc_static
-.hidden __tlsdesc_static
-.type __tlsdesc_static,@function
+.set ___tlsdesc_static, __tlsdesc_static
+.global ___tlsdesc_static
 __tlsdesc_static:
 	mov 8(%rax),%rax
 	ret
 
-.global __tlsdesc_dynamic
-.hidden __tlsdesc_dynamic
-.type __tlsdesc_dynamic,@function
+.set ___tlsdesc_dynamic, __tlsdesc_dynamic
+.global ___tlsdesc_dynamic
 __tlsdesc_dynamic:
 	mov 8(%rax),%rax
 	push %rdx

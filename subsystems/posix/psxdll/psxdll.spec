@@ -117,7 +117,7 @@
 #@ cdecl utime(str ptr)
 #@ cdecl wait(ptr)
 #@ cdecl waitpid(long ptr long)
-#@ cdecl write(long ptr long)
+@ cdecl write(long ptr long)
 
 # New exports from Linux (TODO: sort this)
 #@ cdecl cfmakeraw(ptr)
@@ -226,6 +226,3 @@
 #@ cdecl lutimes(str ptr)
 #@ cdecl settimeofday(ptr ptr)
 #@ cdecl adjtime(ptr ptr)
-
-# TODO: REMOVE THIS
-@ stdcall write(long ptr long)

@@ -1,8 +1,8 @@
 /* Copyright 2011-2012 Nicholas J. Kain, licensed under standard MIT license */
+.set __longjmp, _longjmp
+.global __longjmp
+.set _longjmp, longjmp
 .global _longjmp
-.global longjmp
-.type _longjmp,@function
-.type longjmp,@function
 _longjmp:
 longjmp:
 	xor %eax,%eax

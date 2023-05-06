@@ -1,7 +1,6 @@
 .text
-.global dlsym
-.hidden __dlsym
-.type dlsym,@function
+.set _dlsym, dlsym
+.global _dlsym
 dlsym:
 	mov (%rsp),%rdx
 	jmp __dlsym

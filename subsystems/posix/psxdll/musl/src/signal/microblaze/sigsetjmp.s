@@ -1,10 +1,9 @@
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp,@function
-.type __sigsetjmp,@function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
-.hidden ___setjmp
 	beqi r6, ___setjmp
 
 	swi r15,r5,72
@@ -18,5 +17,4 @@ __sigsetjmp:
 	lwi r15,r5,72
 	lwi r19,r5,72+4+8
 
-.hidden __sigsetjmp_tail
 	bri __sigsetjmp_tail

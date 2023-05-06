@@ -1,6 +1,6 @@
 .syntax unified
-.global __aeabi_read_tp
-.type __aeabi_read_tp,%function
+.set ___aeabi_read_tp, __aeabi_read_tp
+.global ___aeabi_read_tp
 __aeabi_read_tp:
 	ldr r0,1f
 	add r0,r0,pc

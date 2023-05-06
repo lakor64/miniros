@@ -3,7 +3,7 @@
 
 .data
 .align 4
-.hidden __sysinfo
-.global __sysinfo
+.set ___sysinfo, __sysinfo
+.global ___sysinfo
 __sysinfo:
 	.long 1b

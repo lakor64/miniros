@@ -1,5 +1,5 @@
-.global fmodl
-.type fmodl,@function
+.set _fmodl, fmodl
+.global _fmodl
 fmodl:
 	fldt 24(%esp)
 	fldt 8(%esp)

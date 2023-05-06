@@ -1,15 +1,15 @@
-.global ldexpf
-.type ldexpf,@function
+.set _ldexpf, ldexpf
+.global _ldexpf
 ldexpf:
 	nop
 
-.global scalblnf
-.type scalblnf,@function
+.set _scalblnf, scalblnf
+.global _scalblnf
 scalblnf:
 	nop
 
-.global scalbnf
-.type scalbnf,@function
+.set _scalbnf, scalbnf
+.global _scalbnf
 scalbnf:
 	mov 8(%esp),%eax
 	add $0x3fe,%eax

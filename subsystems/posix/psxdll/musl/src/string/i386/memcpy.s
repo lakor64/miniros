@@ -1,7 +1,7 @@
-.global memcpy
-.global __memcpy_fwd
-.hidden __memcpy_fwd
-.type memcpy,@function
+.set _memcpy, memcpy
+.global _memcpy
+.set ___memcpy_fwd, __memcpy_fwd
+.global ___memcpy_fwd
 memcpy:
 __memcpy_fwd:
 	push %esi

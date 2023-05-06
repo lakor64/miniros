@@ -1,5 +1,5 @@
-.global remainderl
-.type remainderl,@function
+.set _remainderl, remainderl
+.global _remainderl
 remainderl:
 	fldt 24(%esp)
 	fldt 8(%esp)

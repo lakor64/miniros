@@ -1,0 +1,16 @@
+- Remove .type from all .s
+- Remove .hidden from all .s
+Patch features.h to remove "hidden"
+- Run regex replace in all .s file (fixes __cdecl)
+.global (.*)\R
+->
+.set _\1, \1\n.global _\1\n
+
+- Replace $__ to $___ in all .s
+
+Manual patch: (i386)
+memmove.s
+syscall_cp.s
+sigsetjmp.s
+dlsym.s
+dlsym_time64.S

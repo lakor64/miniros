@@ -1,7 +1,6 @@
 .text
-.global __clone
-.hidden __clone
-.type   __clone,@function
+.set ___clone, __clone
+.global ___clone
 __clone:
 	movl $0x40000038,%eax /* SYS_clone */
 	mov %rdi,%r11

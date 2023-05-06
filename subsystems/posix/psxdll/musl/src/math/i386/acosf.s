@@ -1,5 +1,5 @@
-.global acosf
-.type acosf,@function
+.set _acosf, acosf
+.global _acosf
 acosf:
 	flds 4(%esp)
 	fld %st(0)

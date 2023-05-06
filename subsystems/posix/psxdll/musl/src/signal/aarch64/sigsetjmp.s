@@ -1,7 +1,7 @@
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp,%function
-.type __sigsetjmp,%function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
 	cbz x1,setjmp
@@ -17,5 +17,4 @@ __sigsetjmp:
 	ldr x30,[x0,#176]
 	ldr x19,[x0,#176+8+8]
 
-.hidden __sigsetjmp_tail
 	b __sigsetjmp_tail

@@ -1,15 +1,15 @@
-.global ldexpl
-.type ldexpl,@function
+.set _ldexpl, ldexpl
+.global _ldexpl
 ldexpl:
 	nop
 
-.global scalblnl
-.type scalblnl,@function
+.set _scalblnl, scalblnl
+.global _scalblnl
 scalblnl:
 	nop
 
-.global scalbnl
-.type scalbnl,@function
+.set _scalbnl, scalbnl
+.global _scalbnl
 scalbnl:
 	mov 16(%esp),%eax
 	add $0x3ffe,%eax

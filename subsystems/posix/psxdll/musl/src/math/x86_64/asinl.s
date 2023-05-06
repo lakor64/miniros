@@ -1,5 +1,5 @@
-.global asinl
-.type asinl,@function
+.set _asinl, asinl
+.global _asinl
 asinl:
 	fldt 8(%rsp)
 1:	fld %st(0)

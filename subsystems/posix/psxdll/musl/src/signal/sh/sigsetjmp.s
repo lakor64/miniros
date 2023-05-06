@@ -1,7 +1,7 @@
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp,@function
-.type __sigsetjmp,@function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
 	tst r5, r5
@@ -34,8 +34,6 @@ __sigsetjmp:
 	 nop
 
 .align 2
-.hidden ___setjmp
 1:	.long ___setjmp@PLT-(2b+4-.)
-.hidden __sigsetjmp_tail
 3:	.long __sigsetjmp_tail@PLT-(4b+4-.)
 5:	.long ___setjmp@PLT-(6b+4-.)

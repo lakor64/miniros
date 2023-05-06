@@ -1,9 +1,8 @@
-	.global sigsetjmp
-	.global __sigsetjmp
-	.type sigsetjmp,%function
-	.type __sigsetjmp,%function
-	.hidden __setjmp_toc
-sigsetjmp:
+	.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+	.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
+			sigsetjmp:
 __sigsetjmp:
 	addis 2, 12, .TOC.-__sigsetjmp@ha
 	addi  2,  2, .TOC.-__sigsetjmp@l
@@ -33,5 +32,4 @@ __sigsetjmp:
 	ld   2, 512+16(3)
 	ld  16, 512+24(3)
 
-.hidden __sigsetjmp_tail
 	b __sigsetjmp_tail

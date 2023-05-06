@@ -1,5 +1,5 @@
-.global feclearexcept
-.type feclearexcept,@function
+.set _feclearexcept, feclearexcept
+.global _feclearexcept
 feclearexcept:
 		# maintain exceptions in the sse mxcsr, clear x87 exceptions
 	mov %edi,%ecx
@@ -19,8 +19,8 @@ feclearexcept:
 1:	xor %eax,%eax
 	ret
 
-.global feraiseexcept
-.type feraiseexcept,@function
+.set _feraiseexcept, feraiseexcept
+.global _feraiseexcept
 feraiseexcept:
 	and $0x3f,%edi
 	stmxcsr -8(%esp)
@@ -29,9 +29,8 @@ feraiseexcept:
 	xor %eax,%eax
 	ret
 
-.global __fesetround
-.hidden __fesetround
-.type __fesetround,@function
+.set ___fesetround, __fesetround
+.global ___fesetround
 __fesetround:
 	push %rax
 	xor %eax,%eax
@@ -48,8 +47,8 @@ __fesetround:
 	pop %rcx
 	ret
 
-.global fegetround
-.type fegetround,@function
+.set _fegetround, fegetround
+.global _fegetround
 fegetround:
 	push %rax
 	stmxcsr (%esp)
@@ -58,16 +57,16 @@ fegetround:
 	and $0xc00,%eax
 	ret
 
-.global fegetenv
-.type fegetenv,@function
+.set _fegetenv, fegetenv
+.global _fegetenv
 fegetenv:
 	xor %eax,%eax
 	fnstenv (%edi)
 	stmxcsr 28(%edi)
 	ret
 
-.global fesetenv
-.type fesetenv,@function
+.set _fesetenv, fesetenv
+.global _fesetenv
 fesetenv:
 	xor %eax,%eax
 	inc %edi
@@ -85,8 +84,8 @@ fesetenv:
 	add $40,%esp
 	ret
 
-.global fetestexcept
-.type fetestexcept,@function
+.set _fetestexcept, fetestexcept
+.global _fetestexcept
 fetestexcept:
 	and $0x3f,%edi
 	push %rax

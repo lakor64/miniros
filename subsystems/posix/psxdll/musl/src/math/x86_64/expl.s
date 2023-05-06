@@ -3,8 +3,8 @@
 # exact log2e*x calculation depends on nearest rounding mode
 # using the exact multiplication method of Dekker and Veltkamp
 
-.global expl
-.type expl,@function
+.set _expl, expl
+.global _expl
 expl:
 	fldt 8(%rsp)
 

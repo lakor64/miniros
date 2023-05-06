@@ -1,5 +1,5 @@
-.global hypot
-.type hypot,@function
+.set _hypot, hypot
+.global _hypot
 hypot:
 	mov 8(%esp),%eax
 	mov 16(%esp),%ecx

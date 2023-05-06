@@ -1,7 +1,6 @@
 	nop
-.global __restore_rt
-.hidden __restore_rt
-.type __restore_rt,@function
+.set ___restore_rt, __restore_rt
+.global ___restore_rt
 __restore_rt:
 	mov $15, %rax
 	syscall

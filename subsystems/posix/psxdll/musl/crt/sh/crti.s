@@ -1,6 +1,6 @@
 .section .init
-.global  _init
-.type    _init, @function
+.set _ _init,  _init
+.global _ _init
 _init:
 	add #-4, r15
 	mov.l r12, @-r15
@@ -10,8 +10,8 @@ _init:
 	nop
 
 .section .fini
-.global  _fini
-.type    _fini, @function
+.set _ _fini,  _fini
+.global _ _fini
 _fini:
 	add #-4, r15
 	mov.l r12, @-r15

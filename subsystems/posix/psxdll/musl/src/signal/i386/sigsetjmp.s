@@ -1,7 +1,7 @@
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp,@function
-.type __sigsetjmp,@function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
 	mov 8(%esp),%ecx
@@ -12,7 +12,6 @@ __sigsetjmp:
 	mov %ebx,28+8(%eax)
 	mov %eax,%ebx
 
-.hidden ___setjmp
 	call ___setjmp
 
 	pushl 24(%ebx)
@@ -20,7 +19,6 @@ __sigsetjmp:
 	mov %eax,8(%esp)
 	mov 28+8(%ebx),%ebx
 
-.hidden __sigsetjmp_tail
-	jmp __sigsetjmp_tail
+	jmp ___sigsetjmp_tail
 
 1:	jmp ___setjmp

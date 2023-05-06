@@ -1,8 +1,8 @@
-	.global _longjmp
-	.global longjmp
-	.type   _longjmp,@function
-	.type   longjmp,@function
-_longjmp:
+	.set __longjmp, _longjmp
+.global __longjmp
+	.set _longjmp, longjmp
+.global _longjmp
+		_longjmp:
 longjmp:
 	# 0) move old return address into the link register
 	ld   0,  0*8(3)

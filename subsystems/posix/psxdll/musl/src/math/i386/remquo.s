@@ -1,5 +1,5 @@
-.global remquof
-.type remquof,@function
+.set _remquof, remquof
+.global _remquof
 remquof:
 	mov 12(%esp),%ecx
 	flds 8(%esp)
@@ -8,8 +8,8 @@ remquof:
 	xor 7(%esp),%dh
 	jmp 1f
 
-.global remquol
-.type remquol,@function
+.set _remquol, remquol
+.global _remquol
 remquol:
 	mov 28(%esp),%ecx
 	fldt 16(%esp)
@@ -18,8 +18,8 @@ remquol:
 	xor 13(%esp),%dh
 	jmp 1f
 
-.global remquo
-.type remquo,@function
+.set _remquo, remquo
+.global _remquo
 remquo:
 	mov 20(%esp),%ecx
 	fldl 12(%esp)

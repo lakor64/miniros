@@ -1,8 +1,8 @@
-	.global sigsetjmp
-	.global __sigsetjmp
-	.type sigsetjmp,%function
-	.type __sigsetjmp,%function
-sigsetjmp:
+	.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+	.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
+		sigsetjmp:
 __sigsetjmp:
 	cmpwi cr7, 4, 0
 	beq- cr7, 1f
@@ -12,7 +12,6 @@ __sigsetjmp:
 	stw 16, 448+4+8(3)
 	mr 16, 3
 
-.hidden ___setjmp
 	bl ___setjmp
 
 	mr 4, 3
@@ -21,7 +20,6 @@ __sigsetjmp:
 	mtlr 5
 	lwz 16, 448+4+8(3)
 
-.hidden __sigsetjmp_tail
 	b __sigsetjmp_tail
 
 1:	b ___setjmp

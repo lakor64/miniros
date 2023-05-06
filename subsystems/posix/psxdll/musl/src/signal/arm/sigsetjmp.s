@@ -1,8 +1,8 @@
 .syntax unified
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp,%function
-.type __sigsetjmp,%function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
 	tst r1,r1
@@ -20,5 +20,4 @@ __sigsetjmp:
 	ldr lr,[r0,#256]
 	ldr r4,[r0,#260+8]
 
-.hidden __sigsetjmp_tail
 	b __sigsetjmp_tail

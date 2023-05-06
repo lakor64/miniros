@@ -1,10 +1,10 @@
-	.global __setjmp
-	.global _setjmp
-	.global setjmp
-	.type   __setjmp,@function
-	.type   _setjmp,@function
-	.type   setjmp,@function
-__setjmp:
+	.set ___setjmp, __setjmp
+.global ___setjmp
+	.set __setjmp, _setjmp
+.global __setjmp
+	.set _setjmp, setjmp
+.global _setjmp
+			__setjmp:
 _setjmp:
 setjmp:
 	ld 5, 24(1)   # load from the TOC slot in the caller's stack frame
@@ -15,9 +15,9 @@ setjmp:
 	.localentry setjmp,.-setjmp
 	mr 5, 2
 
-	.global __setjmp_toc
-	.hidden __setjmp_toc
-	# same as normal setjmp, except TOC pointer to save is provided in r5.
+	.set ___setjmp_toc, __setjmp_toc
+.global ___setjmp_toc
+		# same as normal setjmp, except TOC pointer to save is provided in r5.
 	# r4 would normally be the 2nd parameter, but we're using r5 to simplify calling from sigsetjmp.
 	# solves the problem of knowing whether to save the TOC pointer from r2 or the caller's stack frame.
 __setjmp_toc:

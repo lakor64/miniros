@@ -1,7 +1,7 @@
+.set __longjmp, _longjmp
+.global __longjmp
+.set _longjmp, longjmp
 .global _longjmp
-.global longjmp
-.type   _longjmp,@function
-.type   longjmp,@function
 _longjmp:
 longjmp:
 	l.sfeqi	r4, 0

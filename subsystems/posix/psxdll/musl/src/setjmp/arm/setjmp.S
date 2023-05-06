@@ -1,10 +1,10 @@
 .syntax unified
+.set ___setjmp, __setjmp
+.global ___setjmp
+.set __setjmp, _setjmp
 .global __setjmp
+.set _setjmp, setjmp
 .global _setjmp
-.global setjmp
-.type __setjmp,%function
-.type _setjmp,%function
-.type setjmp,%function
 __setjmp:
 _setjmp:
 setjmp:
@@ -47,6 +47,5 @@ setjmp:
 2:
 3:	bx lr
 
-.hidden __hwcap
 .align 2
 1:	.word __hwcap-1b

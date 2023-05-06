@@ -4,8 +4,8 @@
 # syscall(SYS_clone, flags, stack, ptid, tls, ctid)
 #                a7     a0,    a1,   a2,  a3,   a4
 
-.global __clone
-.type  __clone, %function
+.set ___clone, __clone
+.global ___clone
 __clone:
 	# Save func and arg to stack
 	addi a1, a1, -16

@@ -1,11 +1,10 @@
-.global sigsetjmp
-.global __sigsetjmp
-.type sigsetjmp,@function
-.type __sigsetjmp,@function
+.set _sigsetjmp, sigsetjmp
+.global _sigsetjmp
+.set ___sigsetjmp, __sigsetjmp
+.global ___sigsetjmp
 sigsetjmp:
 __sigsetjmp:
 	l.sfeq	r4, r0
-.hidden ___setjmp
 	l.bf	___setjmp
 
 	l.sw    52(r3), r9
@@ -19,6 +18,5 @@ __sigsetjmp:
 
 	l.lwz   r9, 52(r3)
 
-.hidden __sigsetjmp_tail
 	l.j	__sigsetjmp_tail
 	 l.lwz   r20, 52+4+8(r3)

@@ -1,6 +1,6 @@
 .text
-.global ___tls_get_addr
-.type ___tls_get_addr,@function
+.set ____tls_get_addr, ___tls_get_addr
+.global ____tls_get_addr
 ___tls_get_addr:
 	mov %gs:4,%edx
 	mov (%eax),%ecx

@@ -1,5 +1,5 @@
-.global fabs
-.type fabs,@function
+.set _fabs, fabs
+.global _fabs
 fabs:
 	xor %eax,%eax
 	dec %rax

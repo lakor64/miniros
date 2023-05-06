@@ -2,9 +2,8 @@
 // {
 // 	return a[1];
 // }
-.global __tlsdesc_static
-.hidden __tlsdesc_static
-.type __tlsdesc_static,@function
+.set ___tlsdesc_static, __tlsdesc_static
+.global ___tlsdesc_static
 __tlsdesc_static:
 	ldr x0,[x0,#8]
 	ret
@@ -15,9 +14,8 @@ __tlsdesc_static:
 // 	size_t *dtv = *(size_t**)(tp - 8);
 // 	return dtv[p->modidx] + p->off - tp;
 // }
-.global __tlsdesc_dynamic
-.hidden __tlsdesc_dynamic
-.type __tlsdesc_dynamic,@function
+.set ___tlsdesc_dynamic, __tlsdesc_dynamic
+.global ___tlsdesc_dynamic
 __tlsdesc_dynamic:
 	stp x1,x2,[sp,#-16]!
 	mrs x1,tpidr_el0      // tp

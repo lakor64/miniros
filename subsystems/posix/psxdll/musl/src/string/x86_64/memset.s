@@ -1,5 +1,5 @@
-.global memset
-.type memset,@function
+.set _memset, memset
+.global _memset
 memset:
 	movzbq %sil,%rax
 	mov $0x101010101010101,%r8

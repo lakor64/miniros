@@ -1,5 +1,5 @@
-.global logf
-.type logf,@function
+.set _logf, logf
+.global _logf
 logf:
 	fldln2
 	flds 4(%esp)

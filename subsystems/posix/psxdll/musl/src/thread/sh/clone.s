@@ -1,7 +1,6 @@
 .text
-.global __clone
-.hidden __clone
-.type   __clone, @function
+.set ___clone, __clone
+.global ___clone
 __clone:
 ! incoming: fn stack flags arg ptid tls      ctid
 !           r4 r5    r6    r7  @r15 @(4,r15) @(8,r15)
@@ -50,5 +49,4 @@ __clone:
 	or   r0, r0
 
 .align 2
-.hidden __shcall
 1:	.long __shcall@PCREL+(.-2b)
