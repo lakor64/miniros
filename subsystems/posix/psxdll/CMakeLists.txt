@@ -159,7 +159,7 @@ add_library(psxdll SHARED
     ${CMAKE_CURRENT_BINARY_DIR}/psxdll.def
 )
 
-set_module_type(psxdll posix ENTRYPOINT 0)
+#set_module_type(psxdll posix ENTRYPOINT 0)
 target_link_libraries(psxdll musl ${PSEH_LIB} nt)
 add_importlibs(psxdll ntdll)
 add_dependencies(psxdll asm)

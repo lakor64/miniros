@@ -77,7 +77,7 @@ static PS_PICO_PROVIDER_ROUTINES LxpPicoRoutines = {
     NULL,
     NULL,
     NULL,
-    NULL,
+    NULL, // note: discover...
     GENERIC_ALL,
     GENERIC_ALL,
 };
@@ -89,7 +89,9 @@ NTSTATUS NTAPI LxpPicoInitialize()
 
     NTSTATUS Status = PsRegisterPicoProvider(&LxpPicoRoutines, &rt);
 
-    /* TODO: Initialize lxmanager lpc */
+    /*
+        TODO: \\Device\lxss\\ system object...
+    */
 
     return Status;
 }

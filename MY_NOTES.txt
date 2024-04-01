@@ -1,13 +1,35 @@
+# Generic
 Was it already done??
 https://sourceforge.net/projects/winntposix/files/winntposix/1.1.X/psx-src-1.1.4.zip/download
 
-# Prefix for krnl calls and user calls
-## Win32 prefix:
-- Zw means NT syscalls that are called from kernelland (ntoskrnl)
-- Nt means NT syscalls that are called from userland (ntdll)
-## MiniROS prefix:
-- Zw -> sys_ (eg: ZwOpen -> sys_open)
-- Nt -> null (eg: NtOpen -> open)
+What about WSL2? Sure implement kvm in reactos in a hyper-v compatible way! (don't)
+
+wsl.exe? LxssManager? \Device\lxss? No it's not going to be here...
+
+# Idea
+- Should we export LxpSyscalls to the public? eg: NtPsxOpen and ZwPsxOpen?
+Would really have any utility over this? (eg. simplify porting of drivers)
+If so, how can we be sure to not depend on VFS and other concepts?
+
+# Incompatibily
+- WE DO NOT HAVE ANYTHING REVERSED FOR THE ORIGINAL PICOPROCESS STRUCTURE!!!!!
+MINIROS LXCORE WILL NOT BE CONTEXT COMPATIBLE WITH WSL1 PICOPROCESSES!!!! (Altrough the same thing can be used ALSO for w32thread/process)
+- Can we find a way to use Win32Thread/Process in KPROCESS/KTHREAD without registring lxss as a win32k callout?
+This would allow to stay reactos compatible as we don't need to rm win32k.sys.
+During this approach, can callouts be called by not sending them to win32k.sys? Can we actually use csrss for this?
+Solution 1: Modify ReactOS to NOT call the callouts if the win32k was not being registred, so we avoid crash and see if csrss can be used for that
+Solution 2: Add Pico process structures to ReactOS (this would break KTHREAD/KPROCESS as it's target Threshold), we can use them as a decicated space and always call the pico provider
+Soltuion 3 (enrolling): 
+    - Avoid calling any win32k/gdi32 routines so the process does not get registred or some flag checks inside KPROCESS
+    - Use win32 context for something else
+    - Remove the registration and do csrss.exe style-api
+
+
+# Function access
+Application process ------------>  MUSL  -------------------------------> lxcore.sys
+    open("test.txt", O_READ); --> validate pointers --------------------> fetch IRP
+                                  pass to syscall(sys_open);              call userland syscall (LxpSyscall_OPEN)       
+                                  call driver IOCTL
 
 # FileSystem
 - \\?? -> ROOT DEVICE
@@ -21,14 +43,11 @@ initialization:
 - Winlogon
 
 # psxss 
-Was csrss ment to have a posix dll server? __REACTOS__ diffs suggests me so
+csrss.exe was meant to have multiple server (thanks hbelusca for confermation), can we find a way to use it? (TODO: document really on what basesrv.dll/winsrv.dll really does)
 
 1. Create PSX object directory (\POSIX\)
-1. Connect to smss.exe (SmConnectToSm)
-
-
-
-
+2. Connect to smss.exe (SmConnectToSm)
+3. ???
 
 # CreateProcess (w2k)
 NOTE: This is from CreateProcess win32 api?
@@ -83,6 +102,7 @@ PSB_API_ROUTINE CsrServerSbApiDispatch[SbpMaxApiNumber - SbpCreateSession] =
 - win32k callouts are not called unless Win32Context != NULL && Process == GUI_PROCESS
 This is an issue when we want a subsystem for linux because we don't have any Win32Context to hook.
 I falled back to making lxss.sys a win32k.sys wannabe
+-- Design to be removed!
 
 ## How to create new service for syscall handling of any subsystem:
 
@@ -93,10 +113,14 @@ https://codemachine.com/articles/system_call_instructions.html
 This explains why the macro is like this. 
 
 # Questions
-Should we force map something like 0x7FFE0300 for our subsystem?
-Should we simply use "syscall" or "int 0x2e"?
-Should we not use sysenter? I think linux does not use it
-Is "SyscallId" mapped to syscall + serivce id?
+Q: Should we force map something like 0x7FFE0300 for our subsystem?
+A: No because we don't need the KiEnterSysCall or KiEnterFastSysCall like ntdll.dll does as linux don't use it
+Q: Should we simply use "syscall" or "int 0x2e"?
+A: "syscall" for x64, int for x86
+Q: Should we not use sysenter? I think linux does not use it
+A: Linux should not use it
+Q: Is "SyscallId" mapped to syscall + serivce id?
+A: In NT yes, so we can prepend linux syscall id + service id 2
 
 This context switch has to be done on psxsc.dll (POSIX ntdll.dll)
 
@@ -174,16 +198,63 @@ Two main files are used for this purpose:
 - Create and call STUB_K which increment syscall number by 1
 
 # Mysteries:
-- Kernel spawns process, win32k.sys is called where? csrss.exe is called where? smss is called where?
-- Does this mean that I can just use syscalls.inc with 0x2000-0x2FFF ? And rely the work on psxsc.dll to simple stubs that calls KiEnterSysCall from ntdll.dll?
-Yes, as we interrupt to KiSystemService it will redirect it to the proper service dispatcher
+Q: Kernel spawns process, win32k.sys is called where? csrss.exe is called where? smss is called where?
+A: ???
+Q: Does this mean that I can just use syscalls.inc with 0x2000-0x2FFF ? And rely the work on psxsc.dll to simple stubs that calls KiEnterSysCall from ntdll.dll?
+A: Yes, as we interrupt to KiSystemService it will redirect it to the proper service dispatcher
 
 - psxsc.dll is meant to be loaded only by POSIX NT apps, no need to think about this with pico processes
+-- psxsc.dll is NOT THERE ANYMORE!
+
+# From PicoProcess to CSRSS (analysis)
+
+1. We need to be able to do this functions from csrss.exe:
+- System call dispatch: this will be done with IOCTLs so it's not needed as it can be adjusted with patches on musl side
+- Create process: as shown in proc.c, we can use CsrClientCallServer to csrss.exe server for creating a new process
+- Create thread: as shown in thread.c, we can use CsrCreateRemoteThread to csrss.exe server for creating a new thread
+- Get process context: KPROCESS->W32Context
+- Get thread context: KTHREAD->W32Context
+- Terminate thread: we can simply execute NtTerminateThread
+- Resume thread: we can simply use NtResumeThread
+- Suspend therad: we can simply use NtSuspendThread
+- Terminate process: we can simply use NtTerminateProcess
+2. We need that csrss.exe calls the following callback
+- system call dispatches: done by the driver, we use an ioctl
+- thread exit: ?
+- process exit:
+- dispatch exception:
+- terminate process:
+- walk user stack
+- get image name of a process: we should not need this as we have NT standarized names?
 
 # Analysis on Pico Process
 
 PicoProcess is a MicroProcess with a Pico driver provider (lxss.sys) associated
 MicroProcess is a Windows process without PEB/TEB/NTDLL.dll and so on
+
+PsRegisterPicoProvider
+1. PPS_PICO_PROVIDER_ROUTINES this are passed by the pico driver
+- Size of the struct
+- PPS_PICO_PROVIDER_SYSTEM_CALL_DISPATCH: this is called after "syscall" && KPROCESS->Flags(2).PicoCreated
+- PPS_PICO_PROVIDER_THREAD_EXIT: called when a thread is exited, for clearing thread context
+- PPS_PICO_PROVIDER_PROCESS_EXIT: called when a process is exited, for clearning process context
+- PPS_PICO_PROVIDER_DISPATCH_EXCEPTION: called when an exception is being hit, maybe for compat with sigsegv etc
+- PPS_PICO_PROVIDER_TERMINATE_PROCESS: called when a process is terminated
+- PPS_PICO_PROVIDER_WALK_USER_STACK: called when the user stack is being walked, probably for gdb
+- ProtectedRanges: ?
+- PPS_PICO_GET_ALLOCATED_PROCESS_IMAGE_NAME: gets the image name of a process
+- OpenProcess: ?
+- OpenThread: ?
+2. PPS_PICO_ROUTINES this are generic routines from the windows kernel
+- PPS_PICO_CREATE_PROCESS: call this to make a new pico process
+- PPS_PICO_CREATE_THREAD: call this to make a new pico thread
+- PPS_PICO_GET_PROCESS_CONTEXT: gets a reserved context in which you can play and put your own crap
+- PPS_PICO_GET_THREAD_CONTEXT: same but with KTHREAD
+- PPS_TERMINATE_THREAD: kills a thread
+- PPS_RESUME_THREAD: resume a thread
+- PPS_PICO_SET_THREAD_DESCRIPTOR_BASE: ?
+- PPS_SUSPEND_THREAD: suspends a thread
+- PPS_PICO_TERMINATE_PROCESS: kills a process
 
 EPROCESS (PicoContext): https://www.vergiliusproject.com/kernels/x64/Windows%2010%20|%202016/2009%2020H2%20(October%202020%20Update)/_EPROCESS
 ETHREAD (PicoContext): https://www.vergiliusproject.com/kernels/x64/Windows%2010%20|%202016/2009%2020H2%20(October%202020%20Update)/_ETHREAD
@@ -235,3 +306,140 @@ Pico process structure documentations
 
 https://pastebin.com/C1NLn3Jn
 Exported symbols of lxcore
+
+##-- chat.reactos.org review/tests for being compatible with w2k --##
+One way I was thinking was as follows:
+You have a single IOCTL "syscall". In your driver you have your "syscall" table (that you could generate with C macros or whatever).
+When you call the IOCTL, the input "parameter" would be the function index (so that on driver side you can check its value and compare with the table size).
+When you call the IOCTL the output "parameter" would be a pointer to the caller stack or sthg. 
+
+lakor64
+hmm why would the output parameter be a pointer to the caller stack? iirc "syscall" the C api only takes one int output
+altrough it would make sense on the input side
+on musl it's implemented as like this "int __syscall6(int id, int a, int b, int c, int d, int e, int f)" 
+now for the return I could use the ntstatus which I remember it should return actually one
+
+# csrss chunks
+bit-by-bit (I really need to know how this works)
+it seems like multiple sessions can start csrss.exe?
+
+-- When a new process is created inside it's main (eg: DllMain)
+The process tries to tell csrss.exe that something new happend!
+CsrClientConnectToServer
+This is from the ApiPort
+
+So the idea is that we can control dispatch things (DispatchTable) from processes to csrss.exe
+
+csrss.exe, simply this main:
+1. Simply sets info about this process
+2. Call CsrServerInitialization
+3. Disable errors on this proc
+4. Make proc critical
+5. Kill thread
+
+csrssrv.dll!CsrServerInitialization
+1. Cache BaiscSystemInformation
+2. Cache heap
+3. Calls CsrSetProcessSecurity
+4. Calls CsrInitializeNtSessionList
+5. Calls CsrInitializeProcessStructure
+6. Calls CsrParseServerCommandLine
+7. Calls CsrInitCsrRootProcess
+8. Calls CsrApiPortInitialize
+9. Calls CsrSbApiPortInitialize
+10. Calls SmConnectToSm
+The connection to smss.exe is done with the SbApiPort (\\SbApiPort)
+and tells smss.exe that anything should be handled by this process for related
+subsystem stuff.
+
+SO, when a new proces is created theorically sm api should talk to csrss.exe to tell
+something
+
+csrssrv.dll!CsrInitializeNtSessionList
+Just makes a List of some stuff
+
+csrssrv.dll!CsrSetProcessSecurity
+Apperently this gets the current user token and decides to make a new
+Security descriptor. I'm not good an knowing how all this works so I'll leave
+as is.
+It writes the security descriptor to the process, maybe to block other users?
+
+csrssrv.dll!CsrInitializeProcessStructure
+This initializes a process lock then creates a process with CsrAllocateProcess (root process)
+and sets information to it
+
+csrssrv.dll!CsrAllocateProcess
+This allocates a CSR_PROCESS structure inside the Csr heap, then it increase
+the process lock count and init the list of threads for this process
+
+csrssrv.dll!CsrCreateSessionObjectDirectory
+This creates an object dictionary for the BNO and the link of the DosDevices
+
+csrssrv.dll!CsrParseServerCommandLine
+Parses the command line and then (also calls CsrCreateSessionObjectDirectory)
+loads the specified DLLs with CsrLoadServerDll
+Per each server DLL we pass execution to ServerDllInitialization.
+If "SharedSection" is specified it can load itself
+
+csrssrv.dll!CsrInitializeProcessStructure
+1. This looks trough all CsrLoadedServerDll array and see if it was loaded,
+if it WAS loaded then simply send him the allocatd heap of the root process in
+ServerData
+2. Calls "NewProcessCallback"
+
+csrssrv.dll!CsrLoadServerDll
+Basically calls the Ldr loader and see if there's the "ServerDllInitialization"
+entrypoint and then calls it.
+
+csrssrv.dll!CsrSrvCreateSharedSection
+Creates a section into the PEB that Client and Server DLL can use.
+
+csrssrv.dll!CsrInitCsrRootProcess
+Take all DLL that we have loaded and set them the heap.
+Also execute "NewProcessCallback" for the Root process.
+
+csrssrv.dll!CsrApiPortInitialize
+This creates the port of CSR \\ApiPort
+Sets the port handles to CsrApiRequestThread and resumes it
+
+csrssrv.dll!CsrSbApiPortInitialize
+This creates the port of CSR \\SbApiPort
+Sets the port handles to CsrSbApiRequestThread and resumes it
+
+csrssrv.dll!CsrSbApiRequestThread
+- Connection request:
+1. Accept the port and ok
+- Dispatch APIs: CsrServerSbApiDispatch
+    CsrSbCreateSession,
+    CsrSbTerminateSession,
+    CsrSbForeignSessionComplete,
+    CsrSbCreateProcess
+
+csrssrv.dll!CsrSbCreateSession
+* Call CsrAllocateProcess
+* Call CsrAllocateThread
+* Setup csr internal objects
+* add it to the list
+* add the thread to the list
+* resume the thread
+
+csrssrv.dll!CsrSbTerminateSession
+not implemented
+
+csrssrv.dll!CsrSbForeignSessionComplete
+not used in NT
+
+csrssrv.dll!CsrSbCreateProcess
+not implemented
+
+csrssrv.dll!CsrApiRequestThread
+This helps dispatching the functions that we receive from the CsrApi back to the
+csrss.exe for proc destruction and so on
+
+## the base server (basesrv.dll)
+
+basesrv.dll!ServerDllInitialization
+Sets up PCSR_SERVER_DLL
+- BaseServerApiDispatchTable all the dispatch of things from csrss.exe
+- callback when a process is spawned from csrss: ConnectCallback
+- callback when a process is removed from csrss: DisconnectCallback

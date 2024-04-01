@@ -137,6 +137,34 @@
 #@ cdecl getgrgid_r(long ptr str long ptr)
 #@ cdecl secure_getenv(str)
 
+# aio.h
+#@ cdecl aio_read(ptr)
+#@ cdecl aio_write(ptr)
+#@ cdecl aio_return(ptr)
+#@ cdecl aio_cancel(long ptr)
+#@ cdecl aio_suspent(ptr long ptr)
+#@ cdecl aio_fsync(long ptr)
+#@ cdecl lio_listio(long ptr long ptr)
+
+# alloca.h
+#@ cdecl alloca(long)
+
+# assert.h
+#@ cdecl __assert_fail(ptr ptr long ptr) 
+
+# complex.h
+#@ cdecl cacos(double)
+#@ cdecl cacosf(float)
+#@ cdecl cacosl(double)
+#@ cdecl casin(double)
+#@ cdecl casinf(float)
+#@ cdecl casinl(double)
+#@ cdecl catan(double)
+#@ cdecl catanf(double)
+#@ cdecl ccos(double)
+#@ cdecl ccosf(float)
+#@ cdecl ccosl(double)
+
 # New from unistd.h
 #@ cdecl posix_close(long long)
 #@ cdecl dup3(long long long)

@@ -152,34 +152,34 @@ typedef	VOID PS_PICO_SET_THREAD_DESCRIPTOR_BASE(
 typedef PS_PICO_SET_THREAD_DESCRIPTOR_BASE *PPS_PICO_SET_THREAD_DESCRIPTOR_BASE;
 
 typedef	NTSTATUS PS_PICO_TERMINATE_PROCESS(
-			__inout PEPROCESS Process,
-			__in NTSTATUS ExitStatus
+			_Inout_ PEPROCESS Process,
+			_In_ NTSTATUS ExitStatus
 		);
 typedef PS_PICO_TERMINATE_PROCESS *PPS_PICO_TERMINATE_PROCESS;
 
 typedef	NTSTATUS PS_SET_CONTEXT_THREAD_INTERNAL(
-			__in PETHREAD Thread,
-			__in PCONTEXT ThreadContext,
-			__in KPROCESSOR_MODE ProbeMode,
-			__in KPROCESSOR_MODE CtxMode,
-			__in BOOLEAN PerformUnwind
+			_In_ PETHREAD Thread,
+			_In_ PCONTEXT ThreadContext,
+			_In_ KPROCESSOR_MODE ProbeMode,
+			_In_ KPROCESSOR_MODE CtxMode,
+			_In_ BOOLEAN PerformUnwind
 		);
 typedef PS_SET_CONTEXT_THREAD_INTERNAL *PPS_SET_CONTEXT_THREAD_INTERNAL;
 
 typedef	NTSTATUS PS_GET_CONTEXT_THREAD_INTERNAL(
-			__in PETHREAD Thread,
-			__inout PCONTEXT ThreadContext,
-			__in KPROCESSOR_MODE ProbeMode,
-			__in KPROCESSOR_MODE CtxMode,
-			__in BOOLEAN PerformUnwind
+			_In_ PETHREAD Thread,
+			_Inout_ PCONTEXT ThreadContext,
+			_In_ KPROCESSOR_MODE ProbeMode,
+			_In_ KPROCESSOR_MODE CtxMode,
+			_In_ BOOLEAN PerformUnwind
 		);
 typedef PS_GET_CONTEXT_THREAD_INTERNAL *PPS_GET_CONTEXT_THREAD_INTERNAL;
 
 
 typedef	NTSTATUS PS_TERMINATE_THREAD(
-			__inout PETHREAD Thread,
-			__in NTSTATUS ExitStatus,
-			__in BOOLEAN DirectTerminate
+			_Inout_ PETHREAD Thread,
+			_In_ NTSTATUS ExitStatus,
+			_In_ BOOLEAN DirectTerminate
 		);
 typedef PS_TERMINATE_THREAD *PPS_TERMINATE_THREAD;
 
